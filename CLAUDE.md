@@ -107,6 +107,20 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 - 직접 `<button>`, `<input>`, `<select>` 등 인터랙티브 HTML 요소 직접 사용 금지 — 반드시 컴포넌트 사용
 - 래퍼 `<div>` 는 레이아웃 목적으로만 허용, 시각 스타일(색상·간격·폰트)은 토큰 사용
 
+### 컴포넌트가 없는 경우 (Fallback)
+`src/components/` 에 해당하는 컴포넌트가 없을 경우에만 아래 규칙을 따릅니다:
+- **외부 라이브러리 또는 HTML 요소 직접 사용 허용** (AI가 적절한 구현을 선택)
+- **단, 폰트(타이포그래피)는 반드시 IGT 디자인 시스템 토큰 사용** — 하드코딩 금지
+  ```tsx
+  // ✅ fallback 컴포넌트에서도 타이포그래피는 토큰 사용
+  style={{
+    fontSize: 'var(--label-sm-medium-fontSize)',
+    fontWeight: 'var(--label-sm-medium-fontWeight)',
+    lineHeight: 'var(--label-sm-medium-lineHeight)',
+  }}
+  ```
+- 색상·간격·border 등 나머지 토큰 규칙도 동일하게 적용
+
 ### 타입 임포트
 - 모든 컴포넌트 props는 `src/types/components.ts` 에 정의된 타입 사용
 - 새 컴포넌트 추가 시 반드시 타입 파일에 타입 먼저 추가
@@ -231,9 +245,8 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 
 ```
 src/components/ComponentName/
-  ComponentName.tsx      ← 컴포넌트 구현
-  ComponentName.stories.tsx  ← Storybook 스토리
-  index.ts               ← export
+  ComponentName.tsx  ← 컴포넌트 구현
+  index.ts           ← export
 ```
 
 ```tsx
