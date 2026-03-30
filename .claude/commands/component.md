@@ -2,7 +2,13 @@
 
 컴포넌트 이름: $ARGUMENTS
 
-`src/types/components.ts` 와 `src/components/$ARGUMENTS/` 를 읽고 아래 형식으로 정리하세요.
+아래 경로 중 존재하는 곳에서 컴포넌트 정보를 읽고 아래 형식으로 정리하세요.
+- `src/components/$ARGUMENTS/` 또는
+- `node_modules/igt-design-system/src/components/$ARGUMENTS/`
+
+타입 정보:
+- `src/types/components.ts` 또는
+- `node_modules/igt-design-system/src/types/components.ts`
 
 ## 출력 형식
 

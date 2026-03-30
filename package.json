@@ -21,6 +21,7 @@
     "igt-init": "./scripts/init-skills.mjs"
   },
   "scripts": {
+    "prepare": "npm run build:lib",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:lib": "tsc -b && vite build --config vite.lib.config.ts",
