@@ -1,0 +1,102 @@
+/* =============================================================================
+   IGT Design System — SegmentedControl
+   ============================================================================= */
+
+.igt-segmentedcontrol {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  gap: 2px;
+  background-color: var(--sys-background-subtle);
+  border-radius: var(--_sc-radius);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Segment (individual item) ──────────────────────────────────────────── */
+
+.igt-segmentedcontrol__segment {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  cursor: pointer;
+  border: none;
+  border-radius: calc(var(--_sc-radius) - 2px);
+  white-space: nowrap;
+  height: var(--_sc-height);
+  padding: 0 var(--_sc-padding-x);
+
+  background-color: transparent;
+  color: var(--sys-content-neutral-muted);
+
+  font-family: inherit;
+  font-size: var(--_sc-font-size);
+  line-height: var(--_sc-line-height);
+  font-weight: var(--_sc-font-weight);
+  letter-spacing: var(--_sc-letter-spacing);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.igt-segmentedcontrol__segment:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+/* ── Selected segment ───────────────────────────────────────────────────── */
+
+.igt-segmentedcontrol__segment--selected {
+  background-color: var(--sys-surface-base);
+  color: var(--sys-content-neutral-strong);
+  box-shadow: 0 1px 3px var(--sys-border-neutral-default);
+}
+
+/* ── Icon ───────────────────────────────────────────────────────────────── */
+
+.igt-segmentedcontrol__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Size: xs ───────────────────────────────────────────────────────────── */
+
+.igt-segmentedcontrol--size-xs {
+  --_sc-height: var(--recipe-action-base-common-height-xs);
+  --_sc-padding-x: var(--recipe-action-base-button-like-padding-x-xs);
+  --_sc-radius: var(--recipe-action-base-button-like-radius-xs);
+  --_sc-font-size: var(--label-xs-medium-font-size);
+  --_sc-line-height: var(--label-xs-medium-line-height);
+  --_sc-font-weight: var(--label-xs-medium-font-weight);
+  --_sc-letter-spacing: var(--label-xs-medium-letter-spacing);
+}
+
+/* ── Size: sm ───────────────────────────────────────────────────────────── */
+
+.igt-segmentedcontrol--size-sm {
+  --_sc-height: var(--recipe-action-base-common-height-sm);
+  --_sc-padding-x: var(--recipe-action-base-button-like-padding-x-sm);
+  --_sc-radius: var(--recipe-action-base-button-like-radius-sm);
+  --_sc-font-size: var(--label-sm-medium-font-size);
+  --_sc-line-height: var(--label-sm-medium-line-height);
+  --_sc-font-weight: var(--label-sm-medium-font-weight);
+  --_sc-letter-spacing: var(--label-sm-medium-letter-spacing);
+}
+
+/* ── Size: md ───────────────────────────────────────────────────────────── */
+
+.igt-segmentedcontrol--size-md {
+  --_sc-height: var(--recipe-action-base-common-height-md);
+  --_sc-padding-x: var(--recipe-action-base-button-like-padding-x-md);
+  --_sc-radius: var(--recipe-action-base-button-like-radius-md);
+  --_sc-font-size: var(--label-md-medium-font-size);
+  --_sc-line-height: var(--label-md-medium-line-height);
+  --_sc-font-weight: var(--label-md-medium-font-weight);
+  --_sc-letter-spacing: var(--label-md-medium-letter-spacing);
+}

@@ -1,0 +1,81 @@
+/* =============================================================================
+   IGT Design System — Pagination
+   ============================================================================= */
+
+.igt-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Page button base ─────────────────────────────────────────────────────── */
+
+.igt-pagination__prev,
+.igt-pagination__next,
+.igt-pagination__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--sys-content-neutral-default);
+  border-radius: var(--radius-radius-8);
+  font-family: inherit;
+  font-size: var(--label-sm-semibold-font-size);
+  font-weight: var(--label-sm-semibold-font-weight);
+  line-height: var(--label-sm-semibold-line-height);
+  transition: background-color 120ms ease, color 120ms ease;
+  padding: 0;
+  width: var(--_pagination-btn-size);
+  height: var(--_pagination-btn-size);
+}
+
+.igt-pagination__prev:hover:not(:disabled),
+.igt-pagination__next:hover:not(:disabled),
+.igt-pagination__page:hover:not(.igt-pagination__page--active) {
+  background-color: var(--sys-interaction-hover-overlay-neutral);
+}
+
+.igt-pagination__prev:disabled,
+.igt-pagination__next:disabled {
+  color: var(--sys-content-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Active page ──────────────────────────────────────────────────────────── */
+
+.igt-pagination__page--active {
+  background-color: var(--sys-container-brand-solid-default);
+  color: var(--sys-content-inverse-strong);
+  cursor: default;
+}
+
+/* ── Ellipsis ─────────────────────────────────────────────────────────────── */
+
+.igt-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_pagination-btn-size);
+  height: var(--_pagination-btn-size);
+  color: var(--sys-content-neutral-subtle);
+  font-size: var(--label-sm-semibold-font-size);
+  user-select: none;
+}
+
+/* ── Minimal info ─────────────────────────────────────────────────────────── */
+
+.igt-pagination__info {
+  padding: 0 var(--spacing-8);
+  color: var(--sys-content-neutral-default);
+  font-size: var(--label-sm-semibold-font-size);
+  font-weight: var(--label-sm-semibold-font-weight);
+  line-height: var(--label-sm-semibold-line-height);
+}
+
+/* ── Sizes ────────────────────────────────────────────────────────────────── */
+
+.igt-pagination--size-sm { --_pagination-btn-size: var(--size-32); }
+.igt-pagination--size-md { --_pagination-btn-size: var(--size-40); }

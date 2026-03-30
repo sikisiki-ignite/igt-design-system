@@ -1,0 +1,560 @@
+/* =============================================================================
+   IGT Design System — Button
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  border-style: solid;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* ── consumed private vars (set by size / tone / variant modifiers below) */
+  height: var(--_btn-height);
+  padding: 0 var(--_btn-padding-x);
+  gap: var(--_btn-gap);
+  border-radius: var(--_btn-radius);
+  border-width: var(--_btn-border-width);
+
+  background-color: var(--_btn-bg);
+  color: var(--_btn-text);
+  border-color: var(--_btn-border-color);
+
+  font-size: var(--_btn-font-size);
+  line-height: var(--_btn-line-height);
+  font-weight: var(--_btn-font-weight);
+  letter-spacing: var(--_btn-letter-spacing);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease;
+}
+
+.igt-button:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-button:disabled,
+.igt-button--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Label ────────────────────────────────────────────────────────────────── */
+
+.igt-button__label {
+  padding: 0 var(--_btn-label-padding-x);
+}
+
+/* ── Spinner ──────────────────────────────────────────────────────────────── */
+
+.igt-button__spinner {
+  flex-shrink: 0;
+  width: var(--_btn-icon-size);
+  height: var(--_btn-icon-size);
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-9999);
+  animation: igt-button-spin 0.6s linear infinite;
+}
+
+@keyframes igt-button-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* =============================================================================
+   SIZE — standard density
+   ============================================================================= */
+
+.igt-button--size-xs {
+  --_btn-height: var(--comp-button-size-height-xs);
+  --_btn-padding-x: var(--comp-button-size-padding-x-xs);
+  --_btn-radius: var(--comp-button-size-radius-xs);
+  --_btn-border-width: var(--comp-button-size-border-width-xs);
+  --_btn-gap: var(--comp-button-size-gap-xs);
+  --_btn-label-padding-x: var(--comp-button-size-label-padding-x-xs);
+  --_btn-icon-size: var(--comp-button-size-icon-xs);
+  --_btn-font-size: var(--label-xs-semibold-font-size);
+  --_btn-line-height: var(--label-xs-semibold-line-height);
+  --_btn-font-weight: var(--label-xs-semibold-font-weight);
+  --_btn-letter-spacing: var(--label-xs-semibold-letter-spacing);
+}
+
+.igt-button--size-sm {
+  --_btn-height: var(--comp-button-size-height-sm);
+  --_btn-padding-x: var(--comp-button-size-padding-x-sm);
+  --_btn-radius: var(--comp-button-size-radius-sm);
+  --_btn-border-width: var(--comp-button-size-border-width-sm);
+  --_btn-gap: var(--comp-button-size-gap-sm);
+  --_btn-label-padding-x: var(--comp-button-size-label-padding-x-sm);
+  --_btn-icon-size: var(--comp-button-size-icon-sm);
+  --_btn-font-size: var(--label-sm-semibold-font-size);
+  --_btn-line-height: var(--label-sm-semibold-line-height);
+  --_btn-font-weight: var(--label-sm-semibold-font-weight);
+  --_btn-letter-spacing: var(--label-sm-semibold-letter-spacing);
+}
+
+.igt-button--size-md {
+  --_btn-height: var(--comp-button-size-height-md);
+  --_btn-padding-x: var(--comp-button-size-padding-x-md);
+  --_btn-radius: var(--comp-button-size-radius-md);
+  --_btn-border-width: var(--comp-button-size-border-width-md);
+  --_btn-gap: var(--comp-button-size-gap-md);
+  --_btn-label-padding-x: var(--comp-button-size-label-padding-x-md);
+  --_btn-icon-size: var(--comp-button-size-icon-md);
+  --_btn-font-size: var(--label-md-semibold-font-size);
+  --_btn-line-height: var(--label-md-semibold-line-height);
+  --_btn-font-weight: var(--label-md-semibold-font-weight);
+  --_btn-letter-spacing: var(--label-md-semibold-letter-spacing);
+}
+
+.igt-button--size-lg {
+  --_btn-height: var(--comp-button-size-height-lg);
+  --_btn-padding-x: var(--comp-button-size-padding-x-lg);
+  --_btn-radius: var(--comp-button-size-radius-lg);
+  --_btn-border-width: var(--comp-button-size-border-width-lg);
+  --_btn-gap: var(--comp-button-size-gap-lg);
+  --_btn-label-padding-x: var(--comp-button-size-label-padding-x-lg);
+  --_btn-icon-size: var(--comp-button-size-icon-lg);
+  --_btn-font-size: var(--label-lg-semibold-font-size);
+  --_btn-line-height: var(--label-lg-semibold-line-height);
+  --_btn-font-weight: var(--label-lg-semibold-font-weight);
+  --_btn-letter-spacing: var(--label-lg-semibold-letter-spacing);
+}
+
+/* ── compact density overrides ────────────────────────────────────────────── */
+
+.igt-button--density-compact.igt-button--size-xs {
+  --_btn-height: var(--comp-button-size-height-compact-xs);
+  --_btn-padding-x: var(--comp-button-size-padding-x-compact-xs);
+}
+.igt-button--density-compact.igt-button--size-sm {
+  --_btn-height: var(--comp-button-size-height-compact-sm);
+  --_btn-padding-x: var(--comp-button-size-padding-x-compact-sm);
+}
+.igt-button--density-compact.igt-button--size-md {
+  --_btn-height: var(--comp-button-size-height-compact-md);
+  --_btn-padding-x: var(--comp-button-size-padding-x-compact-md);
+}
+.igt-button--density-compact.igt-button--size-lg {
+  --_btn-height: var(--comp-button-size-height-compact-lg);
+  --_btn-padding-x: var(--comp-button-size-padding-x-compact-lg);
+}
+
+
+/* =============================================================================
+   COLOR — primary
+   ============================================================================= */
+
+/* primary / fill */
+.igt-button--tone-primary.igt-button--variant-fill {
+  --_btn-bg: var(--comp-button-color-primary-fill-container-normal);
+  --_btn-text: var(--comp-button-color-primary-fill-text-normal);
+  --_btn-border-color: var(--comp-button-color-primary-fill-border-normal);
+}
+.igt-button--tone-primary.igt-button--variant-fill:hover {
+  --_btn-bg: var(--comp-button-color-primary-fill-container-hover);
+  --_btn-text: var(--comp-button-color-primary-fill-text-hover);
+  --_btn-border-color: var(--comp-button-color-primary-fill-border-hover);
+}
+.igt-button--tone-primary.igt-button--variant-fill:active {
+  --_btn-bg: var(--comp-button-color-primary-fill-container-pressed);
+  --_btn-text: var(--comp-button-color-primary-fill-text-pressed);
+  --_btn-border-color: var(--comp-button-color-primary-fill-border-pressed);
+}
+.igt-button--tone-primary.igt-button--variant-fill:disabled,
+.igt-button--tone-primary.igt-button--variant-fill.igt-button--disabled,
+.igt-button--tone-primary.igt-button--variant-fill.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-primary-fill-container-disabled);
+  --_btn-text: var(--comp-button-color-primary-fill-text-disabled);
+  --_btn-border-color: var(--comp-button-color-primary-fill-border-disabled);
+}
+
+/* primary / soft */
+.igt-button--tone-primary.igt-button--variant-soft {
+  --_btn-bg: var(--comp-button-color-primary-soft-container-normal);
+  --_btn-text: var(--comp-button-color-primary-soft-text-normal);
+  --_btn-border-color: var(--comp-button-color-primary-soft-border-normal);
+}
+.igt-button--tone-primary.igt-button--variant-soft:hover {
+  --_btn-bg: var(--comp-button-color-primary-soft-container-hover);
+  --_btn-text: var(--comp-button-color-primary-soft-text-hover);
+  --_btn-border-color: var(--comp-button-color-primary-soft-border-hover);
+}
+.igt-button--tone-primary.igt-button--variant-soft:active {
+  --_btn-bg: var(--comp-button-color-primary-soft-container-pressed);
+  --_btn-text: var(--comp-button-color-primary-soft-text-pressed);
+  --_btn-border-color: var(--comp-button-color-primary-soft-border-pressed);
+}
+.igt-button--tone-primary.igt-button--variant-soft:disabled,
+.igt-button--tone-primary.igt-button--variant-soft.igt-button--disabled,
+.igt-button--tone-primary.igt-button--variant-soft.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-primary-soft-container-disabled);
+  --_btn-text: var(--comp-button-color-primary-soft-text-disabled);
+  --_btn-border-color: var(--comp-button-color-primary-soft-border-disabled);
+}
+
+/* primary / outline */
+.igt-button--tone-primary.igt-button--variant-outline {
+  --_btn-bg: var(--comp-button-color-primary-outline-container-normal);
+  --_btn-text: var(--comp-button-color-primary-outline-text-normal);
+  --_btn-border-color: var(--comp-button-color-primary-outline-border-normal);
+}
+.igt-button--tone-primary.igt-button--variant-outline:hover {
+  --_btn-bg: var(--comp-button-color-primary-outline-container-hover);
+  --_btn-text: var(--comp-button-color-primary-outline-text-hover);
+  --_btn-border-color: var(--comp-button-color-primary-outline-border-hover);
+}
+.igt-button--tone-primary.igt-button--variant-outline:active {
+  --_btn-bg: var(--comp-button-color-primary-outline-container-pressed);
+  --_btn-text: var(--comp-button-color-primary-outline-text-pressed);
+  --_btn-border-color: var(--comp-button-color-primary-outline-border-pressed);
+}
+.igt-button--tone-primary.igt-button--variant-outline:disabled,
+.igt-button--tone-primary.igt-button--variant-outline.igt-button--disabled,
+.igt-button--tone-primary.igt-button--variant-outline.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-primary-outline-container-disabled);
+  --_btn-text: var(--comp-button-color-primary-outline-text-disabled);
+  --_btn-border-color: var(--comp-button-color-primary-outline-border-disabled);
+}
+
+/* primary / ghost */
+.igt-button--tone-primary.igt-button--variant-ghost {
+  --_btn-bg: var(--comp-button-color-primary-ghost-container-normal);
+  --_btn-text: var(--comp-button-color-primary-ghost-text-normal);
+  --_btn-border-color: var(--comp-button-color-primary-ghost-border-normal);
+}
+.igt-button--tone-primary.igt-button--variant-ghost:hover {
+  --_btn-bg: var(--comp-button-color-primary-ghost-container-hover);
+  --_btn-text: var(--comp-button-color-primary-ghost-text-hover);
+  --_btn-border-color: var(--comp-button-color-primary-ghost-border-hover);
+}
+.igt-button--tone-primary.igt-button--variant-ghost:active {
+  --_btn-bg: var(--comp-button-color-primary-ghost-container-pressed);
+  --_btn-text: var(--comp-button-color-primary-ghost-text-pressed);
+  --_btn-border-color: var(--comp-button-color-primary-ghost-border-pressed);
+}
+.igt-button--tone-primary.igt-button--variant-ghost:disabled,
+.igt-button--tone-primary.igt-button--variant-ghost.igt-button--disabled,
+.igt-button--tone-primary.igt-button--variant-ghost.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-primary-ghost-container-disabled);
+  --_btn-text: var(--comp-button-color-primary-ghost-text-disabled);
+  --_btn-border-color: var(--comp-button-color-primary-ghost-border-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — secondary
+   ============================================================================= */
+
+/* secondary / fill */
+.igt-button--tone-secondary.igt-button--variant-fill {
+  --_btn-bg: var(--comp-button-color-secondary-fill-container-normal);
+  --_btn-text: var(--comp-button-color-secondary-fill-text-normal);
+  --_btn-border-color: var(--comp-button-color-secondary-fill-border-normal);
+}
+.igt-button--tone-secondary.igt-button--variant-fill:hover {
+  --_btn-bg: var(--comp-button-color-secondary-fill-container-hover);
+  --_btn-text: var(--comp-button-color-secondary-fill-text-hover);
+  --_btn-border-color: var(--comp-button-color-secondary-fill-border-hover);
+}
+.igt-button--tone-secondary.igt-button--variant-fill:active {
+  --_btn-bg: var(--comp-button-color-secondary-fill-container-pressed);
+  --_btn-text: var(--comp-button-color-secondary-fill-text-pressed);
+  --_btn-border-color: var(--comp-button-color-secondary-fill-border-pressed);
+}
+.igt-button--tone-secondary.igt-button--variant-fill:disabled,
+.igt-button--tone-secondary.igt-button--variant-fill.igt-button--disabled,
+.igt-button--tone-secondary.igt-button--variant-fill.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-secondary-fill-container-disabled);
+  --_btn-text: var(--comp-button-color-secondary-fill-text-disabled);
+  --_btn-border-color: var(--comp-button-color-secondary-fill-border-disabled);
+}
+
+/* secondary / soft */
+.igt-button--tone-secondary.igt-button--variant-soft {
+  --_btn-bg: var(--comp-button-color-secondary-soft-container-normal);
+  --_btn-text: var(--comp-button-color-secondary-soft-text-normal);
+  --_btn-border-color: var(--comp-button-color-secondary-soft-border-normal);
+}
+.igt-button--tone-secondary.igt-button--variant-soft:hover {
+  --_btn-bg: var(--comp-button-color-secondary-soft-container-hover);
+  --_btn-text: var(--comp-button-color-secondary-soft-text-hover);
+  --_btn-border-color: var(--comp-button-color-secondary-soft-border-hover);
+}
+.igt-button--tone-secondary.igt-button--variant-soft:active {
+  --_btn-bg: var(--comp-button-color-secondary-soft-container-pressed);
+  --_btn-text: var(--comp-button-color-secondary-soft-text-pressed);
+  --_btn-border-color: var(--comp-button-color-secondary-soft-border-pressed);
+}
+.igt-button--tone-secondary.igt-button--variant-soft:disabled,
+.igt-button--tone-secondary.igt-button--variant-soft.igt-button--disabled,
+.igt-button--tone-secondary.igt-button--variant-soft.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-secondary-soft-container-disabled);
+  --_btn-text: var(--comp-button-color-secondary-soft-text-disabled);
+  --_btn-border-color: var(--comp-button-color-secondary-soft-border-disabled);
+}
+
+/* secondary / outline */
+.igt-button--tone-secondary.igt-button--variant-outline {
+  --_btn-bg: var(--comp-button-color-secondary-outline-container-normal);
+  --_btn-text: var(--comp-button-color-secondary-outline-text-normal);
+  --_btn-border-color: var(--comp-button-color-secondary-outline-border-normal);
+}
+.igt-button--tone-secondary.igt-button--variant-outline:hover {
+  --_btn-bg: var(--comp-button-color-secondary-outline-container-hover);
+  --_btn-text: var(--comp-button-color-secondary-outline-text-hover);
+  --_btn-border-color: var(--comp-button-color-secondary-outline-border-hover);
+}
+.igt-button--tone-secondary.igt-button--variant-outline:active {
+  --_btn-bg: var(--comp-button-color-secondary-outline-container-pressed);
+  --_btn-text: var(--comp-button-color-secondary-outline-text-pressed);
+  --_btn-border-color: var(--comp-button-color-secondary-outline-border-pressed);
+}
+.igt-button--tone-secondary.igt-button--variant-outline:disabled,
+.igt-button--tone-secondary.igt-button--variant-outline.igt-button--disabled,
+.igt-button--tone-secondary.igt-button--variant-outline.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-secondary-outline-container-disabled);
+  --_btn-text: var(--comp-button-color-secondary-outline-text-disabled);
+  --_btn-border-color: var(--comp-button-color-secondary-outline-border-disabled);
+}
+
+/* secondary / ghost */
+.igt-button--tone-secondary.igt-button--variant-ghost {
+  --_btn-bg: var(--comp-button-color-secondary-ghost-container-normal);
+  --_btn-text: var(--comp-button-color-secondary-ghost-text-normal);
+  --_btn-border-color: var(--comp-button-color-secondary-ghost-border-normal);
+}
+.igt-button--tone-secondary.igt-button--variant-ghost:hover {
+  --_btn-bg: var(--comp-button-color-secondary-ghost-container-hover);
+  --_btn-text: var(--comp-button-color-secondary-ghost-text-hover);
+  --_btn-border-color: var(--comp-button-color-secondary-ghost-border-hover);
+}
+.igt-button--tone-secondary.igt-button--variant-ghost:active {
+  --_btn-bg: var(--comp-button-color-secondary-ghost-container-pressed);
+  --_btn-text: var(--comp-button-color-secondary-ghost-text-pressed);
+  --_btn-border-color: var(--comp-button-color-secondary-ghost-border-pressed);
+}
+.igt-button--tone-secondary.igt-button--variant-ghost:disabled,
+.igt-button--tone-secondary.igt-button--variant-ghost.igt-button--disabled,
+.igt-button--tone-secondary.igt-button--variant-ghost.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-secondary-ghost-container-disabled);
+  --_btn-text: var(--comp-button-color-secondary-ghost-text-disabled);
+  --_btn-border-color: var(--comp-button-color-secondary-ghost-border-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — danger
+   ============================================================================= */
+
+/* danger / fill */
+.igt-button--tone-danger.igt-button--variant-fill {
+  --_btn-bg: var(--comp-button-color-danger-fill-container-normal);
+  --_btn-text: var(--comp-button-color-danger-fill-text-normal);
+  --_btn-border-color: var(--comp-button-color-danger-fill-border-normal);
+}
+.igt-button--tone-danger.igt-button--variant-fill:hover {
+  --_btn-bg: var(--comp-button-color-danger-fill-container-hover);
+  --_btn-text: var(--comp-button-color-danger-fill-text-hover);
+  --_btn-border-color: var(--comp-button-color-danger-fill-border-hover);
+}
+.igt-button--tone-danger.igt-button--variant-fill:active {
+  --_btn-bg: var(--comp-button-color-danger-fill-container-pressed);
+  --_btn-text: var(--comp-button-color-danger-fill-text-pressed);
+  --_btn-border-color: var(--comp-button-color-danger-fill-border-pressed);
+}
+.igt-button--tone-danger.igt-button--variant-fill:disabled,
+.igt-button--tone-danger.igt-button--variant-fill.igt-button--disabled,
+.igt-button--tone-danger.igt-button--variant-fill.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-danger-fill-container-disabled);
+  --_btn-text: var(--comp-button-color-danger-fill-text-disabled);
+  --_btn-border-color: var(--comp-button-color-danger-fill-border-disabled);
+}
+
+/* danger / soft */
+.igt-button--tone-danger.igt-button--variant-soft {
+  --_btn-bg: var(--comp-button-color-danger-soft-container-normal);
+  --_btn-text: var(--comp-button-color-danger-soft-text-normal);
+  --_btn-border-color: var(--comp-button-color-danger-soft-border-normal);
+}
+.igt-button--tone-danger.igt-button--variant-soft:hover {
+  --_btn-bg: var(--comp-button-color-danger-soft-container-hover);
+  --_btn-text: var(--comp-button-color-danger-soft-text-hover);
+  --_btn-border-color: var(--comp-button-color-danger-soft-border-hover);
+}
+.igt-button--tone-danger.igt-button--variant-soft:active {
+  --_btn-bg: var(--comp-button-color-danger-soft-container-pressed);
+  --_btn-text: var(--comp-button-color-danger-soft-text-pressed);
+  --_btn-border-color: var(--comp-button-color-danger-soft-border-pressed);
+}
+.igt-button--tone-danger.igt-button--variant-soft:disabled,
+.igt-button--tone-danger.igt-button--variant-soft.igt-button--disabled,
+.igt-button--tone-danger.igt-button--variant-soft.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-danger-soft-container-disabled);
+  --_btn-text: var(--comp-button-color-danger-soft-text-disabled);
+  --_btn-border-color: var(--comp-button-color-danger-soft-border-disabled);
+}
+
+/* danger / outline */
+.igt-button--tone-danger.igt-button--variant-outline {
+  --_btn-bg: var(--comp-button-color-danger-outline-container-normal);
+  --_btn-text: var(--comp-button-color-danger-outline-text-normal);
+  --_btn-border-color: var(--comp-button-color-danger-outline-border-normal);
+}
+.igt-button--tone-danger.igt-button--variant-outline:hover {
+  --_btn-bg: var(--comp-button-color-danger-outline-container-hover);
+  --_btn-text: var(--comp-button-color-danger-outline-text-hover);
+  --_btn-border-color: var(--comp-button-color-danger-outline-border-hover);
+}
+.igt-button--tone-danger.igt-button--variant-outline:active {
+  --_btn-bg: var(--comp-button-color-danger-outline-container-pressed);
+  --_btn-text: var(--comp-button-color-danger-outline-text-pressed);
+  --_btn-border-color: var(--comp-button-color-danger-outline-border-pressed);
+}
+.igt-button--tone-danger.igt-button--variant-outline:disabled,
+.igt-button--tone-danger.igt-button--variant-outline.igt-button--disabled,
+.igt-button--tone-danger.igt-button--variant-outline.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-danger-outline-container-disabled);
+  --_btn-text: var(--comp-button-color-danger-outline-text-disabled);
+  --_btn-border-color: var(--comp-button-color-danger-outline-border-disabled);
+}
+
+/* danger / ghost */
+.igt-button--tone-danger.igt-button--variant-ghost {
+  --_btn-bg: var(--comp-button-color-danger-ghost-container-normal);
+  --_btn-text: var(--comp-button-color-danger-ghost-text-normal);
+  --_btn-border-color: var(--comp-button-color-danger-ghost-border-normal);
+}
+.igt-button--tone-danger.igt-button--variant-ghost:hover {
+  --_btn-bg: var(--comp-button-color-danger-ghost-container-hover);
+  --_btn-text: var(--comp-button-color-danger-ghost-text-hover);
+  --_btn-border-color: var(--comp-button-color-danger-ghost-border-hover);
+}
+.igt-button--tone-danger.igt-button--variant-ghost:active {
+  --_btn-bg: var(--comp-button-color-danger-ghost-container-pressed);
+  --_btn-text: var(--comp-button-color-danger-ghost-text-pressed);
+  --_btn-border-color: var(--comp-button-color-danger-ghost-border-pressed);
+}
+.igt-button--tone-danger.igt-button--variant-ghost:disabled,
+.igt-button--tone-danger.igt-button--variant-ghost.igt-button--disabled,
+.igt-button--tone-danger.igt-button--variant-ghost.igt-button--loading {
+  --_btn-bg: var(--comp-button-color-danger-ghost-container-disabled);
+  --_btn-text: var(--comp-button-color-danger-ghost-text-disabled);
+  --_btn-border-color: var(--comp-button-color-danger-ghost-border-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — primaryInverse
+   (white/light button for use on dark or brand-colored surfaces)
+   Uses overlay-inverse recipe tokens — no dedicated comp token exists yet
+   ============================================================================= */
+
+/* primaryInverse / fill */
+.igt-button--tone-primaryInverse.igt-button--variant-fill {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-normal);
+  --_btn-text: var(--recipe-action-base-overlay-inverse-text-normal);
+  --_btn-border-color: var(--recipe-action-base-overlay-inverse-border-normal);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-fill:hover {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-hover);
+  --_btn-text: var(--recipe-action-base-overlay-inverse-text-hover);
+  --_btn-border-color: var(--recipe-action-base-overlay-inverse-border-hover);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-fill:active {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-pressed);
+  --_btn-text: var(--recipe-action-base-overlay-inverse-text-pressed);
+  --_btn-border-color: var(--recipe-action-base-overlay-inverse-border-pressed);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-fill:disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-fill.igt-button--disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-fill.igt-button--loading {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-disabled);
+  --_btn-text: var(--recipe-action-base-overlay-inverse-text-disabled);
+  --_btn-border-color: var(--recipe-action-base-overlay-inverse-border-disabled);
+}
+
+/* primaryInverse / soft */
+.igt-button--tone-primaryInverse.igt-button--variant-soft {
+  --_btn-bg: var(--recipe-action-base-overlay-default-container-normal);
+  --_btn-text: var(--recipe-action-base-overlay-default-text-normal);
+  --_btn-border-color: var(--recipe-action-base-overlay-default-border-normal);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-soft:hover {
+  --_btn-bg: var(--recipe-action-base-overlay-default-container-hover);
+  --_btn-text: var(--recipe-action-base-overlay-default-text-hover);
+  --_btn-border-color: var(--recipe-action-base-overlay-default-border-hover);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-soft:active {
+  --_btn-bg: var(--recipe-action-base-overlay-default-container-pressed);
+  --_btn-text: var(--recipe-action-base-overlay-default-text-pressed);
+  --_btn-border-color: var(--recipe-action-base-overlay-default-border-pressed);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-soft:disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-soft.igt-button--disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-soft.igt-button--loading {
+  --_btn-bg: var(--recipe-action-base-overlay-default-container-disabled);
+  --_btn-text: var(--recipe-action-base-overlay-default-text-disabled);
+  --_btn-border-color: var(--recipe-action-base-overlay-default-border-disabled);
+}
+
+/* primaryInverse / outline — reuse inverse container transparent + inverse border */
+.igt-button--tone-primaryInverse.igt-button--variant-outline {
+  --_btn-bg: transparent;
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: var(--sys-border-inverse-default);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-outline:hover {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-hover);
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: var(--sys-border-inverse-default);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-outline:active {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-pressed);
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: var(--sys-border-inverse-default);
+}
+.igt-button--tone-primaryInverse.igt-button--variant-outline:disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-outline.igt-button--disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-outline.igt-button--loading {
+  --_btn-bg: transparent;
+  --_btn-text: var(--sys-content-inverse-disabled);
+  --_btn-border-color: var(--sys-border-inverse-disabled);
+}
+
+/* primaryInverse / ghost */
+.igt-button--tone-primaryInverse.igt-button--variant-ghost {
+  --_btn-bg: transparent;
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: transparent;
+}
+.igt-button--tone-primaryInverse.igt-button--variant-ghost:hover {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-hover);
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: transparent;
+}
+.igt-button--tone-primaryInverse.igt-button--variant-ghost:active {
+  --_btn-bg: var(--recipe-action-base-overlay-inverse-container-pressed);
+  --_btn-text: var(--sys-content-inverse-strong);
+  --_btn-border-color: transparent;
+}
+.igt-button--tone-primaryInverse.igt-button--variant-ghost:disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-ghost.igt-button--disabled,
+.igt-button--tone-primaryInverse.igt-button--variant-ghost.igt-button--loading {
+  --_btn-bg: transparent;
+  --_btn-text: var(--sys-content-inverse-disabled);
+  --_btn-border-color: transparent;
+}

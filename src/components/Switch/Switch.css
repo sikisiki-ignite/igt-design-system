@@ -1,0 +1,140 @@
+/* =============================================================================
+   IGT Design System — Switch
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--layout-inline-gap-sm);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.igt-switch--disabled {
+  cursor: not-allowed;
+}
+
+/* ── Visually-hidden native input ─────────────────────────────────────────── */
+
+.igt-switch__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Track ────────────────────────────────────────────────────────────────── */
+
+.igt-switch__track {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: var(--radius-radius-full);
+  background-color: var(--sys-container-neutral-tint-strong);
+  transition: background-color 160ms ease;
+}
+
+/* ── Thumb ────────────────────────────────────────────────────────────────── */
+
+.igt-switch__thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(var(--_switch-thumb-offset-off));
+  border-radius: var(--radius-radius-full);
+  background-color: var(--sys-surface-static);
+  transition: transform 160ms ease;
+}
+
+/* ── Size — sm ────────────────────────────────────────────────────────────── */
+
+.igt-switch--size-sm {
+  --_switch-track-w: var(--size-28);
+  --_switch-track-h: var(--size-16);
+  --_switch-thumb-size: var(--size-12);
+  --_switch-thumb-offset-off: 2px;
+  --_switch-thumb-offset-on: calc(var(--size-28) - var(--size-12) - 2px);
+}
+
+.igt-switch--size-sm .igt-switch__track {
+  width: var(--_switch-track-w);
+  height: var(--_switch-track-h);
+}
+
+.igt-switch--size-sm .igt-switch__thumb {
+  width: var(--_switch-thumb-size);
+  height: var(--_switch-thumb-size);
+}
+
+/* ── Size — md ────────────────────────────────────────────────────────────── */
+
+.igt-switch--size-md {
+  --_switch-track-w: var(--size-36);
+  --_switch-track-h: var(--size-20);
+  --_switch-thumb-size: var(--size-16);
+  --_switch-thumb-offset-off: 2px;
+  --_switch-thumb-offset-on: calc(var(--size-36) - var(--size-16) - 2px);
+}
+
+.igt-switch--size-md .igt-switch__track {
+  width: var(--_switch-track-w);
+  height: var(--_switch-track-h);
+}
+
+.igt-switch--size-md .igt-switch__thumb {
+  width: var(--_switch-thumb-size);
+  height: var(--_switch-thumb-size);
+}
+
+/* ── On state ─────────────────────────────────────────────────────────────── */
+
+.igt-switch--on .igt-switch__track {
+  background-color: var(--sys-container-brand-solid-default);
+}
+
+.igt-switch--on .igt-switch__thumb {
+  transform: translateY(-50%) translateX(var(--_switch-thumb-offset-on));
+}
+
+/* ── Label text ───────────────────────────────────────────────────────────── */
+
+.igt-switch__label {
+  color: var(--sys-content-neutral-default);
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--label-md-regular-font-size);
+  line-height: var(--label-md-regular-line-height);
+  font-weight: var(--label-md-regular-font-weight);
+  letter-spacing: var(--label-md-regular-letter-spacing);
+}
+
+/* ── Hover ────────────────────────────────────────────────────────────────── */
+
+.igt-switch:not(.igt-switch--disabled):hover .igt-switch__track {
+  background-color: var(--sys-container-neutral-solid-default);
+}
+
+.igt-switch--on:not(.igt-switch--disabled):hover .igt-switch__track {
+  background-color: var(--sys-container-brand-solid-strong);
+}
+
+/* ── Disabled ─────────────────────────────────────────────────────────────── */
+
+.igt-switch--disabled .igt-switch__track {
+  background-color: var(--sys-container-neutral-tint-default);
+}
+
+.igt-switch--disabled.igt-switch--on .igt-switch__track {
+  background-color: var(--sys-container-brand-solid-disabled);
+}
+
+.igt-switch--disabled .igt-switch__label {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────────────── */
+
+.igt-switch:focus-within .igt-switch__track {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}

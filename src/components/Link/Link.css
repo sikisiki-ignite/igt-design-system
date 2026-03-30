@@ -1,0 +1,85 @@
+/* =============================================================================
+   IGT Design System — Link
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-link {
+  display: inline;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  color: var(--_link-color);
+  text-decoration-line: var(--_link-text-decoration-line);
+  text-underline-offset: 2px;
+
+  transition: color 120ms ease;
+}
+
+.igt-link:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+  border-radius: 2px;
+}
+
+.igt-link--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* =============================================================================
+   TONE — color
+   ============================================================================= */
+
+/* brand */
+.igt-link--tone-brand {
+  --_link-color: var(--sys-content-link-default);
+}
+.igt-link--tone-brand:hover {
+  --_link-color: var(--sys-content-link-hover);
+}
+.igt-link--tone-brand:active {
+  --_link-color: var(--sys-content-link-pressed);
+}
+.igt-link--tone-brand.igt-link--disabled {
+  --_link-color: var(--sys-content-link-disabled);
+}
+
+/* neutral */
+.igt-link--tone-neutral {
+  --_link-color: var(--sys-content-neutral-default);
+}
+.igt-link--tone-neutral:hover {
+  --_link-color: var(--sys-content-neutral-strong);
+}
+.igt-link--tone-neutral:active {
+  --_link-color: var(--sys-content-neutral-strong);
+}
+.igt-link--tone-neutral.igt-link--disabled {
+  --_link-color: var(--sys-content-neutral-disabled);
+}
+
+
+/* =============================================================================
+   UNDERLINE
+   ============================================================================= */
+
+.igt-link--underline-always {
+  --_link-text-decoration-line: underline;
+}
+
+.igt-link--underline-none {
+  --_link-text-decoration-line: none;
+}
+
+.igt-link--underline-auto {
+  --_link-text-decoration-line: none;
+}
+.igt-link--underline-auto:hover {
+  --_link-text-decoration-line: underline;
+}

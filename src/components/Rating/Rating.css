@@ -1,0 +1,80 @@
+/* =============================================================================
+   IGT Design System — Rating
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--layout-inline-gap-xs);
+}
+
+/* ── Star button ──────────────────────────────────────────────────────────── */
+
+.igt-rating__star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--sys-content-neutral-subtle);
+  line-height: 1;
+  transition: color 120ms ease, transform 80ms ease;
+}
+
+.igt-rating__star:not(:disabled):hover {
+  transform: scale(1.15);
+}
+
+/* ── Filled star ──────────────────────────────────────────────────────────── */
+
+.igt-rating__star--filled {
+  color: var(--sys-content-status-warning-default);
+}
+
+/* ── Size — xs ────────────────────────────────────────────────────────────── */
+
+.igt-rating--size-xs .igt-rating__star {
+  width: var(--icon-16);
+  height: var(--icon-16);
+  font-size: var(--icon-16);
+}
+
+/* ── Size — sm ────────────────────────────────────────────────────────────── */
+
+.igt-rating--size-sm .igt-rating__star {
+  width: var(--icon-18);
+  height: var(--icon-18);
+  font-size: var(--icon-18);
+}
+
+/* ── Size — md ────────────────────────────────────────────────────────────── */
+
+.igt-rating--size-md .igt-rating__star {
+  width: var(--icon-20);
+  height: var(--icon-20);
+  font-size: var(--icon-20);
+}
+
+/* ── Disabled ─────────────────────────────────────────────────────────────── */
+
+.igt-rating--disabled .igt-rating__star {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--sys-content-neutral-disabled);
+}
+
+.igt-rating--disabled .igt-rating__star--filled {
+  color: var(--sys-content-status-warning-disabled);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────────────── */
+
+.igt-rating__star:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+  border-radius: var(--radius-radius-4);
+}

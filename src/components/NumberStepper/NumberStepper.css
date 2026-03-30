@@ -1,0 +1,125 @@
+/* =============================================================================
+   IGT Design System — NumberStepper
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-numberstepper {
+  display: inline-flex;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Buttons (decrement / increment) ─────────────────────────────────────── */
+
+.igt-numberstepper__decrement,
+.igt-numberstepper__increment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-style: solid;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+
+  /* consumed private vars set by size/emphasis modifiers */
+  width: var(--_stepper-btn-size);
+  height: var(--_stepper-btn-size);
+  border-radius: var(--_stepper-radius);
+  border-width: var(--_stepper-border-width);
+  font-size: var(--_stepper-font-size);
+  background-color: var(--_stepper-btn-bg);
+  color: var(--_stepper-btn-text);
+  border-color: var(--_stepper-btn-border);
+}
+
+.igt-numberstepper__decrement:disabled,
+.igt-numberstepper__increment:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ── Value display ────────────────────────────────────────────────────────── */
+
+.igt-numberstepper__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--body-md-regular-font-size, var(--label-md-regular-font-size));
+  line-height: var(--body-md-regular-line-height, var(--label-md-regular-line-height));
+  font-weight: var(--body-md-regular-font-weight, var(--label-md-regular-font-weight));
+  color: var(--sys-content-neutral-default);
+  min-width: var(--_stepper-value-min-w);
+  text-align: center;
+}
+
+/* ── Size — xs ────────────────────────────────────────────────────────────── */
+
+.igt-numberstepper--size-xs {
+  --_stepper-btn-size: var(--recipe-action-base-common-height-xs);
+  --_stepper-radius: var(--recipe-action-base-button-like-radius-xs);
+  --_stepper-border-width: var(--recipe-action-base-common-border-width-xs);
+  --_stepper-font-size: var(--label-xs-semibold-font-size);
+  --_stepper-value-min-w: var(--size-28);
+}
+
+/* ── Size — sm ────────────────────────────────────────────────────────────── */
+
+.igt-numberstepper--size-sm {
+  --_stepper-btn-size: var(--recipe-action-base-common-height-sm);
+  --_stepper-radius: var(--recipe-action-base-button-like-radius-sm);
+  --_stepper-border-width: var(--recipe-action-base-common-border-width-sm);
+  --_stepper-font-size: var(--label-sm-semibold-font-size);
+  --_stepper-value-min-w: var(--size-36);
+}
+
+/* ── Size — md ────────────────────────────────────────────────────────────── */
+
+.igt-numberstepper--size-md {
+  --_stepper-btn-size: var(--recipe-action-base-common-height-md);
+  --_stepper-radius: var(--recipe-action-base-button-like-radius-md);
+  --_stepper-border-width: var(--recipe-action-base-common-border-width-md);
+  --_stepper-font-size: var(--label-md-semibold-font-size);
+  --_stepper-value-min-w: var(--size-40);
+}
+
+/* ── Emphasis — fill ──────────────────────────────────────────────────────── */
+
+.igt-numberstepper--emphasis-fill .igt-numberstepper__decrement,
+.igt-numberstepper--emphasis-fill .igt-numberstepper__increment {
+  --_stepper-btn-bg: var(--sys-container-brand-solid-default);
+  --_stepper-btn-text: var(--sys-content-on-brand-solid-default);
+  --_stepper-btn-border: var(--sys-container-brand-solid-default);
+}
+
+.igt-numberstepper--emphasis-fill .igt-numberstepper__decrement:not(:disabled):hover,
+.igt-numberstepper--emphasis-fill .igt-numberstepper__increment:not(:disabled):hover {
+  --_stepper-btn-bg: var(--sys-container-brand-solid-strong);
+  --_stepper-btn-border: var(--sys-container-brand-solid-strong);
+}
+
+/* ── Emphasis — outline ───────────────────────────────────────────────────── */
+
+.igt-numberstepper--emphasis-outline .igt-numberstepper__decrement,
+.igt-numberstepper--emphasis-outline .igt-numberstepper__increment {
+  --_stepper-btn-bg: transparent;
+  --_stepper-btn-text: var(--sys-content-brand-default);
+  --_stepper-btn-border: var(--sys-border-brand-default);
+}
+
+.igt-numberstepper--emphasis-outline .igt-numberstepper__decrement:not(:disabled):hover,
+.igt-numberstepper--emphasis-outline .igt-numberstepper__increment:not(:disabled):hover {
+  --_stepper-btn-bg: var(--sys-container-brand-tint-default);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────────────── */
+
+.igt-numberstepper__decrement:focus-visible,
+.igt-numberstepper__increment:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}

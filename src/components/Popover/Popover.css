@@ -1,0 +1,73 @@
+/* =============================================================================
+   IGT Design System — Popover
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Wrapper ──────────────────────────────────────────────────────────────── */
+
+.igt-popover-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Popover panel ────────────────────────────────────────────────────────── */
+
+.igt-popover {
+  position: absolute;
+  z-index: 800;
+  padding: var(--spacing-14);
+  border-radius: var(--radius-radius-10);
+  box-shadow: var(--sys-elevation-popover);
+  border: 1px solid var(--_popover-border-color);
+  background-color: var(--_popover-bg);
+  min-width: 200px;
+  max-width: 360px;
+
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--body-sm-regular-font-size);
+  line-height: var(--body-sm-regular-line-height);
+  font-weight: var(--body-sm-regular-font-weight);
+  letter-spacing: var(--body-sm-regular-letter-spacing);
+  color: var(--sys-content-neutral-default);
+}
+
+/* ── Emphasis modifiers ───────────────────────────────────────────────────── */
+
+.igt-popover--emphasis-neutral {
+  --_popover-bg: var(--sys-surface-overlay);
+  --_popover-border-color: var(--sys-border-neutral-default);
+}
+
+.igt-popover--emphasis-subtle {
+  --_popover-bg: var(--sys-surface-grouped-default);
+  --_popover-border-color: var(--sys-border-neutral-subtle);
+}
+
+/* ── Placement modifiers ──────────────────────────────────────────────────── */
+
+.igt-popover--placement-top {
+  bottom: calc(100% + var(--spacing-8));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.igt-popover--placement-bottom {
+  top: calc(100% + var(--spacing-8));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.igt-popover--placement-left {
+  right: calc(100% + var(--spacing-8));
+  top: 0;
+}
+
+.igt-popover--placement-right {
+  left: calc(100% + var(--spacing-8));
+  top: 0;
+}
+
+.igt-popover--placement-none {
+  position: static;
+  transform: none;
+}

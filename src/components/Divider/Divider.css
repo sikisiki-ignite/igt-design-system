@@ -1,0 +1,42 @@
+/* =============================================================================
+   IGT Design System — Divider
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-divider {
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  background-color: var(--_color);
+}
+
+/* ── Direction ────────────────────────────────────────────────────────────── */
+
+.igt-divider--horizontal {
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.igt-divider--vertical {
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+  align-self: stretch;
+}
+
+/* ── Emphasis ─────────────────────────────────────────────────────────────── */
+
+.igt-divider--weak {
+  --_color: var(--sys-border-neutral-subtle);
+}
+
+.igt-divider--default {
+  --_color: var(--sys-border-neutral-default);
+}
+
+.igt-divider--strong {
+  --_color: var(--sys-border-neutral-strong);
+}

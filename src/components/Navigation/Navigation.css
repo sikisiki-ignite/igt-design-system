@@ -1,0 +1,163 @@
+/* =============================================================================
+   IGT Design System — Navigation (SideNavigation + TopNavigation)
+   ============================================================================= */
+
+/* ══════════════════════════════════════════════════════════════
+   SideNavigation
+   ══════════════════════════════════════════════════════════════ */
+
+.igt-sidenav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.igt-sidenav__list,
+.igt-sidenav__sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.igt-sidenav__item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* depth indentation */
+.igt-sidenav__item--depth-1 { padding-left: 0; }
+.igt-sidenav__item--depth-2 { padding-left: var(--spacing-14); }
+.igt-sidenav__item--depth-3 { padding-left: var(--spacing-28); }
+
+.igt-sidenav__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--spacing-8);
+  border-radius: var(--radius-radius-6);
+  color: var(--sys-content-neutral-default);
+  text-decoration: none;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+/* size */
+.igt-sidenav--size-sm .igt-sidenav__link {
+  height: var(--size-32);
+  font-size: var(--label-sm-medium-font-size);
+  line-height: var(--label-sm-medium-line-height);
+  font-weight: var(--label-sm-medium-font-weight);
+  letter-spacing: var(--label-sm-medium-letter-spacing);
+}
+.igt-sidenav--size-md .igt-sidenav__link {
+  height: var(--size-40);
+  font-size: var(--label-md-medium-font-size);
+  line-height: var(--label-md-medium-line-height);
+  font-weight: var(--label-md-medium-font-weight);
+  letter-spacing: var(--label-md-medium-letter-spacing);
+}
+
+/* hover */
+.igt-sidenav__link:hover {
+  background-color: var(--sys-surface-subtle, var(--sys-background-subtle));
+}
+
+/* current — neutral tone */
+.igt-sidenav--tone-neutral .igt-sidenav__item--current > .igt-sidenav__link {
+  background-color: var(--sys-container-neutral-tint-default);
+  color: var(--sys-content-neutral-strong);
+  font-weight: var(--label-md-semibold-font-weight);
+}
+
+/* current — accent tone */
+.igt-sidenav--tone-accent .igt-sidenav__item--current > .igt-sidenav__link {
+  background-color: var(--sys-container-brand-tint-default);
+  color: var(--sys-content-brand-default);
+  font-weight: var(--label-md-semibold-font-weight);
+}
+
+/* disabled */
+.igt-sidenav__item--disabled > .igt-sidenav__link {
+  color: var(--sys-content-neutral-disabled);
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   TopNavigation
+   ══════════════════════════════════════════════════════════════ */
+
+.igt-topnav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--size-48);
+  padding: 0 var(--spacing-16);
+  background-color: var(--sys-surface-default, #ffffff);
+  border-bottom: var(--border-width-1) solid var(--sys-border-neutral-subtle);
+  box-sizing: border-box;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.igt-topnav__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.igt-topnav--breakpoint-md-lg .igt-topnav__inner {
+  max-width: 1024px;
+}
+.igt-topnav--breakpoint-xl .igt-topnav__inner {
+  max-width: 1280px;
+}
+
+.igt-topnav__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: var(--label-lg-semibold-font-size);
+  font-weight: var(--label-lg-semibold-font-weight);
+  color: var(--sys-content-neutral-strong);
+  text-decoration: none;
+}
+
+.igt-topnav__nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.igt-topnav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  flex-shrink: 0;
+}
+
+.igt-topnav__user,
+.igt-topnav__auth {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  font-size: var(--label-sm-medium-font-size);
+  font-weight: var(--label-sm-medium-font-weight);
+  color: var(--sys-content-neutral-default);
+  cursor: pointer;
+}
+
+.igt-topnav__clock {
+  font-size: var(--label-sm-regular-font-size);
+  font-weight: var(--label-sm-regular-font-weight);
+  color: var(--sys-content-neutral-muted);
+  letter-spacing: var(--label-sm-regular-letter-spacing);
+  white-space: nowrap;
+}

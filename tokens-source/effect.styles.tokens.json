@@ -1,0 +1,82 @@
+{
+  "sys": {
+    "elevation": {
+      "subtle": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "0px",
+            "color": "#0220470f"
+          }
+        ]
+      },
+      "floating": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "16px",
+            "spread": "0px",
+            "color": "#0220470f"
+          },
+          {
+            "offsetX": "0px",
+            "offsetY": "12px",
+            "blur": "24px",
+            "spread": "0px",
+            "color": "#0220470a"
+          }
+        ]
+      },
+      "popover": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "40px",
+            "spread": "0px",
+            "color": "#02204705"
+          },
+          {
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "50px",
+            "spread": "0px",
+            "color": "#02204705"
+          },
+          {
+            "offsetX": "2px",
+            "offsetY": "70px",
+            "blur": "80px",
+            "spread": "0px",
+            "color": "#02204705"
+          }
+        ]
+      },
+      "dialog": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "60px",
+            "spread": "0px",
+            "color": "#0220470a"
+          },
+          {
+            "offsetX": "0px",
+            "offsetY": "40px",
+            "blur": "120px",
+            "spread": "0px",
+            "color": "#02204714"
+          }
+        ]
+      }
+    }
+  }
+}

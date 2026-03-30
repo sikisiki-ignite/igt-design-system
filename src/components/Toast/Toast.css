@@ -1,0 +1,99 @@
+/* =============================================================================
+   IGT Design System — Toast
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-14);
+  border-radius: var(--radius-radius-8);
+  background-color: var(--sys-surface-overlay);
+  box-shadow: var(--sys-elevation-floating);
+  max-width: 480px;
+  min-width: 240px;
+
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+  color: var(--sys-content-neutral-strong);
+
+  border-left: 4px solid var(--_toast-accent-color);
+}
+
+/* ── Icon dot ─────────────────────────────────────────────────────────────── */
+
+.igt-toast__icon {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-radius-full);
+  background-color: var(--_toast-accent-color);
+}
+
+/* ── Message ──────────────────────────────────────────────────────────────── */
+
+.igt-toast__message {
+  flex: 1;
+}
+
+/* ── Dismiss button ───────────────────────────────────────────────────────── */
+
+.igt-toast__dismiss {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin-left: var(--spacing-4);
+  border: none;
+  border-radius: var(--radius-radius-4);
+  background: transparent;
+  color: var(--sys-content-neutral-muted);
+  cursor: pointer;
+  font-size: var(--body-xs-regular-font-size);
+  line-height: 1;
+
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.igt-toast__dismiss:hover {
+  background-color: var(--sys-container-neutral-tint-default);
+  color: var(--sys-content-neutral-strong);
+}
+
+.igt-toast__dismiss:focus-visible {
+  outline: 1.5px solid var(--sys-content-brand-default);
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   TYPE MODIFIERS
+   ============================================================================= */
+
+.igt-toast--type-neutral {
+  --_toast-accent-color: var(--sys-content-neutral-default);
+}
+
+.igt-toast--type-info {
+  --_toast-accent-color: var(--sys-content-status-info-default);
+}
+
+.igt-toast--type-success {
+  --_toast-accent-color: var(--sys-content-status-success-default);
+}
+
+.igt-toast--type-warning {
+  --_toast-accent-color: var(--sys-content-status-warning-default);
+}
+
+.igt-toast--type-error {
+  --_toast-accent-color: var(--sys-content-status-danger-default);
+}

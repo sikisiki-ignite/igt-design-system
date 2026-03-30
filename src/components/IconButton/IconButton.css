@@ -1,0 +1,244 @@
+/* =============================================================================
+   IGT Design System — IconButton
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-iconbutton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-style: solid;
+  -webkit-font-smoothing: antialiased;
+
+  width: var(--_ibtn-size);
+  height: var(--_ibtn-size);
+  border-radius: var(--_ibtn-radius);
+  border-width: var(--_ibtn-border-width);
+
+  background-color: var(--_ibtn-bg);
+  color: var(--_ibtn-color);
+  border-color: var(--_ibtn-border-color);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.igt-iconbutton:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-iconbutton:disabled,
+.igt-iconbutton--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igt-iconbutton__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_ibtn-icon-size);
+  height: var(--_ibtn-icon-size);
+}
+
+.igt-iconbutton__spinner {
+  flex-shrink: 0;
+  width: var(--_ibtn-icon-size);
+  height: var(--_ibtn-icon-size);
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-9999);
+  animation: igt-iconbutton-spin 0.6s linear infinite;
+}
+
+@keyframes igt-iconbutton-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-iconbutton--size-xs {
+  --_ibtn-size: var(--recipe-action-base-common-height-xs);
+  --_ibtn-icon-size: var(--recipe-action-base-icon-button-like-icon-size-xs);
+  --_ibtn-radius: var(--comp-icon-button-size-radius-rounded-sm);
+  --_ibtn-border-width: var(--recipe-action-base-common-border-width-xs);
+}
+
+.igt-iconbutton--size-sm {
+  --_ibtn-size: var(--comp-icon-button-size-container-sm);
+  --_ibtn-icon-size: var(--comp-icon-button-size-icon-sm);
+  --_ibtn-radius: var(--comp-icon-button-size-radius-rounded-sm);
+  --_ibtn-border-width: var(--recipe-action-base-common-border-width-sm);
+}
+
+.igt-iconbutton--size-md {
+  --_ibtn-size: var(--comp-icon-button-size-container-md);
+  --_ibtn-icon-size: var(--comp-icon-button-size-icon-md);
+  --_ibtn-radius: var(--comp-icon-button-size-radius-rounded-md);
+  --_ibtn-border-width: var(--recipe-action-base-common-border-width-md);
+}
+
+
+/* =============================================================================
+   COLOR — tone: neutral
+   Maps to secondary recipe tokens
+   ============================================================================= */
+
+/* neutral / fill */
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill {
+  --_ibtn-bg: var(--recipe-action-base-secondary-fill-container-normal);
+  --_ibtn-color: var(--recipe-action-base-secondary-fill-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-fill-border-normal);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill:hover {
+  --_ibtn-bg: var(--recipe-action-base-secondary-fill-container-hover);
+  --_ibtn-color: var(--recipe-action-base-secondary-fill-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-fill-border-hover);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill:active {
+  --_ibtn-bg: var(--recipe-action-base-secondary-fill-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-secondary-fill-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-fill-border-pressed);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill:disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill.igt-iconbutton--disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-fill.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-secondary-fill-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-secondary-fill-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-fill-border-disabled);
+}
+
+/* neutral / outline */
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline {
+  --_ibtn-bg: var(--recipe-action-base-secondary-outline-container-normal);
+  --_ibtn-color: var(--recipe-action-base-secondary-outline-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-outline-border-normal);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline:hover {
+  --_ibtn-bg: var(--recipe-action-base-secondary-outline-container-hover);
+  --_ibtn-color: var(--recipe-action-base-secondary-outline-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-outline-border-hover);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline:active {
+  --_ibtn-bg: var(--recipe-action-base-secondary-outline-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-secondary-outline-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-outline-border-pressed);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline:disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline.igt-iconbutton--disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-outline.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-secondary-outline-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-secondary-outline-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-outline-border-disabled);
+}
+
+/* neutral / ghost */
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost {
+  --_ibtn-bg: var(--recipe-action-base-secondary-ghost-container-normal);
+  --_ibtn-color: var(--recipe-action-base-secondary-ghost-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-ghost-border-normal);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost:hover {
+  --_ibtn-bg: var(--recipe-action-base-secondary-ghost-container-hover);
+  --_ibtn-color: var(--recipe-action-base-secondary-ghost-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-ghost-border-hover);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost:active {
+  --_ibtn-bg: var(--recipe-action-base-secondary-ghost-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-secondary-ghost-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-ghost-border-pressed);
+}
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost:disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost.igt-iconbutton--disabled,
+.igt-iconbutton--tone-neutral.igt-iconbutton--variant-ghost.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-secondary-ghost-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-secondary-ghost-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-ghost-border-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — tone: subtle
+   Maps to overlay-default recipe tokens
+   ============================================================================= */
+
+/* subtle / fill */
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-normal);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-normal);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill:hover {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-hover);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-hover);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill:active {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-pressed);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill:disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill.igt-iconbutton--disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-fill.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-disabled);
+}
+
+/* subtle / outline — overlay-default has no border tokens; reuse container + soft border */
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-normal);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-soft-border-normal);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline:hover {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-hover);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-soft-border-hover);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline:active {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-soft-border-pressed);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline:disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline.igt-iconbutton--disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-outline.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-secondary-soft-border-disabled);
+}
+
+/* subtle / ghost */
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-normal);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-normal);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-normal);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost:hover {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-hover);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-hover);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-hover);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost:active {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-pressed);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-pressed);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-pressed);
+}
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost:disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost.igt-iconbutton--disabled,
+.igt-iconbutton--tone-subtle.igt-iconbutton--variant-ghost.igt-iconbutton--loading {
+  --_ibtn-bg: var(--recipe-action-base-overlay-default-container-disabled);
+  --_ibtn-color: var(--recipe-action-base-overlay-default-icon-disabled);
+  --_ibtn-border-color: var(--recipe-action-base-overlay-default-border-disabled);
+}

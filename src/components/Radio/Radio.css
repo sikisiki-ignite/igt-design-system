@@ -1,0 +1,139 @@
+/* =============================================================================
+   IGT Design System — Radio
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--layout-inline-gap-sm);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.igt-radio--disabled {
+  cursor: not-allowed;
+}
+
+.igt-radio--readonly {
+  cursor: default;
+}
+
+/* ── Visually-hidden native input ─────────────────────────────────────────── */
+
+.igt-radio__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Control (visual circle) ──────────────────────────────────────────────── */
+
+.igt-radio__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-style: solid;
+  border-color: var(--sys-border-field-normal-default);
+  background-color: transparent;
+  border-radius: var(--recipe-selection-control-base-radius-circle-md);
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+/* ── Size modifiers ───────────────────────────────────────────────────────── */
+
+.igt-radio--size-sm .igt-radio__control {
+  width: var(--recipe-selection-control-base-container-sm);
+  height: var(--recipe-selection-control-base-container-sm);
+  border-width: var(--recipe-selection-control-base-border-width-sm);
+}
+
+.igt-radio--size-md .igt-radio__control {
+  width: var(--recipe-selection-control-base-container-md);
+  height: var(--recipe-selection-control-base-container-md);
+  border-width: var(--recipe-selection-control-base-border-width-md);
+}
+
+/* ── Inner dot ────────────────────────────────────────────────────────────── */
+
+.igt-radio--size-sm .igt-radio__dot {
+  display: block;
+  width: var(--recipe-selection-control-base-icon-size-sm);
+  height: var(--recipe-selection-control-base-icon-size-sm);
+  border-radius: var(--recipe-selection-control-base-radius-circle-sm);
+  background-color: var(--sys-content-on-brand-solid-default);
+}
+
+.igt-radio--size-md .igt-radio__dot {
+  display: block;
+  width: var(--recipe-selection-control-base-icon-size-md);
+  height: var(--recipe-selection-control-base-icon-size-md);
+  border-radius: var(--recipe-selection-control-base-radius-circle-md);
+  background-color: var(--sys-content-on-brand-solid-default);
+}
+
+/* ── Selected state ───────────────────────────────────────────────────────── */
+
+.igt-radio--selected .igt-radio__control {
+  background-color: var(--sys-container-brand-solid-default);
+  border-color: var(--sys-container-brand-solid-default);
+}
+
+/* ── Label text ───────────────────────────────────────────────────────────── */
+
+.igt-radio__label {
+  color: var(--sys-content-neutral-default);
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--label-md-regular-font-size);
+  line-height: var(--label-md-regular-line-height);
+  font-weight: var(--label-md-regular-font-weight);
+  letter-spacing: var(--label-md-regular-letter-spacing);
+}
+
+/* ── Hover ────────────────────────────────────────────────────────────────── */
+
+.igt-radio:not(.igt-radio--disabled):not(.igt-radio--readonly):hover
+  .igt-radio__control {
+  border-color: var(--sys-border-field-hover);
+}
+
+.igt-radio--selected:not(.igt-radio--disabled):not(.igt-radio--readonly):hover
+  .igt-radio__control {
+  background-color: var(--sys-container-brand-solid-strong);
+  border-color: var(--sys-container-brand-solid-strong);
+}
+
+/* ── Invalid ──────────────────────────────────────────────────────────────── */
+
+.igt-radio--invalid .igt-radio__control {
+  border-color: var(--sys-border-status-danger-default);
+}
+
+/* ── Disabled ─────────────────────────────────────────────────────────────── */
+
+.igt-radio--disabled .igt-radio__control {
+  border-color: var(--sys-border-field-disabled);
+  background-color: transparent;
+}
+
+.igt-radio--disabled.igt-radio--selected .igt-radio__control {
+  background-color: var(--sys-container-brand-solid-disabled);
+  border-color: var(--sys-container-brand-solid-disabled);
+}
+
+.igt-radio--disabled .igt-radio__label {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────────────── */
+
+.igt-radio:focus-within .igt-radio__control {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}

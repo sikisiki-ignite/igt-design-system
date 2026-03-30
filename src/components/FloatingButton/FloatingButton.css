@@ -1,0 +1,181 @@
+/* =============================================================================
+   IGT Design System — FloatingButton (FAB)
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-floatingbutton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 0;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  height: var(--_fab-height);
+  padding: 0 var(--_fab-padding-x);
+  gap: var(--_fab-gap);
+  border-radius: var(--radius-radius-full);
+
+  background-color: var(--_fab-bg);
+  color: var(--_fab-color);
+  box-shadow: var(--sys-elevation-floating);
+
+  font-size: var(--label-md-semibold-font-size);
+  line-height: var(--label-md-semibold-line-height);
+  font-weight: var(--label-md-semibold-font-weight);
+  letter-spacing: var(--label-md-semibold-letter-spacing);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.igt-floatingbutton:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-floatingbutton:disabled,
+.igt-floatingbutton--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.igt-floatingbutton__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_fab-icon-size);
+  height: var(--_fab-icon-size);
+  flex-shrink: 0;
+}
+
+.igt-floatingbutton__label {
+  /* label text */
+}
+
+.igt-floatingbutton__spinner {
+  flex-shrink: 0;
+  width: var(--_fab-icon-size);
+  height: var(--_fab-icon-size);
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-9999);
+  animation: igt-floatingbutton-spin 0.6s linear infinite;
+}
+
+@keyframes igt-floatingbutton-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-floatingbutton--size-md {
+  --_fab-height: var(--size-48);
+  --_fab-icon-size: var(--recipe-action-base-button-like-icon-size-lg);
+  --_fab-gap: var(--layout-inline-gap-sm);
+}
+
+.igt-floatingbutton--size-lg {
+  --_fab-height: var(--size-56, 56px);
+  --_fab-icon-size: var(--recipe-action-base-button-like-icon-size-lg);
+  --_fab-gap: var(--layout-inline-gap-sm);
+}
+
+
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
+
+/* standard: square — equal padding on all sides */
+.igt-floatingbutton--layout-standard {
+  --_fab-padding-x: var(--_fab-height);
+  width: var(--_fab-height);
+  padding: 0;
+}
+
+/* extended: pill with icon + label */
+.igt-floatingbutton--layout-extended {
+  --_fab-padding-x: var(--spacing-20, 20px);
+}
+
+
+/* =============================================================================
+   COLOR — priority: brand  (primary fill tokens)
+   ============================================================================= */
+
+.igt-floatingbutton--priority-brand {
+  --_fab-bg: var(--recipe-action-base-primary-fill-container-normal);
+  --_fab-color: var(--recipe-action-base-primary-fill-text-normal);
+}
+.igt-floatingbutton--priority-brand:hover {
+  --_fab-bg: var(--recipe-action-base-primary-fill-container-hover);
+  --_fab-color: var(--recipe-action-base-primary-fill-text-hover);
+}
+.igt-floatingbutton--priority-brand:active {
+  --_fab-bg: var(--recipe-action-base-primary-fill-container-pressed);
+  --_fab-color: var(--recipe-action-base-primary-fill-text-pressed);
+}
+.igt-floatingbutton--priority-brand:disabled,
+.igt-floatingbutton--priority-brand.igt-floatingbutton--disabled,
+.igt-floatingbutton--priority-brand.igt-floatingbutton--loading {
+  --_fab-bg: var(--recipe-action-base-primary-fill-container-disabled);
+  --_fab-color: var(--recipe-action-base-primary-fill-text-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — priority: neutral  (secondary fill tokens)
+   ============================================================================= */
+
+.igt-floatingbutton--priority-neutral {
+  --_fab-bg: var(--recipe-action-base-secondary-fill-container-normal);
+  --_fab-color: var(--recipe-action-base-secondary-fill-text-normal);
+}
+.igt-floatingbutton--priority-neutral:hover {
+  --_fab-bg: var(--recipe-action-base-secondary-fill-container-hover);
+  --_fab-color: var(--recipe-action-base-secondary-fill-text-hover);
+}
+.igt-floatingbutton--priority-neutral:active {
+  --_fab-bg: var(--recipe-action-base-secondary-fill-container-pressed);
+  --_fab-color: var(--recipe-action-base-secondary-fill-text-pressed);
+}
+.igt-floatingbutton--priority-neutral:disabled,
+.igt-floatingbutton--priority-neutral.igt-floatingbutton--disabled,
+.igt-floatingbutton--priority-neutral.igt-floatingbutton--loading {
+  --_fab-bg: var(--recipe-action-base-secondary-fill-container-disabled);
+  --_fab-color: var(--recipe-action-base-secondary-fill-text-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — priority: subtle  (secondary soft tokens)
+   ============================================================================= */
+
+.igt-floatingbutton--priority-subtle {
+  --_fab-bg: var(--recipe-action-base-secondary-soft-container-normal);
+  --_fab-color: var(--recipe-action-base-secondary-soft-text-normal);
+}
+.igt-floatingbutton--priority-subtle:hover {
+  --_fab-bg: var(--recipe-action-base-secondary-soft-container-hover);
+  --_fab-color: var(--recipe-action-base-secondary-soft-text-hover);
+}
+.igt-floatingbutton--priority-subtle:active {
+  --_fab-bg: var(--recipe-action-base-secondary-soft-container-pressed);
+  --_fab-color: var(--recipe-action-base-secondary-soft-text-pressed);
+}
+.igt-floatingbutton--priority-subtle:disabled,
+.igt-floatingbutton--priority-subtle.igt-floatingbutton--disabled,
+.igt-floatingbutton--priority-subtle.igt-floatingbutton--loading {
+  --_fab-bg: var(--recipe-action-base-secondary-soft-container-disabled);
+  --_fab-color: var(--recipe-action-base-secondary-soft-text-disabled);
+}

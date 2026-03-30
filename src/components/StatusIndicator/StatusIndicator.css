@@ -1,0 +1,63 @@
+/* =============================================================================
+   IGT Design System — StatusIndicator
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-statusindicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Dot ──────────────────────────────────────────────────────────────────── */
+
+.igt-statusindicator__dot {
+  display: block;
+  width: var(--_dot-size);
+  height: var(--_dot-size);
+  border-radius: var(--radius-9999);
+  background-color: var(--_dot-color);
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-statusindicator--size-xs {
+  --_dot-size: var(--size-6);
+}
+
+.igt-statusindicator--size-sm {
+  --_dot-size: var(--size-8);
+}
+
+/* size-md uses 10px — no --size-10 primitive exists, use spacing-10 */
+.igt-statusindicator--size-md {
+  --_dot-size: var(--spacing-10);
+}
+
+.igt-statusindicator--size-lg {
+  --_dot-size: var(--size-12);
+}
+
+/* =============================================================================
+   TONE
+   ============================================================================= */
+
+.igt-statusindicator--tone-active {
+  --_dot-color: var(--sys-container-status-success-solid-default);
+}
+
+.igt-statusindicator--tone-inactive {
+  --_dot-color: var(--sys-container-neutral-tint-strong);
+}
+
+.igt-statusindicator--tone-attention {
+  --_dot-color: var(--sys-container-status-warning-solid-default);
+}
+
+.igt-statusindicator--tone-error {
+  --_dot-color: var(--sys-container-status-danger-solid-default);
+}

@@ -1,0 +1,120 @@
+/* =============================================================================
+   IGT Design System — Accordion
+   ============================================================================= */
+
+.igt-accordion {
+  width: 100%;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Type: contained ─────────────────────────────────────────────────────── */
+
+.igt-accordion--type-contained {
+  border: var(--border-width-1) solid var(--sys-border-neutral-default);
+  border-radius: var(--radius-radius-8);
+  background-color: var(--sys-surface-grouped-default);
+  overflow: hidden;
+}
+
+/* ── Type: plain ─────────────────────────────────────────────────────────── */
+
+.igt-accordion--type-plain {
+  border: none;
+  background: transparent;
+}
+
+.igt-accordion--type-plain .igt-accordion__trigger {
+  border-bottom: var(--border-width-1) solid var(--sys-border-neutral-subtle);
+}
+
+/* ── Trigger ─────────────────────────────────────────────────────────────── */
+
+.igt-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  padding: 0 var(--spacing-16);
+  height: var(--_accordion-height);
+  text-align: left;
+  transition: background-color 120ms ease;
+}
+
+.igt-accordion__trigger:hover:not(:disabled) {
+  background-color: var(--sys-interaction-hover-overlay-neutral);
+}
+
+.igt-accordion__trigger:focus-visible {
+  outline: var(--border-width-2) solid var(--sys-content-brand-default);
+  outline-offset: -2px;
+}
+
+/* ── Title ───────────────────────────────────────────────────────────────── */
+
+.igt-accordion__title {
+  color: var(--sys-content-neutral-strong);
+  font-size: var(--_accordion-font-size);
+  font-weight: var(--_accordion-font-weight);
+  line-height: var(--_accordion-line-height);
+  letter-spacing: var(--_accordion-letter-spacing);
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────────── */
+
+.igt-accordion__icon {
+  color: var(--sys-content-neutral-muted);
+  font-size: var(--label-sm-semibold-font-size);
+  flex-shrink: 0;
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+
+.igt-accordion__content {
+  padding: var(--spacing-12) var(--spacing-16) var(--spacing-16);
+  color: var(--sys-content-neutral-default);
+  font-size: var(--body-sm-regular-font-size);
+  line-height: var(--body-sm-regular-line-height);
+  font-weight: var(--body-sm-regular-font-weight);
+}
+
+/* ── Disabled ────────────────────────────────────────────────────────────── */
+
+.igt-accordion--disabled .igt-accordion__trigger {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igt-accordion--disabled .igt-accordion__title,
+.igt-accordion--disabled .igt-accordion__icon {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Sizes ───────────────────────────────────────────────────────────────── */
+
+.igt-accordion--size-sm {
+  --_accordion-height: var(--size-40);
+  --_accordion-font-size: var(--label-sm-semibold-font-size);
+  --_accordion-font-weight: var(--label-sm-semibold-font-weight);
+  --_accordion-line-height: var(--label-sm-semibold-line-height);
+  --_accordion-letter-spacing: var(--label-sm-semibold-letter-spacing);
+}
+
+.igt-accordion--size-md {
+  --_accordion-height: var(--size-48);
+  --_accordion-font-size: var(--label-md-semibold-font-size);
+  --_accordion-font-weight: var(--label-md-semibold-font-weight);
+  --_accordion-line-height: var(--label-md-semibold-line-height);
+  --_accordion-letter-spacing: var(--label-md-semibold-letter-spacing);
+}
+
+.igt-accordion--size-lg {
+  --_accordion-height: var(--size-56, 56px);
+  --_accordion-font-size: var(--label-lg-semibold-font-size);
+  --_accordion-font-weight: var(--label-lg-semibold-font-weight);
+  --_accordion-line-height: var(--label-lg-semibold-line-height);
+  --_accordion-letter-spacing: var(--label-lg-semibold-letter-spacing);
+}

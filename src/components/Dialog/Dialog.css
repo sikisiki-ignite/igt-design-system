@@ -1,0 +1,106 @@
+/* =============================================================================
+   IGT Design System — Dialog
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Overlay ──────────────────────────────────────────────────────────────── */
+
+.igt-dialog__overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sys-overlay-backdrop-dark-default);
+  z-index: 1000;
+  padding: var(--spacing-16);
+  box-sizing: border-box;
+}
+
+/* ── Dialog panel ─────────────────────────────────────────────────────────── */
+
+.igt-dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sys-surface-overlay);
+  border-radius: var(--radius-radius-12);
+  box-shadow: var(--sys-elevation-dialog);
+  width: 100%;
+  overflow: hidden;
+
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Size modifiers ───────────────────────────────────────────────────────── */
+
+.igt-dialog--size-sm {
+  max-width: 400px;
+}
+
+.igt-dialog--size-md {
+  max-width: 600px;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+
+.igt-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+  padding: var(--spacing-20) var(--spacing-24) var(--spacing-12);
+}
+
+/* ── Title ────────────────────────────────────────────────────────────────── */
+
+.igt-dialog__title {
+  margin: 0;
+  flex: 1;
+  color: var(--sys-content-neutral-strong);
+  font-size: var(--heading-sm-semibold-font-size);
+  line-height: var(--heading-sm-semibold-line-height);
+  font-weight: var(--heading-sm-semibold-font-weight);
+  letter-spacing: var(--heading-sm-semibold-letter-spacing);
+}
+
+/* ── Close button ─────────────────────────────────────────────────────────── */
+
+.igt-dialog__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-radius-6);
+  background: transparent;
+  color: var(--sys-content-neutral-muted);
+  cursor: pointer;
+  font-size: var(--body-sm-regular-font-size);
+  line-height: 1;
+
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.igt-dialog__close:hover {
+  background-color: var(--sys-container-neutral-tint-default);
+  color: var(--sys-content-neutral-strong);
+}
+
+.igt-dialog__close:focus-visible {
+  outline: 1.5px solid var(--sys-content-brand-default);
+  outline-offset: 2px;
+}
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+
+.igt-dialog__body {
+  padding: var(--spacing-4) var(--spacing-24) var(--spacing-24);
+  color: var(--sys-content-neutral-default);
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+}

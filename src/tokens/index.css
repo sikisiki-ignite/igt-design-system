@@ -1,0 +1,54 @@
+/* =============================================================================
+   IGT Design System — Token Entry Point
+   ============================================================================= */
+
+/* Design token layers */
+@import './primitives.css';
+@import './semantic-color.css';
+@import './semantic-radius.css';
+@import './semantic-size.css';
+@import './semantic-typography.css';
+@import './component.css';
+@import './effect.css';
+@import './bridge.css';
+
+/* Local font: IGTSans */
+@font-face {
+  font-family: IGTSans;
+  src: url('/fonts/IGT System Sans Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IGTSans;
+  src: url('/fonts/IGT System Sans Regaulr.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IGTSans;
+  src: url('/fonts/IGT System Sans Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IGTSans;
+  src: url('/fonts/IGT System Sans Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IGTSans;
+  src: url('/fonts/IGT System Sans Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,539 @@
+/* =============================================================================
+   IGT Design System — Bridge Aliases
+   Resolves naming mismatches between component CSS variables and token names.
+   Components use kebab-case / comp-* names; tokens use camelCase / recipe-* names.
+   ============================================================================= */
+
+:root {
+
+  /* ── Typography: camelCase → kebab-case ────────────────────────────────── */
+
+  --label-xs-semibold-font-size:     var(--label-xs-semibold-fontSize);
+  --label-xs-semibold-line-height:   var(--label-xs-semibold-lineHeight);
+  --label-xs-semibold-font-weight:   var(--label-xs-semibold-fontWeight);
+  --label-xs-semibold-letter-spacing:var(--label-xs-semibold-letterSpacing);
+
+  --label-xs-medium-font-size:       var(--label-xs-medium-fontSize);
+  --label-xs-medium-line-height:     var(--label-xs-medium-lineHeight);
+  --label-xs-medium-font-weight:     var(--label-xs-medium-fontWeight);
+  --label-xs-medium-letter-spacing:  var(--label-xs-medium-letterSpacing);
+
+  --label-sm-semibold-font-size:     var(--label-sm-semibold-fontSize);
+  --label-sm-semibold-line-height:   var(--label-sm-semibold-lineHeight);
+  --label-sm-semibold-font-weight:   var(--label-sm-semibold-fontWeight);
+  --label-sm-semibold-letter-spacing:var(--label-sm-semibold-letterSpacing);
+
+  --label-sm-medium-font-size:       var(--label-sm-medium-fontSize);
+  --label-sm-medium-line-height:     var(--label-sm-medium-lineHeight);
+  --label-sm-medium-font-weight:     var(--label-sm-medium-fontWeight);
+  --label-sm-medium-letter-spacing:  var(--label-sm-medium-letterSpacing);
+  --label-sm-medium-font-family:     var(--label-sm-medium-fontFamily);
+
+  --label-md-semibold-font-size:     var(--label-md-semibold-fontSize);
+  --label-md-semibold-line-height:   var(--label-md-semibold-lineHeight);
+  --label-md-semibold-font-weight:   var(--label-md-semibold-fontWeight);
+  --label-md-semibold-letter-spacing:var(--label-md-semibold-letterSpacing);
+
+  --label-md-medium-font-size:       var(--label-md-medium-fontSize);
+  --label-md-medium-line-height:     var(--label-md-medium-lineHeight);
+  --label-md-medium-font-weight:     var(--label-md-medium-fontWeight);
+  --label-md-medium-letter-spacing:  var(--label-md-medium-letterSpacing);
+
+  --label-md-regular-font-size:      var(--label-md-regular-fontSize);
+  --label-md-regular-line-height:    var(--label-md-regular-lineHeight);
+  --label-md-regular-font-weight:    var(--label-md-regular-fontWeight);
+  --label-md-regular-letter-spacing: var(--label-md-regular-letterSpacing);
+
+  --label-lg-semibold-font-size:     var(--label-lg-semibold-fontSize);
+  --label-lg-semibold-line-height:   var(--label-lg-semibold-lineHeight);
+  --label-lg-semibold-font-weight:   var(--label-lg-semibold-fontWeight);
+  --label-lg-semibold-letter-spacing:var(--label-lg-semibold-letterSpacing);
+
+  --label-lg-medium-font-size:       var(--label-lg-medium-fontSize);
+  --label-lg-medium-line-height:     var(--label-lg-medium-lineHeight);
+  --label-lg-medium-font-weight:     var(--label-lg-medium-fontWeight);
+  --label-lg-medium-letter-spacing:  var(--label-lg-medium-letterSpacing);
+
+  /* ── Focus ring: kebab-case → camelCase ────────────────────────────────── */
+
+  --recipe-focus-ring-border-width: var(--recipe-focusRing-borderWidth);
+  --recipe-focus-ring-offset:       var(--recipe-focusRing-offset);
+
+  /* ── Button size ────────────────────────────────────────────────────────── */
+
+  --comp-button-size-height-xs:         var(--recipe-actionBase-common-height-xs);
+  --comp-button-size-height-sm:         var(--recipe-actionBase-common-height-sm);
+  --comp-button-size-height-md:         var(--recipe-actionBase-common-height-md);
+  --comp-button-size-height-lg:         var(--recipe-actionBase-common-height-lg);
+
+  --comp-button-size-height-compact-xs: var(--recipe-actionBase-common-height-compact-xs);
+  --comp-button-size-height-compact-sm: var(--recipe-actionBase-common-height-compact-sm);
+  --comp-button-size-height-compact-md: var(--recipe-actionBase-common-height-compact-md);
+  --comp-button-size-height-compact-lg: var(--recipe-actionBase-common-height-compact-lg);
+
+  --comp-button-size-padding-x-xs:         var(--recipe-actionBase-buttonLike-paddingX-xs);
+  --comp-button-size-padding-x-sm:         var(--recipe-actionBase-buttonLike-paddingX-sm);
+  --comp-button-size-padding-x-md:         var(--recipe-actionBase-buttonLike-paddingX-md);
+  --comp-button-size-padding-x-lg:         var(--recipe-actionBase-buttonLike-paddingX-lg);
+
+  --comp-button-size-padding-x-compact-xs: var(--recipe-actionBase-buttonLike-paddingX-compact-xs);
+  --comp-button-size-padding-x-compact-sm: var(--recipe-actionBase-buttonLike-paddingX-compact-sm);
+  --comp-button-size-padding-x-compact-md: var(--recipe-actionBase-buttonLike-paddingX-compact-md);
+  --comp-button-size-padding-x-compact-lg: var(--recipe-actionBase-buttonLike-paddingX-compact-lg);
+
+  --comp-button-size-radius-xs: var(--recipe-actionBase-buttonLike-radius-xs);
+  --comp-button-size-radius-sm: var(--recipe-actionBase-buttonLike-radius-sm);
+  --comp-button-size-radius-md: var(--recipe-actionBase-buttonLike-radius-md);
+  --comp-button-size-radius-lg: var(--recipe-actionBase-buttonLike-radius-lg);
+
+  --comp-button-size-border-width-xs: var(--recipe-actionBase-common-borderWidth-xs);
+  --comp-button-size-border-width-sm: var(--recipe-actionBase-common-borderWidth-sm);
+  --comp-button-size-border-width-md: var(--borderWidth-1);
+  --comp-button-size-border-width-lg: var(--borderWidth-1);
+
+  --comp-button-size-gap-xs: var(--recipe-actionBase-buttonLike-gap-xs);
+  --comp-button-size-gap-sm: var(--recipe-actionBase-buttonLike-gap-sm);
+  --comp-button-size-gap-md: var(--recipe-actionBase-buttonLike-gap-md);
+  --comp-button-size-gap-lg: var(--recipe-actionBase-buttonLike-gap-lg);
+
+  --comp-button-size-label-padding-x-xs: var(--recipe-actionBase-buttonLike-labelPaddingX-xs);
+  --comp-button-size-label-padding-x-sm: var(--recipe-actionBase-buttonLike-labelPaddingX-sm);
+  --comp-button-size-label-padding-x-md: var(--recipe-actionBase-buttonLike-labelPaddingX-md);
+  --comp-button-size-label-padding-x-lg: var(--recipe-actionBase-buttonLike-labelPaddingX-lg);
+
+  --comp-button-size-icon-xs: var(--recipe-actionBase-buttonLike-iconSize-xs);
+  --comp-button-size-icon-sm: var(--recipe-actionBase-buttonLike-iconSize-sm);
+  --comp-button-size-icon-md: var(--recipe-actionBase-buttonLike-iconSize-md);
+  --comp-button-size-icon-lg: var(--recipe-actionBase-buttonLike-iconSize-lg);
+
+  /* ── Button color — primary ─────────────────────────────────────────────── */
+
+  --comp-button-color-primary-fill-container-normal:   var(--recipe-actionBase-primary-fill-container-normal);
+  --comp-button-color-primary-fill-container-hover:    var(--recipe-actionBase-primary-fill-container-hover);
+  --comp-button-color-primary-fill-container-pressed:  var(--recipe-actionBase-primary-fill-container-pressed);
+  --comp-button-color-primary-fill-container-disabled: var(--recipe-actionBase-primary-fill-container-disabled);
+  --comp-button-color-primary-fill-text-normal:        var(--recipe-actionBase-primary-fill-text-normal);
+  --comp-button-color-primary-fill-text-hover:         var(--recipe-actionBase-primary-fill-text-hover);
+  --comp-button-color-primary-fill-text-pressed:       var(--recipe-actionBase-primary-fill-text-pressed);
+  --comp-button-color-primary-fill-text-disabled:      var(--recipe-actionBase-primary-fill-text-disabled);
+  --comp-button-color-primary-fill-border-normal:      var(--recipe-actionBase-primary-fill-border-normal);
+  --comp-button-color-primary-fill-border-hover:       var(--recipe-actionBase-primary-fill-border-hover);
+  --comp-button-color-primary-fill-border-pressed:     var(--recipe-actionBase-primary-fill-border-pressed);
+  --comp-button-color-primary-fill-border-disabled:    var(--recipe-actionBase-primary-fill-border-disabled);
+
+  --comp-button-color-primary-soft-container-normal:   var(--recipe-actionBase-primary-soft-container-normal);
+  --comp-button-color-primary-soft-container-hover:    var(--recipe-actionBase-primary-soft-container-hover);
+  --comp-button-color-primary-soft-container-pressed:  var(--recipe-actionBase-primary-soft-container-pressed);
+  --comp-button-color-primary-soft-container-disabled: var(--recipe-actionBase-primary-soft-container-disabled);
+  --comp-button-color-primary-soft-text-normal:        var(--recipe-actionBase-primary-soft-text-normal);
+  --comp-button-color-primary-soft-text-hover:         var(--recipe-actionBase-primary-soft-text-hover);
+  --comp-button-color-primary-soft-text-pressed:       var(--recipe-actionBase-primary-soft-text-pressed);
+  --comp-button-color-primary-soft-text-disabled:      var(--recipe-actionBase-primary-soft-text-disabled);
+  --comp-button-color-primary-soft-border-normal:      var(--recipe-actionBase-primary-soft-border-normal);
+  --comp-button-color-primary-soft-border-hover:       var(--recipe-actionBase-primary-soft-border-hover);
+  --comp-button-color-primary-soft-border-pressed:     var(--recipe-actionBase-primary-soft-border-pressed);
+  --comp-button-color-primary-soft-border-disabled:    var(--recipe-actionBase-primary-soft-border-disabled);
+
+  --comp-button-color-primary-outline-container-normal:   var(--recipe-actionBase-primary-outline-container-normal);
+  --comp-button-color-primary-outline-container-hover:    var(--recipe-actionBase-primary-outline-container-hover);
+  --comp-button-color-primary-outline-container-pressed:  var(--recipe-actionBase-primary-outline-container-pressed);
+  --comp-button-color-primary-outline-container-disabled: var(--recipe-actionBase-primary-outline-container-disabled);
+  --comp-button-color-primary-outline-text-normal:        var(--recipe-actionBase-primary-outline-text-normal);
+  --comp-button-color-primary-outline-text-hover:         var(--recipe-actionBase-primary-outline-text-hover);
+  --comp-button-color-primary-outline-text-pressed:       var(--recipe-actionBase-primary-outline-text-pressed);
+  --comp-button-color-primary-outline-text-disabled:      var(--recipe-actionBase-primary-outline-text-disabled);
+  --comp-button-color-primary-outline-border-normal:      var(--recipe-actionBase-primary-outline-border-normal);
+  --comp-button-color-primary-outline-border-hover:       var(--recipe-actionBase-primary-outline-border-hover);
+  --comp-button-color-primary-outline-border-pressed:     var(--recipe-actionBase-primary-outline-border-pressed);
+  --comp-button-color-primary-outline-border-disabled:    var(--recipe-actionBase-primary-outline-border-disabled);
+
+  --comp-button-color-primary-ghost-container-normal:   var(--recipe-actionBase-primary-ghost-container-normal);
+  --comp-button-color-primary-ghost-container-hover:    var(--recipe-actionBase-primary-ghost-container-hover);
+  --comp-button-color-primary-ghost-container-pressed:  var(--recipe-actionBase-primary-ghost-container-pressed);
+  --comp-button-color-primary-ghost-container-disabled: var(--recipe-actionBase-primary-ghost-container-disabled);
+  --comp-button-color-primary-ghost-text-normal:        var(--recipe-actionBase-primary-ghost-text-normal);
+  --comp-button-color-primary-ghost-text-hover:         var(--recipe-actionBase-primary-ghost-text-hover);
+  --comp-button-color-primary-ghost-text-pressed:       var(--recipe-actionBase-primary-ghost-text-pressed);
+  --comp-button-color-primary-ghost-text-disabled:      var(--recipe-actionBase-primary-ghost-text-disabled);
+  --comp-button-color-primary-ghost-border-normal:      var(--recipe-actionBase-primary-ghost-border-normal);
+  --comp-button-color-primary-ghost-border-hover:       var(--recipe-actionBase-primary-ghost-border-hover);
+  --comp-button-color-primary-ghost-border-pressed:     var(--recipe-actionBase-primary-ghost-border-pressed);
+  --comp-button-color-primary-ghost-border-disabled:    var(--recipe-actionBase-primary-ghost-border-disabled);
+
+  /* ── Button color — secondary ───────────────────────────────────────────── */
+
+  --comp-button-color-secondary-fill-container-normal:   var(--recipe-actionBase-secondary-fill-container-normal);
+  --comp-button-color-secondary-fill-container-hover:    var(--recipe-actionBase-secondary-fill-container-hover);
+  --comp-button-color-secondary-fill-container-pressed:  var(--recipe-actionBase-secondary-fill-container-pressed);
+  --comp-button-color-secondary-fill-container-disabled: var(--recipe-actionBase-secondary-fill-container-disabled);
+  --comp-button-color-secondary-fill-text-normal:        var(--recipe-actionBase-secondary-fill-text-normal);
+  --comp-button-color-secondary-fill-text-hover:         var(--recipe-actionBase-secondary-fill-text-hover);
+  --comp-button-color-secondary-fill-text-pressed:       var(--recipe-actionBase-secondary-fill-text-pressed);
+  --comp-button-color-secondary-fill-text-disabled:      var(--recipe-actionBase-secondary-fill-text-disabled);
+  --comp-button-color-secondary-fill-border-normal:      var(--recipe-actionBase-secondary-fill-border-normal);
+  --comp-button-color-secondary-fill-border-hover:       var(--recipe-actionBase-secondary-fill-border-hover);
+  --comp-button-color-secondary-fill-border-pressed:     var(--recipe-actionBase-secondary-fill-border-pressed);
+  --comp-button-color-secondary-fill-border-disabled:    var(--recipe-actionBase-secondary-fill-border-disabled);
+
+  --comp-button-color-secondary-soft-container-normal:   var(--recipe-actionBase-secondary-soft-container-normal);
+  --comp-button-color-secondary-soft-container-hover:    var(--recipe-actionBase-secondary-soft-container-hover);
+  --comp-button-color-secondary-soft-container-pressed:  var(--recipe-actionBase-secondary-soft-container-pressed);
+  --comp-button-color-secondary-soft-container-disabled: var(--recipe-actionBase-secondary-soft-container-disabled);
+  --comp-button-color-secondary-soft-text-normal:        var(--recipe-actionBase-secondary-soft-text-normal);
+  --comp-button-color-secondary-soft-text-hover:         var(--recipe-actionBase-secondary-soft-text-hover);
+  --comp-button-color-secondary-soft-text-pressed:       var(--recipe-actionBase-secondary-soft-text-pressed);
+  --comp-button-color-secondary-soft-text-disabled:      var(--recipe-actionBase-secondary-soft-text-disabled);
+  --comp-button-color-secondary-soft-border-normal:      var(--recipe-actionBase-secondary-soft-border-normal);
+  --comp-button-color-secondary-soft-border-hover:       var(--recipe-actionBase-secondary-soft-border-hover);
+  --comp-button-color-secondary-soft-border-pressed:     var(--recipe-actionBase-secondary-soft-border-pressed);
+  --comp-button-color-secondary-soft-border-disabled:    var(--recipe-actionBase-secondary-soft-border-disabled);
+
+  --comp-button-color-secondary-outline-container-normal:   var(--recipe-actionBase-secondary-outline-container-normal);
+  --comp-button-color-secondary-outline-container-hover:    var(--recipe-actionBase-secondary-outline-container-hover);
+  --comp-button-color-secondary-outline-container-pressed:  var(--recipe-actionBase-secondary-outline-container-pressed);
+  --comp-button-color-secondary-outline-container-disabled: var(--recipe-actionBase-secondary-outline-container-disabled);
+  --comp-button-color-secondary-outline-text-normal:        var(--recipe-actionBase-secondary-outline-text-normal);
+  --comp-button-color-secondary-outline-text-hover:         var(--recipe-actionBase-secondary-outline-text-hover);
+  --comp-button-color-secondary-outline-text-pressed:       var(--recipe-actionBase-secondary-outline-text-pressed);
+  --comp-button-color-secondary-outline-text-disabled:      var(--recipe-actionBase-secondary-outline-text-disabled);
+  --comp-button-color-secondary-outline-border-normal:      var(--recipe-actionBase-secondary-outline-border-normal);
+  --comp-button-color-secondary-outline-border-hover:       var(--recipe-actionBase-secondary-outline-border-hover);
+  --comp-button-color-secondary-outline-border-pressed:     var(--recipe-actionBase-secondary-outline-border-pressed);
+  --comp-button-color-secondary-outline-border-disabled:    var(--recipe-actionBase-secondary-outline-border-disabled);
+
+  --comp-button-color-secondary-ghost-container-normal:   var(--recipe-actionBase-secondary-ghost-container-normal);
+  --comp-button-color-secondary-ghost-container-hover:    var(--recipe-actionBase-secondary-ghost-container-hover);
+  --comp-button-color-secondary-ghost-container-pressed:  var(--recipe-actionBase-secondary-ghost-container-pressed);
+  --comp-button-color-secondary-ghost-container-disabled: var(--recipe-actionBase-secondary-ghost-container-disabled);
+  --comp-button-color-secondary-ghost-text-normal:        var(--recipe-actionBase-secondary-ghost-text-normal);
+  --comp-button-color-secondary-ghost-text-hover:         var(--recipe-actionBase-secondary-ghost-text-hover);
+  --comp-button-color-secondary-ghost-text-pressed:       var(--recipe-actionBase-secondary-ghost-text-pressed);
+  --comp-button-color-secondary-ghost-text-disabled:      var(--recipe-actionBase-secondary-ghost-text-disabled);
+  --comp-button-color-secondary-ghost-border-normal:      var(--recipe-actionBase-secondary-ghost-border-normal);
+  --comp-button-color-secondary-ghost-border-hover:       var(--recipe-actionBase-secondary-ghost-border-hover);
+  --comp-button-color-secondary-ghost-border-pressed:     var(--recipe-actionBase-secondary-ghost-border-pressed);
+  --comp-button-color-secondary-ghost-border-disabled:    var(--recipe-actionBase-secondary-ghost-border-disabled);
+
+  /* ── Button color — danger ──────────────────────────────────────────────── */
+
+  --comp-button-color-danger-fill-container-normal:   var(--recipe-actionBase-danger-fill-container-normal);
+  --comp-button-color-danger-fill-container-hover:    var(--recipe-actionBase-danger-fill-container-hover);
+  --comp-button-color-danger-fill-container-pressed:  var(--recipe-actionBase-danger-fill-container-pressed);
+  --comp-button-color-danger-fill-container-disabled: var(--recipe-actionBase-danger-fill-container-disabled);
+  --comp-button-color-danger-fill-text-normal:        var(--recipe-actionBase-danger-fill-text-normal);
+  --comp-button-color-danger-fill-text-hover:         var(--recipe-actionBase-danger-fill-text-hover);
+  --comp-button-color-danger-fill-text-pressed:       var(--recipe-actionBase-danger-fill-text-pressed);
+  --comp-button-color-danger-fill-text-disabled:      var(--recipe-actionBase-danger-fill-text-disabled);
+  --comp-button-color-danger-fill-border-normal:      var(--recipe-actionBase-danger-fill-border-normal);
+  --comp-button-color-danger-fill-border-hover:       var(--recipe-actionBase-danger-fill-border-hover);
+  --comp-button-color-danger-fill-border-pressed:     var(--recipe-actionBase-danger-fill-border-pressed);
+  --comp-button-color-danger-fill-border-disabled:    var(--recipe-actionBase-danger-fill-border-disabled);
+
+  --comp-button-color-danger-soft-container-normal:   var(--recipe-actionBase-danger-soft-container-normal);
+  --comp-button-color-danger-soft-container-hover:    var(--recipe-actionBase-danger-soft-container-hover);
+  --comp-button-color-danger-soft-container-pressed:  var(--recipe-actionBase-danger-soft-container-pressed);
+  --comp-button-color-danger-soft-container-disabled: var(--recipe-actionBase-danger-soft-container-disabled);
+  --comp-button-color-danger-soft-text-normal:        var(--recipe-actionBase-danger-soft-text-normal);
+  --comp-button-color-danger-soft-text-hover:         var(--recipe-actionBase-danger-soft-text-hover);
+  --comp-button-color-danger-soft-text-pressed:       var(--recipe-actionBase-danger-soft-text-pressed);
+  --comp-button-color-danger-soft-text-disabled:      var(--recipe-actionBase-danger-soft-text-disabled);
+  --comp-button-color-danger-soft-border-normal:      var(--recipe-actionBase-danger-soft-border-normal);
+  --comp-button-color-danger-soft-border-hover:       var(--recipe-actionBase-danger-soft-border-hover);
+  --comp-button-color-danger-soft-border-pressed:     var(--recipe-actionBase-danger-soft-border-pressed);
+  --comp-button-color-danger-soft-border-disabled:    var(--recipe-actionBase-danger-soft-border-disabled);
+
+  --comp-button-color-danger-outline-container-normal:   var(--recipe-actionBase-danger-outline-container-normal);
+  --comp-button-color-danger-outline-container-hover:    var(--recipe-actionBase-danger-outline-container-hover);
+  --comp-button-color-danger-outline-container-pressed:  var(--recipe-actionBase-danger-outline-container-pressed);
+  --comp-button-color-danger-outline-container-disabled: var(--recipe-actionBase-danger-outline-container-disabled);
+  --comp-button-color-danger-outline-text-normal:        var(--recipe-actionBase-danger-outline-text-normal);
+  --comp-button-color-danger-outline-text-hover:         var(--recipe-actionBase-danger-outline-text-hover);
+  --comp-button-color-danger-outline-text-pressed:       var(--recipe-actionBase-danger-outline-text-pressed);
+  --comp-button-color-danger-outline-text-disabled:      var(--recipe-actionBase-danger-outline-text-disabled);
+  --comp-button-color-danger-outline-border-normal:      var(--recipe-actionBase-danger-outline-border-normal);
+  --comp-button-color-danger-outline-border-hover:       var(--recipe-actionBase-danger-outline-border-hover);
+  --comp-button-color-danger-outline-border-pressed:     var(--recipe-actionBase-danger-outline-border-pressed);
+  --comp-button-color-danger-outline-border-disabled:    var(--recipe-actionBase-danger-outline-border-disabled);
+
+  --comp-button-color-danger-ghost-container-normal:   var(--recipe-actionBase-danger-ghost-container-normal);
+  --comp-button-color-danger-ghost-container-hover:    var(--recipe-actionBase-danger-ghost-container-hover);
+  --comp-button-color-danger-ghost-container-pressed:  var(--recipe-actionBase-danger-ghost-container-pressed);
+  --comp-button-color-danger-ghost-container-disabled: var(--recipe-actionBase-danger-ghost-container-disabled);
+  --comp-button-color-danger-ghost-text-normal:        var(--recipe-actionBase-danger-ghost-text-normal);
+  --comp-button-color-danger-ghost-text-hover:         var(--recipe-actionBase-danger-ghost-text-hover);
+  --comp-button-color-danger-ghost-text-pressed:       var(--recipe-actionBase-danger-ghost-text-pressed);
+  --comp-button-color-danger-ghost-text-disabled:      var(--recipe-actionBase-danger-ghost-text-disabled);
+  --comp-button-color-danger-ghost-border-normal:      var(--recipe-actionBase-danger-ghost-border-normal);
+  --comp-button-color-danger-ghost-border-hover:       var(--recipe-actionBase-danger-ghost-border-hover);
+  --comp-button-color-danger-ghost-border-pressed:     var(--recipe-actionBase-danger-ghost-border-pressed);
+  --comp-button-color-danger-ghost-border-disabled:    var(--recipe-actionBase-danger-ghost-border-disabled);
+
+  /* ── IconButton size ────────────────────────────────────────────────────── */
+
+  --comp-icon-button-size-icon-sm:           var(--recipe-actionBase-iconButtonLike-iconSize-sm);
+  --comp-icon-button-size-icon-md:           var(--recipe-actionBase-iconButtonLike-iconSize-md);
+  --comp-icon-button-size-radius-rounded-sm: var(--recipe-actionBase-iconButtonLike-radius-rounded-sm);
+  --comp-icon-button-size-radius-rounded-md: var(--recipe-actionBase-iconButtonLike-radius-rounded-md);
+  --comp-icon-button-size-container-sm:      var(--recipe-actionBase-common-height-sm);
+  --comp-icon-button-size-container-md:      var(--recipe-actionBase-common-height-md);
+
+  /* ── Typography: font-family camelCase → kebab-case ────────────────────── */
+
+  --body-md-regular-font-family:     var(--body-md-regular-fontFamily);
+  --body-md-regular-font-size:       var(--body-md-regular-fontSize);
+  --body-md-regular-line-height:     var(--body-md-regular-lineHeight);
+  --body-md-regular-font-weight:     var(--body-md-regular-fontWeight);
+  --body-md-regular-letter-spacing:  var(--body-md-regular-letterSpacing);
+
+  --body-sm-regular-font-size:       var(--body-sm-regular-fontSize);
+  --body-sm-regular-line-height:     var(--body-sm-regular-lineHeight);
+  --body-sm-regular-font-weight:     var(--body-sm-regular-fontWeight);
+  --body-sm-regular-letter-spacing:  var(--body-sm-regular-letterSpacing);
+  --body-sm-semibold-font-weight:    var(--body-sm-semibold-fontWeight);
+
+  --caption-lg-regular-font-family:  var(--caption-lg-regular-fontFamily);
+  --caption-lg-regular-font-size:    var(--caption-lg-regular-fontSize);
+  --caption-lg-regular-line-height:  var(--caption-lg-regular-lineHeight);
+  --caption-lg-regular-font-weight:  var(--caption-lg-regular-fontWeight);
+  --caption-lg-regular-letter-spacing: var(--caption-lg-regular-letterSpacing);
+
+  /* ── Border width: kebab-case → camelCase ───────────────────────────────── */
+
+  --border-width-1: var(--borderWidth-1);
+  --border-width-2: var(--borderWidth-2);
+
+  /* ── Misc size tokens ───────────────────────────────────────────────────── */
+
+  --size-6:  var(--size-size-6);
+  --size-8:  var(--size-size-8);
+  --size-12: var(--size-size-12);
+  --size-16: var(--size-size-16);
+  --size-18: var(--size-size-18);
+  --size-20: var(--size-size-20);
+  --size-24: var(--size-size-24);
+  --size-28: var(--size-size-28);
+  --size-32: var(--size-size-32);
+  --size-36: var(--size-size-36);
+  --size-40: var(--size-size-40);
+  --size-44: var(--size-size-44);
+  --size-48: var(--size-size-48);
+  --size-56: 56px;
+  --layout-inline-gap-xs: var(--spacing-4);
+  --layout-inline-gap-sm: var(--spacing-6);
+
+  /* ── Icon size tokens ───────────────────────────────────────────────────── */
+
+  --icon-16: var(--icon-icon-16);
+  --icon-18: var(--icon-icon-18);
+  --icon-20: var(--icon-icon-20);
+
+  /* ── Caption SM semibold typography ────────────────────────────────────── */
+
+  --caption-sm-semibold-font-size:      var(--caption-sm-semibold-fontSize);
+  --caption-sm-semibold-line-height:    var(--caption-sm-semibold-lineHeight);
+  --caption-sm-semibold-font-weight:    var(--caption-sm-semibold-fontWeight);
+  --caption-sm-semibold-letter-spacing: var(--caption-sm-semibold-letterSpacing);
+
+  /* ── Caption LG semibold typography ────────────────────────────────────── */
+
+  --caption-lg-semibold-font-size:      var(--caption-lg-semibold-fontSize);
+  --caption-lg-semibold-line-height:    var(--caption-lg-semibold-lineHeight);
+  --caption-lg-semibold-font-weight:    var(--caption-lg-semibold-fontWeight);
+  --caption-lg-semibold-letter-spacing: var(--caption-lg-semibold-letterSpacing);
+
+  /* ── recipe-field-base-* → recipe-fieldBase-* ───────────────────────────── */
+
+  --recipe-field-base-width-default: var(--recipe-fieldBase-width-default);
+  --recipe-field-base-width-focus:   var(--recipe-fieldBase-width-focus);
+
+  --recipe-field-base-height-xs:          var(--recipe-fieldBase-height-xs);
+  --recipe-field-base-height-sm:          var(--recipe-fieldBase-height-sm);
+  --recipe-field-base-height-md:          var(--recipe-fieldBase-height-md);
+  --recipe-field-base-height-lg:          var(--recipe-fieldBase-height-lg);
+  --recipe-field-base-height-compact-xs:  var(--recipe-fieldBase-height-compact-xs);
+  --recipe-field-base-height-compact-sm:  var(--recipe-fieldBase-height-compact-sm);
+  --recipe-field-base-height-compact-md:  var(--recipe-fieldBase-height-compact-md);
+  --recipe-field-base-height-compact-lg:  var(--recipe-fieldBase-height-compact-lg);
+
+  --recipe-field-base-padding-start-xs:          var(--recipe-fieldBase-padding-start-xs);
+  --recipe-field-base-padding-start-sm:          var(--recipe-fieldBase-padding-start-sm);
+  --recipe-field-base-padding-start-md:          var(--recipe-fieldBase-padding-start-md);
+  --recipe-field-base-padding-start-lg:          var(--recipe-fieldBase-padding-start-lg);
+  --recipe-field-base-padding-start-compact-xs:  var(--recipe-fieldBase-padding-start-compact-xs);
+  --recipe-field-base-padding-start-compact-sm:  var(--recipe-fieldBase-padding-start-compact-sm);
+  --recipe-field-base-padding-start-compact-md:  var(--recipe-fieldBase-padding-start-compact-md);
+  --recipe-field-base-padding-start-compact-lg:  var(--recipe-fieldBase-padding-start-compact-lg);
+
+  --recipe-field-base-padding-end-xs:          var(--recipe-fieldBase-padding-end-xs);
+  --recipe-field-base-padding-end-sm:          var(--recipe-fieldBase-padding-end-sm);
+  --recipe-field-base-padding-end-md:          var(--recipe-fieldBase-padding-end-md);
+  --recipe-field-base-padding-end-lg:          var(--recipe-fieldBase-padding-end-lg);
+  --recipe-field-base-padding-end-compact-xs:  var(--recipe-fieldBase-padding-end-compact-xs);
+  --recipe-field-base-padding-end-compact-sm:  var(--recipe-fieldBase-padding-end-compact-sm);
+  --recipe-field-base-padding-end-compact-md:  var(--recipe-fieldBase-padding-end-compact-md);
+  --recipe-field-base-padding-end-compact-lg:  var(--recipe-fieldBase-padding-end-compact-lg);
+
+  --recipe-field-base-padding-end-with-trailing-xs:  var(--recipe-fieldBase-padding-end-withTrailing-xs);
+  --recipe-field-base-padding-end-with-trailing-sm:  var(--recipe-fieldBase-padding-end-withTrailing-sm);
+  --recipe-field-base-padding-end-with-trailing-md:  var(--recipe-fieldBase-padding-end-withTrailing-md);
+  --recipe-field-base-padding-end-with-trailing-lg:  var(--recipe-fieldBase-padding-end-withTrailing-lg);
+
+  --recipe-field-base-gap-xs:          var(--recipe-fieldBase-gap-xs);
+  --recipe-field-base-gap-sm:          var(--recipe-fieldBase-gap-sm);
+  --recipe-field-base-gap-md:          var(--recipe-fieldBase-gap-md);
+  --recipe-field-base-gap-lg:          var(--recipe-fieldBase-gap-lg);
+  --recipe-field-base-gap-compact-xs:  var(--recipe-fieldBase-gap-compact-xs);
+  --recipe-field-base-gap-compact-sm:  var(--recipe-fieldBase-gap-compact-sm);
+  --recipe-field-base-gap-compact-md:  var(--recipe-fieldBase-gap-compact-md);
+  --recipe-field-base-gap-compact-lg:  var(--recipe-fieldBase-gap-compact-lg);
+
+  --recipe-field-base-radius-xs: var(--recipe-fieldBase-radius-xs);
+  --recipe-field-base-radius-sm: var(--recipe-fieldBase-radius-sm);
+  --recipe-field-base-radius-md: var(--recipe-fieldBase-radius-md);
+  --recipe-field-base-radius-lg: var(--recipe-fieldBase-radius-lg);
+
+  --recipe-field-base-icon-size-sm: var(--recipe-fieldBase-iconSize-sm);
+  --recipe-field-base-icon-size-md: var(--recipe-fieldBase-iconSize-md);
+  --recipe-field-base-icon-size-lg: var(--recipe-fieldBase-iconSize-lg);
+
+  /* TextArea vertical spacing — token has typo "vertiacl" */
+  --recipe-field-base-spacing-vertical-sm: var(--recipe-fieldBase-spacing-vertiacl-sm);
+  --recipe-field-base-spacing-vertical-md: var(--recipe-fieldBase-spacing-vertiacl-md);
+  --recipe-field-base-spacing-vertical-lg: var(--recipe-fieldBase-spacing-vertiacl-lg);
+  --recipe-field-base-spacing-vertical-compact-sm: var(--recipe-fieldBase-spacing-vertiacl-compact-sm);
+  --recipe-field-base-spacing-vertical-compact-md: var(--recipe-fieldBase-spacing-vertiacl-compact-md);
+  --recipe-field-base-spacing-vertical-compact-lg: var(--recipe-fieldBase-spacing-vertiacl-compact-lg);
+
+  /* ── recipe-action-base-* → recipe-actionBase-* (IconButton, FloatingButton) */
+
+  /* common */
+  --recipe-action-base-common-height-xs:      var(--recipe-actionBase-common-height-xs);
+  --recipe-action-base-common-border-width-xs: var(--recipe-actionBase-common-borderWidth-xs);
+  --recipe-action-base-common-border-width-sm: var(--recipe-actionBase-common-borderWidth-sm);
+  --recipe-action-base-common-border-width-md: var(--recipe-actionBase-common-borderWidth-md);
+
+  /* icon sizes */
+  --recipe-action-base-icon-button-like-icon-size-xs: var(--recipe-actionBase-iconButtonLike-iconSize-xs);
+  --recipe-action-base-button-like-icon-size-lg:      var(--recipe-actionBase-buttonLike-iconSize-lg);
+
+  /* secondary-fill */
+  --recipe-action-base-secondary-fill-container-normal:   var(--recipe-actionBase-secondary-fill-container-normal);
+  --recipe-action-base-secondary-fill-container-hover:    var(--recipe-actionBase-secondary-fill-container-hover);
+  --recipe-action-base-secondary-fill-container-pressed:  var(--recipe-actionBase-secondary-fill-container-pressed);
+  --recipe-action-base-secondary-fill-container-disabled: var(--recipe-actionBase-secondary-fill-container-disabled);
+  --recipe-action-base-secondary-fill-text-normal:        var(--recipe-actionBase-secondary-fill-text-normal);
+  --recipe-action-base-secondary-fill-text-hover:         var(--recipe-actionBase-secondary-fill-text-hover);
+  --recipe-action-base-secondary-fill-text-pressed:       var(--recipe-actionBase-secondary-fill-text-pressed);
+  --recipe-action-base-secondary-fill-text-disabled:      var(--recipe-actionBase-secondary-fill-text-disabled);
+  --recipe-action-base-secondary-fill-icon-normal:        var(--recipe-actionBase-secondary-fill-icon-normal);
+  --recipe-action-base-secondary-fill-icon-hover:         var(--recipe-actionBase-secondary-fill-icon-hover);
+  --recipe-action-base-secondary-fill-icon-pressed:       var(--recipe-actionBase-secondary-fill-icon-pressed);
+  --recipe-action-base-secondary-fill-icon-disabled:      var(--recipe-actionBase-secondary-fill-icon-disabled);
+  --recipe-action-base-secondary-fill-border-normal:      var(--recipe-actionBase-secondary-fill-border-normal);
+  --recipe-action-base-secondary-fill-border-hover:       var(--recipe-actionBase-secondary-fill-border-hover);
+  --recipe-action-base-secondary-fill-border-pressed:     var(--recipe-actionBase-secondary-fill-border-pressed);
+  --recipe-action-base-secondary-fill-border-disabled:    var(--recipe-actionBase-secondary-fill-border-disabled);
+
+  /* secondary-soft */
+  --recipe-action-base-secondary-soft-container-normal:   var(--recipe-actionBase-secondary-soft-container-normal);
+  --recipe-action-base-secondary-soft-container-hover:    var(--recipe-actionBase-secondary-soft-container-hover);
+  --recipe-action-base-secondary-soft-container-pressed:  var(--recipe-actionBase-secondary-soft-container-pressed);
+  --recipe-action-base-secondary-soft-container-disabled: var(--recipe-actionBase-secondary-soft-container-disabled);
+  --recipe-action-base-secondary-soft-text-normal:        var(--recipe-actionBase-secondary-soft-text-normal);
+  --recipe-action-base-secondary-soft-text-hover:         var(--recipe-actionBase-secondary-soft-text-hover);
+  --recipe-action-base-secondary-soft-text-pressed:       var(--recipe-actionBase-secondary-soft-text-pressed);
+  --recipe-action-base-secondary-soft-text-disabled:      var(--recipe-actionBase-secondary-soft-text-disabled);
+  --recipe-action-base-secondary-soft-icon-normal:        var(--recipe-actionBase-secondary-soft-icon-normal);
+  --recipe-action-base-secondary-soft-icon-hover:         var(--recipe-actionBase-secondary-soft-icon-hover);
+  --recipe-action-base-secondary-soft-icon-pressed:       var(--recipe-actionBase-secondary-soft-icon-pressed);
+  --recipe-action-base-secondary-soft-icon-disabled:      var(--recipe-actionBase-secondary-soft-icon-disabled);
+  --recipe-action-base-secondary-soft-border-normal:      var(--recipe-actionBase-secondary-soft-border-normal);
+  --recipe-action-base-secondary-soft-border-hover:       var(--recipe-actionBase-secondary-soft-border-hover);
+  --recipe-action-base-secondary-soft-border-pressed:     var(--recipe-actionBase-secondary-soft-border-pressed);
+  --recipe-action-base-secondary-soft-border-disabled:    var(--recipe-actionBase-secondary-soft-border-disabled);
+
+  /* secondary-outline */
+  --recipe-action-base-secondary-outline-container-normal:   var(--recipe-actionBase-secondary-outline-container-normal);
+  --recipe-action-base-secondary-outline-container-hover:    var(--recipe-actionBase-secondary-outline-container-hover);
+  --recipe-action-base-secondary-outline-container-pressed:  var(--recipe-actionBase-secondary-outline-container-pressed);
+  --recipe-action-base-secondary-outline-container-disabled: var(--recipe-actionBase-secondary-outline-container-disabled);
+  --recipe-action-base-secondary-outline-icon-normal:        var(--recipe-actionBase-secondary-outline-icon-normal);
+  --recipe-action-base-secondary-outline-icon-hover:         var(--recipe-actionBase-secondary-outline-icon-hover);
+  --recipe-action-base-secondary-outline-icon-pressed:       var(--recipe-actionBase-secondary-outline-icon-pressed);
+  --recipe-action-base-secondary-outline-icon-disabled:      var(--recipe-actionBase-secondary-outline-icon-disabled);
+  --recipe-action-base-secondary-outline-border-normal:      var(--recipe-actionBase-secondary-outline-border-normal);
+  --recipe-action-base-secondary-outline-border-hover:       var(--recipe-actionBase-secondary-outline-border-hover);
+  --recipe-action-base-secondary-outline-border-pressed:     var(--recipe-actionBase-secondary-outline-border-pressed);
+  --recipe-action-base-secondary-outline-border-disabled:    var(--recipe-actionBase-secondary-outline-border-disabled);
+
+  /* secondary-ghost */
+  --recipe-action-base-secondary-ghost-container-normal:   var(--recipe-actionBase-secondary-ghost-container-normal);
+  --recipe-action-base-secondary-ghost-container-hover:    var(--recipe-actionBase-secondary-ghost-container-hover);
+  --recipe-action-base-secondary-ghost-container-pressed:  var(--recipe-actionBase-secondary-ghost-container-pressed);
+  --recipe-action-base-secondary-ghost-container-disabled: var(--recipe-actionBase-secondary-ghost-container-disabled);
+  --recipe-action-base-secondary-ghost-icon-normal:        var(--recipe-actionBase-secondary-ghost-icon-normal);
+  --recipe-action-base-secondary-ghost-icon-hover:         var(--recipe-actionBase-secondary-ghost-icon-hover);
+  --recipe-action-base-secondary-ghost-icon-pressed:       var(--recipe-actionBase-secondary-ghost-icon-pressed);
+  --recipe-action-base-secondary-ghost-icon-disabled:      var(--recipe-actionBase-secondary-ghost-icon-disabled);
+  --recipe-action-base-secondary-ghost-border-normal:      var(--recipe-actionBase-secondary-ghost-border-normal);
+  --recipe-action-base-secondary-ghost-border-hover:       var(--recipe-actionBase-secondary-ghost-border-hover);
+  --recipe-action-base-secondary-ghost-border-pressed:     var(--recipe-actionBase-secondary-ghost-border-pressed);
+  --recipe-action-base-secondary-ghost-border-disabled:    var(--recipe-actionBase-secondary-ghost-border-disabled);
+
+  /* overlay-default */
+  --recipe-action-base-overlay-default-container-normal:   var(--recipe-actionBase-overlay-default-container-normal);
+  --recipe-action-base-overlay-default-container-hover:    var(--recipe-actionBase-overlay-default-container-hover);
+  --recipe-action-base-overlay-default-container-pressed:  var(--recipe-actionBase-overlay-default-container-pressed);
+  --recipe-action-base-overlay-default-container-disabled: var(--recipe-actionBase-overlay-default-container-disabled);
+  --recipe-action-base-overlay-default-icon-normal:        var(--recipe-actionBase-overlay-default-icon-normal);
+  --recipe-action-base-overlay-default-icon-hover:         var(--recipe-actionBase-overlay-default-icon-hover);
+  --recipe-action-base-overlay-default-icon-pressed:       var(--recipe-actionBase-overlay-default-icon-pressed);
+  --recipe-action-base-overlay-default-icon-disabled:      var(--recipe-actionBase-overlay-default-icon-disabled);
+  --recipe-action-base-overlay-default-border-normal:      var(--recipe-actionBase-overlay-default-border-normal);
+  --recipe-action-base-overlay-default-border-hover:       var(--recipe-actionBase-overlay-default-border-hover);
+  --recipe-action-base-overlay-default-border-pressed:     var(--recipe-actionBase-overlay-default-border-pressed);
+  --recipe-action-base-overlay-default-border-disabled:    var(--recipe-actionBase-overlay-default-border-disabled);
+
+  /* primary-fill */
+  --recipe-action-base-primary-fill-container-normal:   var(--recipe-actionBase-primary-fill-container-normal);
+  --recipe-action-base-primary-fill-container-hover:    var(--recipe-actionBase-primary-fill-container-hover);
+  --recipe-action-base-primary-fill-container-pressed:  var(--recipe-actionBase-primary-fill-container-pressed);
+  --recipe-action-base-primary-fill-container-disabled: var(--recipe-actionBase-primary-fill-container-disabled);
+  --recipe-action-base-primary-fill-text-normal:        var(--recipe-actionBase-primary-fill-text-normal);
+  --recipe-action-base-primary-fill-text-hover:         var(--recipe-actionBase-primary-fill-text-hover);
+  --recipe-action-base-primary-fill-text-pressed:       var(--recipe-actionBase-primary-fill-text-pressed);
+  --recipe-action-base-primary-fill-text-disabled:      var(--recipe-actionBase-primary-fill-text-disabled);
+
+  /* ── recipe-action-base-common-height sm/md ─────────────────────────────── */
+
+  --recipe-action-base-common-height-sm: var(--recipe-actionBase-common-height-sm);
+  --recipe-action-base-common-height-md: var(--recipe-actionBase-common-height-md);
+
+  /* ── recipe-action-base-button-like-padding-x-* ─────────────────────────── */
+
+  --recipe-action-base-button-like-padding-x-xs: var(--recipe-actionBase-buttonLike-paddingX-xs);
+  --recipe-action-base-button-like-padding-x-sm: var(--recipe-actionBase-buttonLike-paddingX-sm);
+  --recipe-action-base-button-like-padding-x-md: var(--recipe-actionBase-buttonLike-paddingX-md);
+  --recipe-action-base-button-like-padding-x-lg: var(--recipe-actionBase-buttonLike-paddingX-lg);
+
+  /* ── recipe-action-base-button-like-radius-* ─────────────────────────────── */
+
+  --recipe-action-base-button-like-radius-xs: var(--recipe-actionBase-buttonLike-radius-xs);
+  --recipe-action-base-button-like-radius-sm: var(--recipe-actionBase-buttonLike-radius-sm);
+  --recipe-action-base-button-like-radius-md: var(--recipe-actionBase-buttonLike-radius-md);
+  --recipe-action-base-button-like-radius-lg: var(--recipe-actionBase-buttonLike-radius-lg);
+
+  /* ── recipe-selection-control-base-* → recipe-selectionControlBase-* ────── */
+
+  --recipe-selection-control-base-container-sm:       var(--recipe-selectionControlBase-container-sm);
+  --recipe-selection-control-base-container-md:       var(--recipe-selectionControlBase-container-md);
+  --recipe-selection-control-base-icon-size-sm:       var(--recipe-selectionControlBase-iconSize-sm);
+  --recipe-selection-control-base-icon-size-md:       var(--recipe-selectionControlBase-iconSize-md);
+  --recipe-selection-control-base-border-width-sm:    var(--recipe-selectionControlBase-borderWidth-sm);
+  --recipe-selection-control-base-border-width-md:    var(--recipe-selectionControlBase-borderWidth-md);
+  --recipe-selection-control-base-radius-rounded-sm:  var(--recipe-selectionControlBase-radius-rounded-sm);
+  --recipe-selection-control-base-radius-rounded-md:  var(--recipe-selectionControlBase-radius-rounded-md);
+  --recipe-selection-control-base-radius-circle-sm:   var(--recipe-selectionControlBase-radius-circle-sm);
+  --recipe-selection-control-base-radius-circle-md:   var(--recipe-selectionControlBase-radius-circle-md);
+
+}

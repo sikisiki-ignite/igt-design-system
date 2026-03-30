@@ -1,0 +1,156 @@
+/* =============================================================================
+   IGT Design System — TextArea
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-textarea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Label ────────────────────────────────────────────────────────────────── */
+
+.igt-textarea__label {
+  font-family: var(--label-sm-medium-font-family);
+  font-size: var(--label-sm-medium-font-size);
+  line-height: var(--label-sm-medium-line-height);
+  font-weight: var(--label-sm-medium-font-weight);
+  letter-spacing: var(--label-sm-medium-letter-spacing);
+  color: var(--sys-content-neutral-default);
+}
+
+.igt-textarea--disabled .igt-textarea__label {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Input Wrap ───────────────────────────────────────────────────────────── */
+
+.igt-textarea__input-wrap {
+  display: flex;
+  border-radius: var(--_ta-radius);
+  border: var(--recipe-field-base-width-default) solid var(--_ta-border-color);
+  background-color: var(--_ta-bg);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.igt-textarea__input-wrap:focus-within {
+  border-color: var(--sys-border-field-focus);
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-textarea--invalid .igt-textarea__input-wrap {
+  border-color: var(--sys-border-field-error) !important;
+}
+
+.igt-textarea--invalid .igt-textarea__input-wrap:focus-within {
+  outline-color: var(--sys-border-status-danger-default);
+}
+
+.igt-textarea--disabled .igt-textarea__input-wrap {
+  background-color: var(--sys-container-field-disabled);
+  border-color: var(--sys-border-field-disabled);
+  cursor: not-allowed;
+}
+
+.igt-textarea--readonly .igt-textarea__input-wrap {
+  background-color: var(--sys-container-field-read-only);
+  border-color: var(--sys-border-field-read-only);
+}
+
+/* ── Textarea element ─────────────────────────────────────────────────────── */
+
+.igt-textarea__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--_ta-min-height);
+  padding: var(--_ta-padding-y) var(--_ta-padding-x);
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: vertical;
+  color: var(--sys-content-neutral-default);
+  font-family: var(--body-md-regular-font-family);
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+}
+
+.igt-textarea__input::placeholder {
+  color: var(--sys-content-neutral-placeholder);
+}
+
+.igt-textarea__input:disabled {
+  color: var(--sys-content-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Helper Text ──────────────────────────────────────────────────────────── */
+
+.igt-textarea__helper {
+  font-family: var(--caption-lg-regular-font-family);
+  font-size: var(--caption-lg-regular-font-size);
+  line-height: var(--caption-lg-regular-line-height);
+  font-weight: var(--caption-lg-regular-font-weight);
+  letter-spacing: var(--caption-lg-regular-letter-spacing);
+  color: var(--sys-content-neutral-muted);
+}
+
+.igt-textarea--invalid .igt-textarea__helper {
+  color: var(--sys-content-status-danger-default);
+}
+
+.igt-textarea--disabled .igt-textarea__helper {
+  color: var(--sys-content-neutral-disabled);
+}
+
+
+/* =============================================================================
+   VARIANT
+   ============================================================================= */
+
+/* fill */
+.igt-textarea--variant-fill {
+  --_ta-bg: var(--sys-container-field-normal);
+  --_ta-border-color: transparent;
+}
+
+.igt-textarea--variant-fill .igt-textarea__input-wrap:hover {
+  --_ta-border-color: var(--sys-border-field-hover);
+}
+
+/* outline */
+.igt-textarea--variant-outline {
+  --_ta-bg: transparent;
+  --_ta-border-color: var(--sys-border-field-normal-default);
+}
+
+.igt-textarea--variant-outline .igt-textarea__input-wrap:hover {
+  --_ta-border-color: var(--sys-border-field-hover);
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-textarea--size-md {
+  --_ta-min-height: var(--recipe-field-base-height-md);
+  --_ta-padding-x: var(--recipe-field-base-padding-start-md);
+  --_ta-padding-y: var(--recipe-field-base-spacing-vertical-md);
+  --_ta-radius: var(--recipe-field-base-radius-md);
+}
+
+.igt-textarea--size-lg {
+  --_ta-min-height: var(--recipe-field-base-height-lg);
+  --_ta-padding-x: var(--recipe-field-base-padding-start-lg);
+  --_ta-padding-y: var(--recipe-field-base-spacing-vertical-lg);
+  --_ta-radius: var(--recipe-field-base-radius-lg);
+}

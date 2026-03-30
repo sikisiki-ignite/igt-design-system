@@ -1,0 +1,122 @@
+/* =============================================================================
+   IGT Design System — Alert
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-14);
+  border-radius: var(--radius-radius-8);
+  border-left: 4px solid var(--_alert-accent-color);
+  background-color: var(--_alert-bg-color);
+  width: 100%;
+  box-sizing: border-box;
+
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Icon ─────────────────────────────────────────────────────────────────── */
+
+.igt-alert__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-radius-full);
+  background-color: var(--_alert-accent-color);
+  margin-top: 2px;
+}
+
+/* ── Content ──────────────────────────────────────────────────────────────── */
+
+.igt-alert__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* ── Title ────────────────────────────────────────────────────────────────── */
+
+.igt-alert__title {
+  margin: 0;
+  color: var(--sys-content-neutral-strong);
+  font-size: var(--label-md-semibold-font-size);
+  line-height: var(--label-md-semibold-line-height);
+  font-weight: var(--label-md-semibold-font-weight);
+  letter-spacing: var(--label-md-semibold-letter-spacing);
+}
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+
+.igt-alert__body {
+  color: var(--sys-content-neutral-default);
+  font-size: var(--body-sm-regular-font-size);
+  line-height: var(--body-sm-regular-line-height);
+  font-weight: var(--body-sm-regular-font-weight);
+  letter-spacing: var(--body-sm-regular-letter-spacing);
+}
+
+/* ── Dismiss button ───────────────────────────────────────────────────────── */
+
+.igt-alert__dismiss {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-radius-4);
+  background: transparent;
+  color: var(--sys-content-neutral-muted);
+  cursor: pointer;
+  font-size: var(--body-xs-regular-font-size);
+  line-height: 1;
+  margin-top: 1px;
+
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.igt-alert__dismiss:hover {
+  background-color: var(--sys-container-neutral-tint-default);
+  color: var(--sys-content-neutral-strong);
+}
+
+.igt-alert__dismiss:focus-visible {
+  outline: 1.5px solid var(--sys-content-brand-default);
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   TYPE MODIFIERS
+   ============================================================================= */
+
+.igt-alert--type-neutral {
+  --_alert-accent-color: var(--sys-content-neutral-default);
+  --_alert-bg-color: var(--sys-container-neutral-tint-default);
+}
+
+.igt-alert--type-info {
+  --_alert-accent-color: var(--sys-content-status-info-default);
+  --_alert-bg-color: var(--sys-container-status-info-tint-default);
+}
+
+.igt-alert--type-success {
+  --_alert-accent-color: var(--sys-content-status-success-default);
+  --_alert-bg-color: var(--sys-container-status-success-tint-default);
+}
+
+.igt-alert--type-warning {
+  --_alert-accent-color: var(--sys-content-status-warning-default);
+  --_alert-bg-color: var(--sys-container-status-warning-tint-default);
+}
+
+.igt-alert--type-danger {
+  --_alert-accent-color: var(--sys-content-status-danger-default);
+  --_alert-bg-color: var(--sys-container-status-danger-tint-default);
+}

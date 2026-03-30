@@ -1,0 +1,4 @@
+.vercel
+
+# Claude Code — 개인 설정 (토큰, 절대경로 포함)
+.claude/settings.local.json

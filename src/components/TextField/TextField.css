@@ -1,0 +1,184 @@
+/* =============================================================================
+   IGT Design System — TextField
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-textfield {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Label ────────────────────────────────────────────────────────────────── */
+
+.igt-textfield__label {
+  font-family: var(--label-sm-medium-font-family);
+  font-size: var(--label-sm-medium-font-size);
+  line-height: var(--label-sm-medium-line-height);
+  font-weight: var(--label-sm-medium-font-weight);
+  letter-spacing: var(--label-sm-medium-letter-spacing);
+  color: var(--sys-content-neutral-default);
+}
+
+.igt-textfield--disabled .igt-textfield__label {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Input Wrap ───────────────────────────────────────────────────────────── */
+
+.igt-textfield__input-wrap {
+  display: flex;
+  align-items: center;
+  border-radius: var(--_tf-radius);
+  border: var(--recipe-field-base-width-default) solid var(--_tf-border-color);
+  background-color: var(--_tf-bg);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.igt-textfield__input-wrap:focus-within {
+  border-color: var(--sys-border-field-focus);
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-textfield--invalid .igt-textfield__input-wrap {
+  border-color: var(--sys-border-field-error) !important;
+}
+
+.igt-textfield--invalid .igt-textfield__input-wrap:focus-within {
+  outline-color: var(--sys-border-status-danger-default);
+}
+
+.igt-textfield--disabled .igt-textfield__input-wrap {
+  background-color: var(--sys-container-field-disabled);
+  border-color: var(--sys-border-field-disabled);
+  cursor: not-allowed;
+}
+
+.igt-textfield--readonly .igt-textfield__input-wrap {
+  background-color: var(--sys-container-field-read-only);
+  border-color: var(--sys-border-field-read-only);
+}
+
+/* ── Input ────────────────────────────────────────────────────────────────── */
+
+.igt-textfield__input {
+  flex: 1;
+  min-width: 0;
+  height: var(--_tf-height);
+  padding: 0 var(--_tf-padding-end) 0 var(--_tf-padding-start);
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--sys-content-neutral-default);
+  font-family: var(--body-md-regular-font-family);
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+}
+
+.igt-textfield__input::placeholder {
+  color: var(--sys-content-neutral-placeholder);
+}
+
+.igt-textfield__input:disabled {
+  color: var(--sys-content-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Helper Text ──────────────────────────────────────────────────────────── */
+
+.igt-textfield__helper {
+  font-family: var(--caption-lg-regular-font-family);
+  font-size: var(--caption-lg-regular-font-size);
+  line-height: var(--caption-lg-regular-line-height);
+  font-weight: var(--caption-lg-regular-font-weight);
+  letter-spacing: var(--caption-lg-regular-letter-spacing);
+  color: var(--sys-content-neutral-muted);
+}
+
+.igt-textfield--invalid .igt-textfield__helper {
+  color: var(--sys-content-status-danger-default);
+}
+
+.igt-textfield--disabled .igt-textfield__helper {
+  color: var(--sys-content-neutral-disabled);
+}
+
+
+/* =============================================================================
+   VARIANT
+   ============================================================================= */
+
+/* fill — filled background, border only on focus (handled via :focus-within) */
+.igt-textfield--variant-fill {
+  --_tf-bg: var(--sys-container-field-normal);
+  --_tf-border-color: transparent;
+}
+
+.igt-textfield--variant-fill .igt-textfield__input-wrap:hover {
+  --_tf-border-color: var(--sys-border-field-hover);
+}
+
+/* outline — transparent bg, always-visible border */
+.igt-textfield--variant-outline {
+  --_tf-bg: transparent;
+  --_tf-border-color: var(--sys-border-field-normal-default);
+}
+
+.igt-textfield--variant-outline .igt-textfield__input-wrap:hover {
+  --_tf-border-color: var(--sys-border-field-hover);
+}
+
+
+/* =============================================================================
+   SIZE — standard density
+   ============================================================================= */
+
+.igt-textfield--size-sm {
+  --_tf-height: var(--recipe-field-base-height-sm);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-sm);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-sm);
+  --_tf-radius: var(--recipe-field-base-radius-sm);
+}
+
+.igt-textfield--size-md {
+  --_tf-height: var(--recipe-field-base-height-md);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-md);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-md);
+  --_tf-radius: var(--recipe-field-base-radius-md);
+}
+
+.igt-textfield--size-lg {
+  --_tf-height: var(--recipe-field-base-height-lg);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-lg);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-lg);
+  --_tf-radius: var(--recipe-field-base-radius-lg);
+}
+
+/* ── compact density overrides ────────────────────────────────────────────── */
+
+.igt-textfield--density-compact.igt-textfield--size-sm {
+  --_tf-height: var(--recipe-field-base-height-compact-sm);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-compact-sm);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-compact-sm);
+}
+
+.igt-textfield--density-compact.igt-textfield--size-md {
+  --_tf-height: var(--recipe-field-base-height-compact-md);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-compact-md);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-compact-md);
+}
+
+.igt-textfield--density-compact.igt-textfield--size-lg {
+  --_tf-height: var(--recipe-field-base-height-compact-lg);
+  --_tf-padding-start: var(--recipe-field-base-padding-start-compact-lg);
+  --_tf-padding-end: var(--recipe-field-base-padding-end-compact-lg);
+}

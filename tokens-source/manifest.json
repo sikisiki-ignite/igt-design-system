@@ -1,0 +1,80 @@
+{
+  "name": "Design Tokens",
+  "collections": {
+    "primitives": {
+      "modes": {
+        "Mode 1": [
+          "primitives.Mode 1.tokens.json"
+        ]
+      }
+    },
+    "semanticColor": {
+      "modes": {
+        "Blue": [
+          "semanticColor.Blue.tokens.json"
+        ],
+        "Blue / Dark": [
+          "semanticColor.Blue / Dark.tokens.json"
+        ]
+      }
+    },
+    "component": {
+      "modes": {
+        "Mode 1": [
+          "component.Mode 1.tokens.json"
+        ]
+      }
+    },
+    "semanticRadius": {
+      "modes": {
+        "soft (3)": [
+          "semanticRadius.soft (3).tokens.json"
+        ],
+        "formal (1)": [
+          "semanticRadius.formal (1).tokens.json"
+        ],
+        "neutral (2)": [
+          "semanticRadius.neutral (2).tokens.json"
+        ],
+        "friendly (4)": [
+          "semanticRadius.friendly (4).tokens.json"
+        ],
+        "playful (5)": [
+          "semanticRadius.playful (5).tokens.json"
+        ]
+      }
+    },
+    "semanticTypography": {
+      "modes": {
+        "IGNITE Sans": [
+          "semanticTypography.IGNITE Sans.tokens.json"
+        ],
+        "BM Dohyeon": [
+          "semanticTypography.BM Dohyeon.tokens.json"
+        ]
+      }
+    },
+    "semanticSize": {
+      "modes": {
+        "Mode 1": [
+          "semanticSize.Mode 1.tokens.json"
+        ]
+      }
+    },
+    "global": {
+      "modes": {
+        "global": [
+          "global.global.tokens.json"
+        ]
+      }
+    }
+  },
+  "styles": {
+    "text": [
+      "text.styles.tokens.json"
+    ],
+    "effect": [
+      "effect.styles.tokens.json"
+    ]
+  }
+}

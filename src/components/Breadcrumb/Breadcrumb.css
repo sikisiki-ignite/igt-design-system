@@ -1,0 +1,57 @@
+/* =============================================================================
+   IGT Design System — Breadcrumb
+   ============================================================================= */
+
+.igt-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--body-sm-regular-font-size);
+  line-height: var(--body-sm-regular-line-height);
+  font-weight: var(--body-sm-regular-font-weight);
+  letter-spacing: var(--body-sm-regular-letter-spacing);
+}
+
+.igt-breadcrumb__home {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--body-sm-regular-font-size);
+  margin-right: var(--spacing-2);
+}
+
+.igt-breadcrumb__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.igt-breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.igt-breadcrumb__link {
+  color: var(--sys-content-neutral-muted);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.igt-breadcrumb__link:hover {
+  color: var(--sys-content-neutral-default);
+}
+
+.igt-breadcrumb__current {
+  color: var(--sys-content-neutral-strong);
+  font-weight: var(--body-sm-semibold-font-weight);
+}
+
+.igt-breadcrumb__separator {
+  color: var(--sys-content-neutral-subtle);
+  user-select: none;
+}

@@ -1,0 +1,786 @@
+{
+  "recipe": {
+    "actionBase": {
+      "common": {
+        "borderWidth": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{borderWidth.1}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{borderWidth.1}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{borderWidth.1_5}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{borderWidth.1_5}"
+          }
+        },
+        "height": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{size.size-24}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{size.size-32}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{size.size-40}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{size.size-48}"
+          },
+          "compact": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{size.size-24}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{size.size-28}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{size.size-36}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{size.size-44}"
+            }
+          }
+        },
+        "hitArea": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{size.size-24}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{size.size-32}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{size.size-40}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{size.size-48}"
+          }
+        }
+      },
+      "buttonLike": {
+        "radius": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{radius.radius-6}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{radius.radius-8}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{radius.radius-10}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{radius.radius-12}"
+          }
+        },
+        "paddingX": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.8}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.12}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.14}"
+          },
+          "compact": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{spacing.6}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{spacing.6}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{spacing.8}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{spacing.12}"
+            }
+          }
+        },
+        "gap": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.0}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.0}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.0}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.0}"
+          }
+        },
+        "labelPaddingX": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.3}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.4}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.8}"
+          }
+        },
+        "labelTrailingGap": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.-2}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.-2}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.-4}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.-4}"
+          }
+        },
+        "iconSize": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{icon.icon-14}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{icon.icon-16}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{icon.icon-18}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{icon.icon-20}"
+          }
+        }
+      },
+      "iconButtonLike": {
+        "radius": {
+          "rounded": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{recipe.actionBase.buttonLike.radius.xs}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{recipe.actionBase.buttonLike.radius.sm}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{recipe.actionBase.buttonLike.radius.md}"
+            }
+          },
+          "circle": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          }
+        },
+        "iconSize": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{icon.icon-16}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{icon.icon-18}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{icon.icon-20}"
+          }
+        }
+      }
+    },
+    "fieldBase": {
+      "height": {
+        "xs": {
+          "$type": "dimension",
+          "$value": "{size.size-24}"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.size-32}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.size-40}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.size-48}"
+        },
+        "compact": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{size.size-24}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{size.size-28}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{size.size-36}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{size.size-44}"
+          }
+        }
+      },
+      "padding": {
+        "start": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.8}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.10}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.12}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.14}"
+          },
+          "compact": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{spacing.8}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{spacing.8}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{spacing.10}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{spacing.12}"
+            }
+          }
+        },
+        "end": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.8}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.10}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.12}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.14}"
+          },
+          "compact": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{spacing.8}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{spacing.8}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{spacing.10}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{spacing.12}"
+            }
+          },
+          "withTrailing": {
+            "xs": {
+              "$type": "dimension",
+              "$value": "{spacing.0}"
+            },
+            "sm": {
+              "$type": "dimension",
+              "$value": "{spacing.2}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{spacing.4}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{spacing.6}"
+            },
+            "compact": {
+              "xs": {
+                "$type": "dimension",
+                "$value": "{spacing.0}"
+              },
+              "sm": {
+                "$type": "dimension",
+                "$value": "{spacing.0}"
+              },
+              "md": {
+                "$type": "dimension",
+                "$value": "{spacing.2}"
+              },
+              "lg": {
+                "$type": "dimension",
+                "$value": "{spacing.4}"
+              }
+            }
+          }
+        }
+      },
+      "gap": {
+        "xs": {
+          "$type": "dimension",
+          "$value": "{spacing.4}"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{spacing.6}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{spacing.8}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{spacing.10}"
+        },
+        "compact": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{spacing.4}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.4}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.8}"
+          }
+        }
+      },
+      "iconSize": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{icon.icon-14}"
+        },
+        "compac": {
+          "$type": "dimension",
+          "$value": "{icon.icon-14}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{icon.icon-16}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{icon.icon-18}"
+        }
+      },
+      "trailingSlot": {
+        "trailingVisual": {
+          "1": {
+            "$type": "dimension",
+            "$value": "0px"
+          }
+        },
+        "trailingAction": {
+          "iconSize": {
+            "sm": {
+              "$type": "dimension",
+              "$value": "{icon.icon-16}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{icon.icon-16}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{icon.icon-16}"
+            }
+          },
+          "hitArea": {
+            "sm": {
+              "$type": "dimension",
+              "$value": "{size.size-32}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{size.size-34_✓}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{size.size-36}"
+            }
+          }
+        }
+      },
+      "radius": {
+        "xs": {
+          "$type": "dimension",
+          "$value": "{radius.radius-6}"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{radius.radius-8}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{radius.radius-10}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{radius.radius-12}"
+        }
+      },
+      "width": {
+        "focus": {
+          "$type": "dimension",
+          "$value": "{borderWidth.1}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{borderWidth.1}"
+        }
+      },
+      "helperText": {
+        "gapTop": {
+          "2": {
+            "$type": "dimension",
+            "$value": "0px"
+          }
+        }
+      },
+      "spacing": {
+        "vertiacl": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "compact": {
+            "sm": {
+              "$type": "dimension",
+              "$value": "{spacing.4}"
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": "{spacing.4}"
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": "{spacing.4}"
+            }
+          }
+        }
+      }
+    },
+    "listItemBase": {
+      "padding": {
+        "x": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.10}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.14}"
+          }
+        },
+        "y": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{spacing.6}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{spacing.10}"
+          }
+        }
+      },
+      "icon": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{icon.icon-16}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{icon.icon-16}"
+        }
+      },
+      "radius": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{radius.radius-6}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{radius.radius-8}"
+        }
+      },
+      "indent": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{spacing.14}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{spacing.16}"
+        }
+      },
+      "height": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.size-32}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.size-40}"
+        }
+      }
+    },
+    "focusRing": {
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{borderWidth.2}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "{size.size-2}"
+      },
+      "radius": {
+        "rounded": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{radius.radius-8}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{radius.radius-10}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{radius.radius-12}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{radius.radius-12}"
+          }
+        },
+        "circle": {
+          "xs": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          },
+          "sm": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          },
+          "lg": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          }
+        }
+      }
+    },
+    "selectionControlBase": {
+      "hitArea": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.size-24}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.size-28}"
+        }
+      },
+      "borderWidth": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{border.strong}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{border.strong}"
+        }
+      },
+      "radius": {
+        "rounded": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{radius.radius-4}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{radius.radius-6}"
+          }
+        },
+        "circle": {
+          "sm": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          },
+          "md": {
+            "$type": "dimension",
+            "$value": "{radius.radius-full}"
+          }
+        }
+      },
+      "iconSize": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.size-12}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.size-16}"
+        }
+      },
+      "container": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.size-16}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{size.size-20}"
+        }
+      }
+    }
+  },
+  "border": {
+    "none": {
+      "$type": "dimension",
+      "$value": "{borderWidth.0}"
+    },
+    "thin": {
+      "$type": "dimension",
+      "$value": "{borderWidth.0_5}"
+    },
+    "defalut": {
+      "$type": "dimension",
+      "$value": "{borderWidth.1}"
+    },
+    "strong": {
+      "$type": "dimension",
+      "$value": "{borderWidth.1_5}"
+    }
+  },
+  "layout": {
+    "inline": {
+      "gap": {
+        "xs": {
+          "$type": "dimension",
+          "$value": "{spacing.4}"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{spacing.6}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{spacing.8}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{spacing.10}"
+        }
+      }
+    },
+    "stack": {
+      "gap": {
+        "xs": {
+          "$type": "dimension",
+          "$value": "{spacing.4}"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{spacing.6}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{spacing.8}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{spacing.10}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+/* =============================================================================
+   IGT Design System — Tab
+   ============================================================================= */
+
+.igt-tab {
+  display: flex;
+  align-items: stretch;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Layout: scrollable ─────────────────────────────────────────────────── */
+
+.igt-tab--layout-scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: var(--_tab-item-gap);
+}
+
+.igt-tab--layout-scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Tab item (shared) ──────────────────────────────────────────────────── */
+
+.igt-tab__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  background-color: transparent;
+  height: var(--_tab-height);
+  padding: 0;
+  font-family: inherit;
+  font-size: var(--_tab-font-size);
+  line-height: var(--_tab-line-height);
+  font-weight: var(--_tab-font-weight-inactive);
+  letter-spacing: var(--_tab-letter-spacing);
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.igt-tab__item--active {
+  font-weight: var(--_tab-font-weight-active);
+}
+
+.igt-tab__item:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+/* ── Layout: fixed — equal width tabs ──────────────────────────────────── */
+
+.igt-tab--layout-fixed .igt-tab__item {
+  flex: 1;
+}
+
+/* ── Layout: scrollable — auto width tabs ──────────────────────────────── */
+
+.igt-tab--layout-scrollable .igt-tab__item {
+  flex: 0 0 auto;
+}
+
+/* =============================================================================
+   VARIANT: underline
+   ============================================================================= */
+
+.igt-tab--variant-underline {
+  border-bottom: var(--3_Navigation-Tab-size-variant-underline-line-track-height) solid var(--3_Navigation-Tab-color-variant-underline-line-track);
+}
+
+.igt-tab--variant-underline .igt-tab__item {
+  color: var(--sys-content-neutral-default);
+  margin-bottom: -1px;
+}
+
+/* Rounded pill indicator via ::after */
+.igt-tab--variant-underline .igt-tab__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--3_Navigation-Tab-size-variant-underline-line-indicator-height);
+  border-radius: var(--3_Navigation-Tab-size-variant-underline-line-indicator-radius);
+  background-color: transparent;
+  transition: background-color 120ms ease;
+}
+
+.igt-tab--variant-underline .igt-tab__item:hover:not(.igt-tab__item--active) {
+  color: var(--sys-content-neutral-strong);
+}
+
+.igt-tab--variant-underline .igt-tab__item--active {
+  color: var(--sys-content-neutral-strong);
+}
+
+.igt-tab--variant-underline .igt-tab__item--active::after {
+  background-color: var(--sys-interaction-selected-indicator-neutral);
+}
+
+/* =============================================================================
+   VARIANT: filled
+   ============================================================================= */
+
+.igt-tab--variant-filled {
+  background-color: var(--sys-background-subtle);
+  border-radius: var(--_tab-radius);
+  padding: 2px;
+  gap: 2px;
+}
+
+.igt-tab--variant-filled .igt-tab__item {
+  color: var(--sys-content-neutral-muted);
+  border-radius: calc(var(--_tab-radius) - 2px);
+  background-color: transparent;
+  padding: 0 var(--_tab-filled-padding-x);
+}
+
+.igt-tab--variant-filled .igt-tab__item:hover:not(.igt-tab__item--active) {
+  color: var(--sys-content-neutral-default);
+  background-color: var(--sys-interaction-hover-overlay-neutral);
+}
+
+.igt-tab--variant-filled .igt-tab__item--active {
+  background-color: var(--sys-container-neutral-tint-default);
+  color: var(--sys-content-neutral-strong);
+}
+
+/* =============================================================================
+   SIZES
+   ============================================================================= */
+
+/* ── Size: sm ───────────────────────────────────────────────────────────── */
+
+.igt-tab--size-sm {
+  --_tab-height: var(--3_Navigation-Tab-size-height-sm);
+  --_tab-item-gap: var(--3_Navigation-Tab-size-itemGap-sm);
+  --_tab-radius: var(--3_Navigation-Tab-size-radius-sm);
+  --_tab-filled-padding-x: var(--3_Navigation-Tab-size-variant-filled-paddingX-sm);
+  --_tab-font-size: var(--label-sm-semibold-font-size);
+  --_tab-line-height: var(--label-sm-semibold-line-height);
+  --_tab-font-weight-active: var(--label-sm-semibold-font-weight);
+  --_tab-font-weight-inactive: var(--label-sm-medium-font-weight);
+  --_tab-letter-spacing: var(--label-sm-semibold-letter-spacing);
+}
+
+/* ── Size: md ───────────────────────────────────────────────────────────── */
+
+.igt-tab--size-md {
+  --_tab-height: var(--3_Navigation-Tab-size-height-md);
+  --_tab-item-gap: var(--3_Navigation-Tab-size-itemGap-md);
+  --_tab-radius: var(--3_Navigation-Tab-size-radius-md);
+  --_tab-filled-padding-x: var(--3_Navigation-Tab-size-variant-filled-paddingX-md);
+  --_tab-font-size: var(--label-md-semibold-font-size);
+  --_tab-line-height: var(--label-md-semibold-line-height);
+  --_tab-font-weight-active: var(--label-md-semibold-font-weight);
+  --_tab-font-weight-inactive: var(--label-md-medium-font-weight);
+  --_tab-letter-spacing: var(--label-md-semibold-letter-spacing);
+}
+
+/* ── Size: lg ───────────────────────────────────────────────────────────── */
+
+.igt-tab--size-lg {
+  --_tab-height: var(--3_Navigation-Tab-size-height-lg);
+  --_tab-item-gap: var(--3_Navigation-Tab-size-itemGap-lg);
+  --_tab-radius: var(--3_Navigation-Tab-size-radius-lg);
+  --_tab-filled-padding-x: var(--3_Navigation-Tab-size-variant-filled-paddingX-lg);
+  --_tab-font-size: var(--label-lg-semibold-font-size);
+  --_tab-line-height: var(--label-lg-semibold-line-height);
+  --_tab-font-weight-active: var(--label-lg-semibold-font-weight);
+  --_tab-font-weight-inactive: var(--label-lg-medium-font-weight);
+  --_tab-letter-spacing: var(--label-lg-semibold-letter-spacing);
+}

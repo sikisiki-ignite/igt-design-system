@@ -1,0 +1,144 @@
+/* =============================================================================
+   IGT Design System — Tag
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-4);
+
+  height: var(--_tag-height);
+  padding: 0 var(--_tag-padding-x);
+  border-radius: var(--radius-radius-full);
+
+  background-color: var(--_tag-bg);
+  color: var(--_tag-text);
+
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--_tag-font-size);
+  line-height: var(--_tag-line-height);
+  font-weight: var(--_tag-font-weight);
+  letter-spacing: var(--_tag-letter-spacing);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Outline tone adds a border ───────────────────────────────────────────── */
+
+.igt-tag--tone-outline {
+  background-color: transparent;
+  border: 1px solid var(--_tag-text);
+}
+
+/* ── Remove button ────────────────────────────────────────────────────────── */
+
+.igt-tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-size: 0.75em;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 120ms ease;
+}
+
+.igt-tag__remove:hover {
+  opacity: 1;
+}
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-tag--size-xs {
+  --_tag-height: var(--size-20);
+  --_tag-padding-x: var(--spacing-6);
+  --_tag-font-size: var(--caption-sm-semibold-font-size);
+  --_tag-line-height: var(--caption-sm-semibold-line-height);
+  --_tag-font-weight: var(--caption-sm-semibold-font-weight);
+  --_tag-letter-spacing: var(--caption-sm-semibold-letter-spacing);
+}
+
+.igt-tag--size-sm {
+  --_tag-height: var(--size-24);
+  --_tag-padding-x: var(--spacing-6);
+  --_tag-font-size: var(--caption-sm-semibold-font-size);
+  --_tag-line-height: var(--caption-sm-semibold-line-height);
+  --_tag-font-weight: var(--caption-sm-semibold-font-weight);
+  --_tag-letter-spacing: var(--caption-sm-semibold-letter-spacing);
+}
+
+.igt-tag--size-md {
+  --_tag-height: var(--size-28);
+  --_tag-padding-x: var(--spacing-8);
+  --_tag-font-size: var(--caption-lg-semibold-font-size);
+  --_tag-line-height: var(--caption-lg-semibold-line-height);
+  --_tag-font-weight: var(--caption-lg-semibold-font-weight);
+  --_tag-letter-spacing: var(--caption-lg-semibold-letter-spacing);
+}
+
+.igt-tag--size-lg {
+  --_tag-height: var(--size-32);
+  --_tag-padding-x: var(--spacing-10);
+  --_tag-font-size: var(--caption-lg-semibold-font-size);
+  --_tag-line-height: var(--caption-lg-semibold-line-height);
+  --_tag-font-weight: var(--caption-lg-semibold-font-weight);
+  --_tag-letter-spacing: var(--caption-lg-semibold-letter-spacing);
+}
+
+.igt-tag--size-xl {
+  --_tag-height: var(--size-40);
+  --_tag-padding-x: var(--spacing-12);
+  --_tag-font-size: var(--caption-lg-semibold-font-size);
+  --_tag-line-height: var(--caption-lg-semibold-line-height);
+  --_tag-font-weight: var(--caption-lg-semibold-font-weight);
+  --_tag-letter-spacing: var(--caption-lg-semibold-letter-spacing);
+}
+
+/* =============================================================================
+   COLOR — soft tone (background + text)
+   ============================================================================= */
+
+.igt-tag--color-grey {
+  --_tag-bg: var(--sys-container-neutral-tint-default);
+  --_tag-text: var(--sys-content-neutral-default);
+}
+
+.igt-tag--color-blue,
+.igt-tag--color-semanticInfo {
+  --_tag-bg: var(--sys-container-status-info-tint-default);
+  --_tag-text: var(--sys-content-status-info-default);
+}
+
+.igt-tag--color-green,
+.igt-tag--color-semanticSuccess,
+.igt-tag--color-teal {
+  --_tag-bg: var(--sys-container-status-success-tint-default);
+  --_tag-text: var(--sys-content-status-success-default);
+}
+
+.igt-tag--color-orange,
+.igt-tag--color-semanticWarning,
+.igt-tag--color-yellow {
+  --_tag-bg: var(--sys-container-status-warning-tint-default);
+  --_tag-text: var(--sys-content-status-warning-default);
+}
+
+.igt-tag--color-red,
+.igt-tag--color-semanticDanger {
+  --_tag-bg: var(--sys-container-status-danger-tint-default);
+  --_tag-text: var(--sys-content-status-danger-default);
+}
+
+.igt-tag--color-purple {
+  --_tag-bg: var(--sys-container-status-info-tint-default);
+  --_tag-text: var(--sys-content-status-info-default);
+}

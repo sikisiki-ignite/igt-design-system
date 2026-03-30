@@ -1,0 +1,59 @@
+/* =============================================================================
+   IGT Design System — Badge
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--_badge-bg);
+  color: var(--_badge-text);
+  border-radius: var(--radius-9999);
+
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ── Kind: dot ────────────────────────────────────────────────────────────── */
+
+.igt-badge--kind-dot {
+  width: var(--size-8);
+  height: var(--size-8);
+}
+
+/* ── Kind: count ──────────────────────────────────────────────────────────── */
+
+.igt-badge--kind-count {
+  min-width: var(--size-16);
+  height: var(--size-16);
+  padding: 0 var(--spacing-3);
+
+  font-size: var(--caption-sm-semibold-font-size);
+  line-height: var(--caption-sm-semibold-line-height);
+  font-weight: var(--caption-sm-semibold-font-weight);
+  letter-spacing: var(--caption-sm-semibold-letter-spacing);
+}
+
+/* ── Tone: accent ─────────────────────────────────────────────────────────── */
+
+.igt-badge--tone-accent {
+  --_badge-bg: var(--sys-container-brand-solid-default);
+  --_badge-text: var(--sys-content-on-brand-solid-default);
+}
+
+/* ── Tone: neutral ────────────────────────────────────────────────────────── */
+
+.igt-badge--tone-neutral {
+  --_badge-bg: var(--sys-container-neutral-tint-default);
+  --_badge-text: var(--sys-content-neutral-strong);
+}
+
+/* ── Tone: urgent ─────────────────────────────────────────────────────────── */
+
+.igt-badge--tone-urgent {
+  --_badge-bg: var(--sys-container-status-danger-solid-default);
+  --_badge-text: var(--sys-content-on-status-danger-solid-default);
+}

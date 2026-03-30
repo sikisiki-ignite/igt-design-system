@@ -1,0 +1,75 @@
+/* =============================================================================
+   IGT Design System — ButtonGroup
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-buttongroup {
+  display: flex;
+  gap: var(--_bgrp-gap);
+}
+
+
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
+
+.igt-buttongroup--layout-inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.igt-buttongroup--layout-stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+/* =============================================================================
+   DISTRIBUTION
+   ============================================================================= */
+
+.igt-buttongroup--distribution-equal > * {
+  flex: 1;
+}
+
+.igt-buttongroup--distribution-content > * {
+  flex: none;
+}
+
+
+/* =============================================================================
+   SIZE — gap
+   ============================================================================= */
+
+.igt-buttongroup--layout-inline.igt-buttongroup--size-xs {
+  --_bgrp-gap: var(--layout-inline-gap-xs);
+}
+
+.igt-buttongroup--layout-inline.igt-buttongroup--size-sm {
+  --_bgrp-gap: var(--layout-inline-gap-sm);
+}
+
+.igt-buttongroup--layout-inline.igt-buttongroup--size-md {
+  --_bgrp-gap: var(--layout-inline-gap-md);
+}
+
+.igt-buttongroup--layout-inline.igt-buttongroup--size-lg {
+  --_bgrp-gap: var(--layout-inline-gap-lg);
+}
+
+.igt-buttongroup--layout-stack.igt-buttongroup--size-xs {
+  --_bgrp-gap: var(--layout-stack-gap-xs);
+}
+
+.igt-buttongroup--layout-stack.igt-buttongroup--size-sm {
+  --_bgrp-gap: var(--layout-stack-gap-sm);
+}
+
+.igt-buttongroup--layout-stack.igt-buttongroup--size-md {
+  --_bgrp-gap: var(--layout-stack-gap-md);
+}
+
+.igt-buttongroup--layout-stack.igt-buttongroup--size-lg {
+  --_bgrp-gap: var(--layout-stack-gap-lg);
+}

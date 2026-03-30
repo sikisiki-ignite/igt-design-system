@@ -1,0 +1,167 @@
+/* =============================================================================
+   IGT Design System — TextButton
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-textbutton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_tbtn-gap);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: var(--_tbtn-text-decoration);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  color: var(--_tbtn-color);
+  font-size: var(--_tbtn-font-size);
+  line-height: var(--_tbtn-line-height);
+  font-weight: var(--_tbtn-font-weight);
+  letter-spacing: var(--_tbtn-letter-spacing);
+
+  transition: color 120ms ease;
+}
+
+.igt-textbutton:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+  border-radius: 2px;
+}
+
+.igt-textbutton:disabled,
+.igt-textbutton--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igt-textbutton__label {
+  /* inline label wrapper */
+}
+
+.igt-textbutton__chevron {
+  font-size: 1.1em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-textbutton--size-xs {
+  --_tbtn-font-size: var(--label-xs-medium-font-size);
+  --_tbtn-line-height: var(--label-xs-medium-line-height);
+  --_tbtn-font-weight: var(--label-xs-medium-font-weight);
+  --_tbtn-letter-spacing: var(--label-xs-medium-letter-spacing);
+  --_tbtn-gap: var(--layout-inline-gap-xs);
+}
+
+.igt-textbutton--size-sm {
+  --_tbtn-font-size: var(--label-sm-medium-font-size);
+  --_tbtn-line-height: var(--label-sm-medium-line-height);
+  --_tbtn-font-weight: var(--label-sm-medium-font-weight);
+  --_tbtn-letter-spacing: var(--label-sm-medium-letter-spacing);
+  --_tbtn-gap: var(--layout-inline-gap-xs);
+}
+
+.igt-textbutton--size-md {
+  --_tbtn-font-size: var(--label-md-medium-font-size);
+  --_tbtn-line-height: var(--label-md-medium-line-height);
+  --_tbtn-font-weight: var(--label-md-medium-font-weight);
+  --_tbtn-letter-spacing: var(--label-md-medium-letter-spacing);
+  --_tbtn-gap: var(--layout-inline-gap-xs);
+}
+
+.igt-textbutton--size-lg {
+  --_tbtn-font-size: var(--label-lg-medium-font-size);
+  --_tbtn-line-height: var(--label-lg-medium-line-height);
+  --_tbtn-font-weight: var(--label-lg-medium-font-weight);
+  --_tbtn-letter-spacing: var(--label-lg-medium-letter-spacing);
+  --_tbtn-gap: var(--layout-inline-gap-xs);
+}
+
+
+/* =============================================================================
+   VARIANT — underline / chevron
+   ============================================================================= */
+
+.igt-textbutton--variant-plain {
+  --_tbtn-text-decoration: none;
+}
+
+.igt-textbutton--variant-underline {
+  --_tbtn-text-decoration: underline;
+}
+
+.igt-textbutton--variant-chevron {
+  --_tbtn-text-decoration: none;
+}
+
+
+/* =============================================================================
+   TONE — color
+   ============================================================================= */
+
+/* accent */
+.igt-textbutton--tone-accent {
+  --_tbtn-color: var(--sys-content-brand-default);
+}
+.igt-textbutton--tone-accent:hover {
+  --_tbtn-color: var(--sys-content-brand-strong);
+}
+.igt-textbutton--tone-accent:active {
+  --_tbtn-color: var(--sys-content-brand-strong);
+}
+.igt-textbutton--tone-accent:disabled,
+.igt-textbutton--tone-accent.igt-textbutton--disabled {
+  --_tbtn-color: var(--sys-content-brand-disabled);
+}
+
+/* danger */
+.igt-textbutton--tone-danger {
+  --_tbtn-color: var(--sys-content-status-danger-default);
+}
+.igt-textbutton--tone-danger:hover {
+  --_tbtn-color: var(--sys-content-status-danger-strong);
+}
+.igt-textbutton--tone-danger:active {
+  --_tbtn-color: var(--sys-content-status-danger-strong);
+}
+.igt-textbutton--tone-danger:disabled,
+.igt-textbutton--tone-danger.igt-textbutton--disabled {
+  --_tbtn-color: var(--sys-content-status-danger-disabled);
+}
+
+/* neutral */
+.igt-textbutton--tone-neutral {
+  --_tbtn-color: var(--sys-content-neutral-default);
+}
+.igt-textbutton--tone-neutral:hover {
+  --_tbtn-color: var(--sys-content-neutral-strong);
+}
+.igt-textbutton--tone-neutral:active {
+  --_tbtn-color: var(--sys-content-neutral-strong);
+}
+.igt-textbutton--tone-neutral:disabled,
+.igt-textbutton--tone-neutral.igt-textbutton--disabled {
+  --_tbtn-color: var(--sys-content-neutral-disabled);
+}
+
+/* neutralMuted */
+.igt-textbutton--tone-neutralMuted {
+  --_tbtn-color: var(--sys-content-neutral-muted);
+}
+.igt-textbutton--tone-neutralMuted:hover {
+  --_tbtn-color: var(--sys-content-neutral-default);
+}
+.igt-textbutton--tone-neutralMuted:active {
+  --_tbtn-color: var(--sys-content-neutral-default);
+}
+.igt-textbutton--tone-neutralMuted:disabled,
+.igt-textbutton--tone-neutralMuted.igt-textbutton--disabled {
+  --_tbtn-color: var(--sys-content-neutral-disabled);
+}

@@ -1,0 +1,169 @@
+/* =============================================================================
+   IGT Design System — SearchField
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-searchfield {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border-radius: var(--_sf-radius);
+  border: var(--recipe-field-base-width-default) solid var(--sys-border-field-normal-default);
+  background-color: transparent;
+  gap: var(--_sf-gap);
+  padding: 0 var(--_sf-padding-end) 0 var(--_sf-padding-start);
+  height: var(--_sf-height);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.igt-searchfield:hover {
+  border-color: var(--sys-border-field-hover);
+}
+
+.igt-searchfield:focus-within {
+  border-color: var(--sys-border-field-focus);
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-searchfield--disabled {
+  border-color: var(--sys-border-field-disabled);
+  background-color: var(--sys-container-field-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Icon ─────────────────────────────────────────────────────────────────── */
+
+.igt-searchfield__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: var(--_sf-icon-size);
+  color: var(--sys-content-neutral-muted);
+  pointer-events: none;
+}
+
+.igt-searchfield--disabled .igt-searchfield__icon {
+  color: var(--sys-content-neutral-disabled);
+}
+
+/* ── Input ────────────────────────────────────────────────────────────────── */
+
+.igt-searchfield__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--sys-content-neutral-default);
+  font-family: var(--body-md-regular-font-family);
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+}
+
+/* remove browser-default search decorations */
+.igt-searchfield__input::-webkit-search-decoration,
+.igt-searchfield__input::-webkit-search-cancel-button,
+.igt-searchfield__input::-webkit-search-results-button,
+.igt-searchfield__input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.igt-searchfield__input::placeholder {
+  color: var(--sys-content-neutral-placeholder);
+}
+
+.igt-searchfield__input:disabled {
+  color: var(--sys-content-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Clear Button ─────────────────────────────────────────────────────────── */
+
+.igt-searchfield__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: var(--_sf-icon-size);
+  color: var(--sys-content-neutral-muted);
+  border-radius: var(--radius-radius-full);
+  transition: color 120ms ease;
+}
+
+.igt-searchfield__clear:hover {
+  color: var(--sys-content-neutral-default);
+}
+
+.igt-searchfield__clear:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+
+/* =============================================================================
+   SIZE — standard density
+   ============================================================================= */
+
+/* xs maps to sm field token height */
+.igt-searchfield--size-xs {
+  --_sf-height: var(--recipe-field-base-height-sm);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-xs);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-xs);
+  --_sf-radius: var(--recipe-field-base-radius-xs);
+  --_sf-gap: var(--recipe-field-base-gap-xs);
+  --_sf-icon-size: var(--recipe-field-base-icon-size-sm);
+}
+
+.igt-searchfield--size-md {
+  --_sf-height: var(--recipe-field-base-height-md);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-md);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-md);
+  --_sf-radius: var(--recipe-field-base-radius-md);
+  --_sf-gap: var(--recipe-field-base-gap-md);
+  --_sf-icon-size: var(--recipe-field-base-icon-size-md);
+}
+
+.igt-searchfield--size-lg {
+  --_sf-height: var(--recipe-field-base-height-lg);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-lg);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-lg);
+  --_sf-radius: var(--recipe-field-base-radius-lg);
+  --_sf-gap: var(--recipe-field-base-gap-lg);
+  --_sf-icon-size: var(--recipe-field-base-icon-size-lg);
+}
+
+/* ── compact density overrides ────────────────────────────────────────────── */
+
+.igt-searchfield--density-compact.igt-searchfield--size-xs {
+  --_sf-height: var(--recipe-field-base-height-compact-xs);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-compact-xs);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-compact-xs);
+  --_sf-gap: var(--recipe-field-base-gap-compact-xs);
+}
+
+.igt-searchfield--density-compact.igt-searchfield--size-md {
+  --_sf-height: var(--recipe-field-base-height-compact-md);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-compact-md);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-compact-md);
+  --_sf-gap: var(--recipe-field-base-gap-compact-md);
+}
+
+.igt-searchfield--density-compact.igt-searchfield--size-lg {
+  --_sf-height: var(--recipe-field-base-height-compact-lg);
+  --_sf-padding-start: var(--recipe-field-base-padding-start-compact-lg);
+  --_sf-padding-end: var(--recipe-field-base-padding-end-compact-lg);
+  --_sf-gap: var(--recipe-field-base-gap-compact-lg);
+}

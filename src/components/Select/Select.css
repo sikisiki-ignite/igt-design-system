@@ -1,0 +1,150 @@
+/* =============================================================================
+   IGT Design System — Select
+   Consumes tokens from src/tokens/
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-select {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: var(--_sel-height);
+  border-radius: var(--_sel-radius);
+  border: var(--recipe-field-base-width-default) solid var(--_sel-border-color);
+  background-color: var(--_sel-bg);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.igt-select:hover {
+  border-color: var(--_sel-border-hover-color);
+}
+
+.igt-select:focus-within {
+  border-color: var(--sys-border-field-focus);
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-select--disabled {
+  background-color: var(--sys-container-field-disabled);
+  border-color: var(--sys-border-field-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igt-select--error {
+  border-color: var(--sys-border-field-error);
+}
+
+/* ── Native Select ────────────────────────────────────────────────────────── */
+
+.igt-select__native {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1;
+  height: 100%;
+  padding: 0 var(--_sel-padding-end-trailing) 0 var(--_sel-padding-start);
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  color: var(--sys-content-neutral-default);
+  font-family: var(--body-md-regular-font-family);
+  font-size: var(--body-md-regular-font-size);
+  line-height: var(--body-md-regular-line-height);
+  font-weight: var(--body-md-regular-font-weight);
+  letter-spacing: var(--body-md-regular-letter-spacing);
+}
+
+.igt-select__native:disabled {
+  color: var(--sys-content-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ── Arrow ────────────────────────────────────────────────────────────────── */
+
+.igt-select__arrow {
+  position: absolute;
+  right: var(--_sel-arrow-inset);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  font-size: var(--_sel-icon-size);
+  color: var(--sys-content-neutral-muted);
+}
+
+.igt-select--disabled .igt-select__arrow {
+  color: var(--sys-content-neutral-disabled);
+}
+
+
+/* =============================================================================
+   TYPE
+   ============================================================================= */
+
+/* filled */
+.igt-select--type-filled {
+  --_sel-bg: var(--sys-container-field-normal);
+  --_sel-border-color: transparent;
+  --_sel-border-hover-color: var(--sys-border-field-hover);
+}
+
+/* outlined */
+.igt-select--type-outlined {
+  --_sel-bg: transparent;
+  --_sel-border-color: var(--sys-border-field-normal-default);
+  --_sel-border-hover-color: var(--sys-border-field-hover);
+}
+
+/* plain — minimal, no bg or border */
+.igt-select--type-plain {
+  --_sel-bg: transparent;
+  --_sel-border-color: transparent;
+  --_sel-border-hover-color: transparent;
+}
+
+.igt-select--type-plain:focus-within {
+  border-color: transparent;
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-border-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+/* xs maps to sm field height token */
+.igt-select--size-xs {
+  --_sel-height: var(--recipe-field-base-height-sm);
+  --_sel-padding-start: var(--recipe-field-base-padding-start-xs);
+  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-xs);
+  --_sel-radius: var(--recipe-field-base-radius-xs);
+  --_sel-icon-size: var(--recipe-field-base-icon-size-sm);
+  --_sel-arrow-inset: var(--recipe-field-base-padding-end-xs);
+}
+
+.igt-select--size-sm {
+  --_sel-height: var(--recipe-field-base-height-sm);
+  --_sel-padding-start: var(--recipe-field-base-padding-start-sm);
+  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-sm);
+  --_sel-radius: var(--recipe-field-base-radius-sm);
+  --_sel-icon-size: var(--recipe-field-base-icon-size-sm);
+  --_sel-arrow-inset: var(--recipe-field-base-padding-end-sm);
+}
+
+.igt-select--size-md {
+  --_sel-height: var(--recipe-field-base-height-md);
+  --_sel-padding-start: var(--recipe-field-base-padding-start-md);
+  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-md);
+  --_sel-radius: var(--recipe-field-base-radius-md);
+  --_sel-icon-size: var(--recipe-field-base-icon-size-md);
+  --_sel-arrow-inset: var(--recipe-field-base-padding-end-md);
+}

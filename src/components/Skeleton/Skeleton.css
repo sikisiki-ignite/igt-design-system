@@ -1,0 +1,83 @@
+/* =============================================================================
+   IGT Design System — Skeleton
+   ============================================================================= */
+
+/* ── Shimmer keyframe ─────────────────────────────────────────────────────── */
+
+@keyframes igt-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ── Shared shimmer mixin (applied via common selector) ───────────────────── */
+
+.igt-skeleton-rect,
+.igt-skeleton-circle,
+.igt-skeleton-text {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--sys-surface-grouped-default) 25%,
+    var(--sys-surface-base)             50%,
+    var(--sys-surface-grouped-default) 75%
+  );
+  background-size: 200% 100%;
+  animation: igt-shimmer 1.5s infinite;
+}
+
+/* =============================================================================
+   SkeletonRect
+   ============================================================================= */
+
+.igt-skeleton-rect {
+  width: 100%;
+  height: var(--_skel-rect-height);
+  border-radius: var(--_skel-rect-radius);
+}
+
+/* — size — */
+.igt-skeleton-rect--size-xs { --_skel-rect-height: var(--size-16); }
+.igt-skeleton-rect--size-sm { --_skel-rect-height: var(--size-20); }
+.igt-skeleton-rect--size-md { --_skel-rect-height: var(--size-24); }
+.igt-skeleton-rect--size-lg { --_skel-rect-height: var(--size-32); }
+.igt-skeleton-rect--size-xl { --_skel-rect-height: var(--size-40); }
+
+/* — radius — */
+.igt-skeleton-rect--radius-none { --_skel-rect-radius: var(--radius-0); }
+.igt-skeleton-rect--radius-xs   { --_skel-rect-radius: var(--radius-2); }
+.igt-skeleton-rect--radius-sm   { --_skel-rect-radius: var(--radius-4); }
+.igt-skeleton-rect--radius-md   { --_skel-rect-radius: var(--radius-8); }
+.igt-skeleton-rect--radius-lg   { --_skel-rect-radius: var(--radius-12); }
+
+/* =============================================================================
+   SkeletonCircle
+   ============================================================================= */
+
+.igt-skeleton-circle {
+  width: var(--_skel-circle-size);
+  height: var(--_skel-circle-size);
+  border-radius: var(--radius-9999);
+  flex-shrink: 0;
+}
+
+.igt-skeleton-circle--size-xs { --_skel-circle-size: var(--size-16); }
+.igt-skeleton-circle--size-sm { --_skel-circle-size: var(--size-20); }
+.igt-skeleton-circle--size-md { --_skel-circle-size: var(--size-24); }
+.igt-skeleton-circle--size-lg { --_skel-circle-size: var(--size-32); }
+.igt-skeleton-circle--size-xl { --_skel-circle-size: var(--size-40); }
+
+/* =============================================================================
+   SkeletonText
+   ============================================================================= */
+
+.igt-skeleton-text {
+  width: 100%;
+  height: var(--_skel-text-height);
+  border-radius: var(--radius-4);
+}
+
+.igt-skeleton-text--size-xs { --_skel-text-height: 12px; }
+.igt-skeleton-text--size-sm { --_skel-text-height: 14px; }
+.igt-skeleton-text--size-md { --_skel-text-height: 16px; }
+.igt-skeleton-text--size-lg { --_skel-text-height: 20px; }
+.igt-skeleton-text--size-xl { --_skel-text-height: 24px; }

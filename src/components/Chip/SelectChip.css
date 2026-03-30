@@ -1,0 +1,144 @@
+/* =============================================================================
+   IGT Design System — SelectChip
+   ============================================================================= */
+
+.igt-selectchip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  height: var(--_chip-height);
+  padding: 0 var(--_chip-padding-x);
+  border-radius: var(--_chip-radius);
+
+  background-color: var(--_chip-bg);
+  color: var(--_chip-text);
+  border-color: var(--_chip-border);
+
+  font-size: var(--_chip-font-size);
+  line-height: var(--_chip-line-height);
+  font-weight: var(--_chip-font-weight);
+  letter-spacing: var(--_chip-letter-spacing);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.igt-selectchip:focus-visible {
+  outline: var(--recipe-focus-ring-border-width) solid var(--sys-content-brand-default);
+  outline-offset: var(--recipe-focus-ring-offset);
+}
+
+.igt-selectchip__check {
+  font-style: normal;
+}
+
+/* ── Variant: fill — unselected ─────────────────────────────────────────── */
+
+.igt-selectchip--variant-fill {
+  --_chip-bg: var(--sys-container-neutral-tint-default);
+  --_chip-text: var(--sys-content-neutral-default);
+  --_chip-border: var(--sys-border-neutral-default);
+}
+
+.igt-selectchip--variant-fill:hover:not(:disabled):not(.igt-selectchip--disabled) {
+  --_chip-bg: var(--sys-container-neutral-tint-strong);
+  --_chip-border: var(--sys-border-neutral-strong);
+}
+
+/* ── Variant: fill — selected ───────────────────────────────────────────── */
+
+.igt-selectchip--variant-fill.igt-selectchip--selected {
+  --_chip-bg: var(--sys-container-brand-tint-strong);
+  --_chip-text: var(--sys-content-brand-default);
+  --_chip-border: var(--sys-border-brand-default);
+}
+
+.igt-selectchip--variant-fill.igt-selectchip--selected:hover:not(:disabled):not(.igt-selectchip--disabled) {
+  --_chip-bg: var(--sys-container-brand-tint-strong);
+  --_chip-border: var(--sys-border-brand-strong);
+}
+
+/* ── Variant: outline — unselected ─────────────────────────────────────── */
+
+.igt-selectchip--variant-outline {
+  --_chip-bg: transparent;
+  --_chip-text: var(--sys-content-neutral-default);
+  --_chip-border: var(--sys-border-neutral-default);
+}
+
+.igt-selectchip--variant-outline:hover:not(:disabled):not(.igt-selectchip--disabled) {
+  --_chip-border: var(--sys-border-neutral-strong);
+}
+
+/* ── Variant: outline — selected ────────────────────────────────────────── */
+
+.igt-selectchip--variant-outline.igt-selectchip--selected {
+  --_chip-bg: transparent;
+  --_chip-text: var(--sys-content-brand-default);
+  --_chip-border: var(--sys-border-brand-default);
+}
+
+.igt-selectchip--variant-outline.igt-selectchip--selected:hover:not(:disabled):not(.igt-selectchip--disabled) {
+  --_chip-border: var(--sys-border-brand-strong);
+}
+
+/* ── Disabled state ─────────────────────────────────────────────────────── */
+
+.igt-selectchip:disabled,
+.igt-selectchip--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  --_chip-bg: var(--sys-container-neutral-tint-disabled);
+  --_chip-text: var(--sys-content-neutral-disabled);
+  --_chip-border: var(--sys-border-neutral-disabled);
+}
+
+.igt-selectchip--variant-outline:disabled,
+.igt-selectchip--variant-outline.igt-selectchip--disabled {
+  --_chip-bg: transparent;
+}
+
+/* ── Size: xs ───────────────────────────────────────────────────────────── */
+
+.igt-selectchip--size-xs {
+  --_chip-height: var(--recipe-action-base-common-height-xs);
+  --_chip-padding-x: var(--recipe-action-base-button-like-padding-x-xs);
+  --_chip-radius: var(--recipe-action-base-button-like-radius-xs);
+  --_chip-font-size: var(--label-xs-medium-font-size);
+  --_chip-line-height: var(--label-xs-medium-line-height);
+  --_chip-font-weight: var(--label-xs-medium-font-weight);
+  --_chip-letter-spacing: var(--label-xs-medium-letter-spacing);
+}
+
+/* ── Size: sm ───────────────────────────────────────────────────────────── */
+
+.igt-selectchip--size-sm {
+  --_chip-height: var(--recipe-action-base-common-height-sm);
+  --_chip-padding-x: var(--recipe-action-base-button-like-padding-x-sm);
+  --_chip-radius: var(--recipe-action-base-button-like-radius-sm);
+  --_chip-font-size: var(--label-sm-medium-font-size);
+  --_chip-line-height: var(--label-sm-medium-line-height);
+  --_chip-font-weight: var(--label-sm-medium-font-weight);
+  --_chip-letter-spacing: var(--label-sm-medium-letter-spacing);
+}
+
+/* ── Size: md ───────────────────────────────────────────────────────────── */
+
+.igt-selectchip--size-md {
+  --_chip-height: var(--recipe-action-base-common-height-md);
+  --_chip-padding-x: var(--recipe-action-base-button-like-padding-x-md);
+  --_chip-radius: var(--recipe-action-base-button-like-radius-md);
+  --_chip-font-size: var(--label-md-medium-font-size);
+  --_chip-line-height: var(--label-md-medium-line-height);
+  --_chip-font-weight: var(--label-md-medium-font-weight);
+  --_chip-letter-spacing: var(--label-md-medium-letter-spacing);
+}
