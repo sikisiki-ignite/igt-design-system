@@ -70,6 +70,8 @@ StatusIndicator  size: xs|sm|md|lg  tone: active|inactive|attention|error
 TopNavigation    breakpoint: md-lg|xl  isLoggedIn?
 SideNavigation   size: sm|md  tone: neutral|accent
                  items: { label, href?, depth?: 1|2|3, state?: default|current|disabled, children? }[]
+                 ⚠️ width: 100% 고정 — 반드시 고정 너비 컨테이너로 감쌀 것:
+                 <div style={{ width: '220px', flexShrink: 0 }}><SideNavigation .../></div>
 Breadcrumb       separator: chevron|dot|slash  leading: none|home
                  items: { label, href? }[]
 Pagination       variant: default|minimal  size: sm|md  currentPage totalPages onChange
