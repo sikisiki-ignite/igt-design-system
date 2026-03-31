@@ -441,6 +441,7 @@ export type SideNavigationTone = 'neutral' | 'accent'
 export interface SideNavigationProps {
   size?: SideNavigationSize
   tone?: SideNavigationTone
+  width?: number | string
   items: {
     label: string
     href?: string

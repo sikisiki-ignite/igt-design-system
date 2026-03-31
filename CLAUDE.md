@@ -239,10 +239,21 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 | 컴포넌트 | 주요 Props | 설명 |
 |----------|------------|------|
 | `TopNavigation` | `breakpoint`, `isLoggedIn` | 상단 네비게이션 |
-| `SideNavigation` | `size`, `tone` | 사이드 네비게이션 |
+| `SideNavigation` | `size`, `tone`, `width` | 사이드 네비게이션 |
 | `Breadcrumb` | `separator`, `leading` | 브레드크럼 |
 | `Pagination` | `variant`, `size` | 페이지네이션 |
 | `Accordion` | `type`, `size` | 아코디언 |
+
+### SideNavigation 사용 예시
+```tsx
+// ✅ width prop으로 너비 지정 (내부 CSS가 width: 100%로 고정되어 있어 반드시 명시)
+<SideNavigation width={240} size="md" tone="neutral" items={items} />
+<SideNavigation width="20%" size="sm" tone="accent" items={items} />
+
+// ✅ size 값: sm | md
+// ✅ tone 값: neutral | accent
+// ⚠️  width 미지정 시 부모 컨테이너 100%를 차지하므로 레이아웃이 깨질 수 있음
+```
 
 ### Loading (로딩)
 | 컴포넌트 | 주요 Props | 설명 |
@@ -272,6 +283,56 @@ export function ComponentName({ prop1, prop2, ...rest }: ComponentNameProps) {
     // 구현
   )
 }
+```
+
+---
+
+## 레이아웃 정책
+
+### 글로벌 리셋
+`src/global.css` 가 `html, body, #root { height: 100%; overflow: hidden; }` 을 적용합니다.
+이 덕분에 브라우저 기본 스크롤이 제거되며, **스크롤은 반드시 페이지 내부 특정 영역에서만 발생**해야 합니다.
+
+### 이중 스크롤 방지 규칙
+```tsx
+// ❌ 금지 — 루트 컨테이너에 minHeight 사용
+<div style={{ minHeight: '100vh' }}>
+
+// ✅ 대체 — height: 100vh 또는 height: '100%' 사용
+<div style={{ height: '100vh', display: 'flex', overflow: 'hidden' }}>
+```
+
+- 페이지 루트 컨테이너: `height: '100vh'` + `overflow: 'hidden'`
+- 스크롤이 필요한 영역: `flex: 1` + `overflow: 'auto'` (단 하나의 컨테이너에만 적용)
+- 사이드바 / 헤더: `overflow: 'hidden'` 또는 `overflow` 미지정
+
+### PC 해상도 정책
+이 프로젝트는 **PC 전용** 입니다. 모바일/태블릿 대응 불필요.
+
+| 구분 | 값 | 설명 |
+|---|---|---|
+| 최소 지원 너비 | `1280px` | 이 미만에서는 레이아웃 보장 안 함 |
+| 권장 콘텐츠 최대 너비 | `1920px` | 이상에서는 여백으로 처리 |
+| 사이드바 너비 | `220px` ~ `280px` | 고정 너비 권장 |
+| 콘텐츠 영역 내부 최대 너비 | 별도 지정 없으면 `100%` | 필요 시 `maxWidth: 1400` 사용 |
+
+```tsx
+// ✅ PC 페이지 레이아웃 기본 템플릿
+<div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+  {/* 사이드바 */}
+  <SideNavigation width={240} ... />
+
+  {/* 메인 콘텐츠 */}
+  <main style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, overflow: 'hidden' }}>
+    {/* 헤더 (고정) */}
+    <header style={{ flexShrink: 0 }}>...</header>
+
+    {/* 스크롤 영역 (단 하나) */}
+    <div style={{ flex: 1, overflow: 'auto' }}>
+      ...
+    </div>
+  </main>
+</div>
 ```
 
 ---

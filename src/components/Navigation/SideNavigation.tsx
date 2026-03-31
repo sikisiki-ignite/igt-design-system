@@ -85,6 +85,7 @@ function NavItems({ items, size, tone }: NavItemsProps) {
 export function SideNavigation({
   size = 'md',
   tone = 'neutral',
+  width,
   items,
 }: SideNavigationProps) {
   return (
@@ -94,6 +95,7 @@ export function SideNavigation({
         `igt-sidenav--size-${size}`,
         `igt-sidenav--tone-${tone}`,
       ].join(' ')}
+      style={width !== undefined ? { width } : undefined}
     >
       <NavItems items={items} size={size} tone={tone} />
     </nav>

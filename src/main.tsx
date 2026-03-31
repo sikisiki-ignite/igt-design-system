@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './global.css'
 import './tokens/index.css'
 import { Preview } from './Preview'
 import { FinanceDashboard } from './pages/FinanceDashboard/FinanceDashboard'
