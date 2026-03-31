@@ -8,6 +8,7 @@ export * from './IconButton'
 export * from './FloatingButton'
 export * from './ButtonGroup'
 export * from './Link'
+export * from './OverlayAction'
 
 // ── Form Inputs ───────────────────────────────────────────────
 export * from './TextField'
