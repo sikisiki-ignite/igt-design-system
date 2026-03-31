@@ -20,11 +20,14 @@
 ### 레이아웃/네비게이션
 ```
 TopNavigation    isLoggedIn?  breakpoint: md-lg|xl
-SideNavigation   size: sm|md  tone: neutral|accent  items[]
-Breadcrumb       separator: chevron|dot|slash  leading: none|home  items[]
-Pagination       variant: default|minimal  currentPage totalPages onChange
+SideNavigation   size: sm|md  tone: neutral|accent
+                 items: { label, href?, depth?: 1|2|3, state?: default|current|disabled, children? }[]
+Breadcrumb       separator: chevron|dot|slash  leading: none|home
+                 items: { label, href? }[]
+Pagination       variant: default|minimal  size: sm|md  currentPage totalPages onChange
 Tab              variant: filled|underline  layout: fixed|scrollable  size: sm|md|lg
-Accordion        type: contained|plain  size: sm|md|lg
+                 value  tabs: { label, value }[]  onChange   ← value/tabs/onChange 필수
+Accordion        type: contained|plain  size: sm|md|lg  title  (children: 내용)
 Divider          direction: horizontal|vertical  emphasis: weak|default|strong
 ```
 
@@ -48,12 +51,28 @@ IconButton     tone: neutral|subtle  variant: fill|outline|ghost  size: xs|sm|md
 ButtonGroup    layout: inline|stack  distribution: content|equal
 ```
 
+### 선택
+```
+SegmentedControl  size: xs|sm|md  content: text|icon|iconText
+                  value  segments: { label, value, icon? }[]  onChange   ← value/segments/onChange 필수
+```
+
 ### 표시
 ```
-Badge          kind: count|dot  tone: accent|neutral|urgent
-Tag            color: grey|blue|green|orange|purple|red|teal|yellow|semanticDanger|semanticInfo|semanticSuccess|semanticWarning  tone: soft|outline
-Avatar         size: xs|sm|md|lg|xl  shape: circle|rounded
-StatusIndicator  tone: active|inactive|attention|error
+Badge          kind: count|dot  tone: accent|neutral|urgent  count?  ← kind=count일 때 count 필수
+Tag            size: xs|sm|md|lg  tone: soft|outline
+               color: grey|blue|green|orange|purple|red|teal|yellow|semanticDanger|semanticInfo|semanticSuccess|semanticWarning
+Avatar         size: xs|sm|md|lg|xl  shape: circle|rounded  src?  fallback?
+StatusIndicator  size: xs|sm|md|lg  tone: active|inactive|attention|error
+```
+
+### 테이블
+```
+Table          size: sm|md|lg  data[]  getRowKey  selectable?  loading?  empty?  onRowClick?
+               columns: { key, header, width?, align?: left|right|center, cell: (row, i) => ReactNode }[]
+               ← columns/data/getRowKey 필수
+
+TableCellStrong  overline  title   ← overline/title 모두 필수, children 방식 아님
 ```
 
 ### 피드백

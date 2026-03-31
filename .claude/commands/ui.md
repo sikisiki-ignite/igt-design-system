@@ -68,10 +68,20 @@ StatusIndicator  size: xs|sm|md|lg  tone: active|inactive|attention|error
 ### Navigation
 ```
 TopNavigation    breakpoint: md-lg|xl  isLoggedIn?
-SideNavigation   size: sm|md  tone: neutral|accent  items[]
-Breadcrumb       separator: chevron|dot|slash  leading: none|home  items[]
+SideNavigation   size: sm|md  tone: neutral|accent
+                 items: { label, href?, depth?: 1|2|3, state?: default|current|disabled, children? }[]
+Breadcrumb       separator: chevron|dot|slash  leading: none|home
+                 items: { label, href? }[]
 Pagination       variant: default|minimal  size: sm|md  currentPage totalPages onChange
 Accordion        type: contained|plain  size: sm|md|lg  title
+```
+
+### Table
+```
+Table            size: sm|md|lg  data[]  getRowKey  selectable?  loading?  empty?  onRowClick?
+                 columns: { key, header, width?, align?: left|right|center, cell: (row, i) => ReactNode }[]
+                 ← columns/data/getRowKey 필수
+TableCellStrong  overline  title   ← overline/title 필수 (children 방식 아님)
 ```
 
 ### Loading
