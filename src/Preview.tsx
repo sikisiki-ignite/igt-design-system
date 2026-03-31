@@ -7,6 +7,7 @@ import { IconButton } from './components/IconButton'
 import { FloatingButton } from './components/FloatingButton'
 import { ButtonGroup } from './components/ButtonGroup'
 import { Link } from './components/Link'
+import { OverlayAction } from './components/OverlayAction'
 
 // Form Inputs
 import { TextField } from './components/TextField'
@@ -285,6 +286,25 @@ export function Preview() {
               <IconButton tone="neutral" variant="fill" size="xs" icon="★" aria-label="xs" />
               <IconButton tone="neutral" variant="fill" size="sm" icon="★" aria-label="sm" />
               <IconButton tone="neutral" variant="fill" size="md" icon="★" aria-label="md" />
+            </Row>
+          </Section>
+
+          <Section title="OverlayAction">
+            <Row>
+              <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                <OverlayAction tone="default" size="xs" icon="▶" aria-label="xs" />
+                <OverlayAction tone="default" size="sm" icon="▶" aria-label="sm" />
+                <OverlayAction tone="default" size="md" icon="▶" aria-label="md" />
+              </div>
+              <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                <OverlayAction tone="inverse" size="xs" icon="▶" aria-label="xs inverse" />
+                <OverlayAction tone="inverse" size="sm" icon="▶" aria-label="sm inverse" />
+                <OverlayAction tone="inverse" size="md" icon="▶" aria-label="md inverse" />
+              </div>
+              <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                <OverlayAction tone="default" size="md" state="disabled" icon="▶" aria-label="disabled" />
+                <OverlayAction tone="default" size="md" state="loading"  icon="▶" aria-label="loading" />
+              </div>
             </Row>
           </Section>
 
