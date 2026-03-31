@@ -493,6 +493,21 @@ export interface NumberStepperProps {
   onChange: (value: number) => void
 }
 
+// ─── OverlayAction ───────────────────────────────────────
+
+export type OverlayActionTone = 'default' | 'inverse'
+export type OverlayActionSize = 'xs' | 'sm' | 'md'
+export type OverlayActionState = 'normal' | 'hover' | 'pressed' | 'disabled' | 'loading'
+
+export interface OverlayActionProps {
+  tone?: OverlayActionTone
+  size?: OverlayActionSize
+  state?: OverlayActionState
+  icon: React.ReactNode
+  'aria-label': string
+  onClick?: () => void
+}
+
 // ─── Table ───────────────────────────────────────────────────
 
 export type TableSize = 'sm' | 'md' | 'lg'

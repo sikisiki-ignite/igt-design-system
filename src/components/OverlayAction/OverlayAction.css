@@ -1,0 +1,147 @@
+/* =============================================================================
+   IGT Design System — OverlayAction
+   Circular icon button for use on top of images / overlay surfaces.
+   Tones: default (semi-transparent) | inverse (opaque white)
+   ============================================================================= */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.igt-overlay-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-style: solid;
+  -webkit-font-smoothing: antialiased;
+
+  width: var(--_oa-size);
+  height: var(--_oa-size);
+  border-radius: var(--recipe-actionBase-iconButtonLike-radius-circle);
+  border-width: var(--_oa-border-width, 0px);
+
+  background-color: var(--_oa-bg);
+  color: var(--_oa-color);
+  border-color: var(--_oa-border-color);
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.igt-overlay-action:focus-visible {
+  outline: var(--recipe-focusRing-borderWidth) solid var(--recipe-focusRing-onOverlay);
+  outline-offset: var(--recipe-focusRing-offset);
+}
+
+.igt-overlay-action:disabled,
+.igt-overlay-action--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.igt-overlay-action__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_oa-icon-size);
+  height: var(--_oa-icon-size);
+}
+
+.igt-overlay-action__spinner {
+  flex-shrink: 0;
+  width: var(--_oa-icon-size);
+  height: var(--_oa-icon-size);
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--recipe-actionBase-iconButtonLike-radius-circle);
+  animation: igt-overlay-action-spin 0.6s linear infinite;
+}
+
+@keyframes igt-overlay-action-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* =============================================================================
+   SIZE
+   ============================================================================= */
+
+.igt-overlay-action--size-xs {
+  --_oa-size:      var(--1_Action-OverlayAction-size-container-xs);
+  --_oa-icon-size: var(--1_Action-OverlayAction-size-icon-xs);
+}
+
+.igt-overlay-action--size-sm {
+  --_oa-size:      var(--1_Action-OverlayAction-size-container-sm);
+  --_oa-icon-size: var(--1_Action-OverlayAction-size-icon-sm);
+}
+
+.igt-overlay-action--size-md {
+  --_oa-size:      var(--1_Action-OverlayAction-size-container-md);
+  --_oa-icon-size: var(--1_Action-OverlayAction-size-icon-md);
+}
+
+
+/* =============================================================================
+   COLOR — tone: default
+   Semi-transparent overlay on dark or image backgrounds
+   ============================================================================= */
+
+.igt-overlay-action--tone-default {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-default-container-normal);
+  --_oa-color:        var(--1_Action-OverlayAction-color-default-icon-normal);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-default-border-default);
+}
+
+.igt-overlay-action--tone-default:hover {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-default-container-hover);
+  --_oa-color:        var(--1_Action-OverlayAction-color-default-icon-hover);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-default-border-hover);
+}
+
+.igt-overlay-action--tone-default:active {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-default-container-pressed);
+  --_oa-color:        var(--1_Action-OverlayAction-color-default-icon-pressed);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-default-border-pressed);
+}
+
+.igt-overlay-action--tone-default:disabled,
+.igt-overlay-action--tone-default.igt-overlay-action--disabled,
+.igt-overlay-action--tone-default.igt-overlay-action--loading {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-default-container-disabled);
+  --_oa-color:        var(--1_Action-OverlayAction-color-default-icon-disabled);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-default-border-disabled);
+}
+
+
+/* =============================================================================
+   COLOR — tone: inverse
+   Opaque white button for use on dark / image backgrounds
+   ============================================================================= */
+
+.igt-overlay-action--tone-inverse {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-inverse-container-normal);
+  --_oa-color:        var(--1_Action-OverlayAction-color-inverse-icon-normal);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-inverse-border-default);
+}
+
+.igt-overlay-action--tone-inverse:hover {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-inverse-container-hover);
+  --_oa-color:        var(--1_Action-OverlayAction-color-inverse-icon-hover);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-inverse-border-hover);
+}
+
+.igt-overlay-action--tone-inverse:active {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-inverse-container-pressed);
+  --_oa-color:        var(--1_Action-OverlayAction-color-inverse-icon-pressed);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-inverse-border-pressed);
+}
+
+.igt-overlay-action--tone-inverse:disabled,
+.igt-overlay-action--tone-inverse.igt-overlay-action--disabled,
+.igt-overlay-action--tone-inverse.igt-overlay-action--loading {
+  --_oa-bg:           var(--1_Action-OverlayAction-color-inverse-container-disabled);
+  --_oa-color:        var(--1_Action-OverlayAction-color-inverse-icon-disabled);
+  --_oa-border-color: var(--1_Action-OverlayAction-color-inverse-border-disabled);
+}

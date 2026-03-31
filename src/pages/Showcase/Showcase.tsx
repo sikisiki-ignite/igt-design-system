@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Button } from '../../components/Button'
 import { TextButton } from '../../components/TextButton'
 import { IconButton } from '../../components/IconButton'
+import { OverlayAction } from '../../components/OverlayAction'
 import { FloatingButton } from '../../components/FloatingButton'
 import { ButtonGroup } from '../../components/ButtonGroup'
 import { Link } from '../../components/Link'
@@ -282,6 +283,29 @@ export function Showcase() {
                 <IconButton variant="outline" icon="★" aria-label="outline" />
                 <IconButton variant="ghost"   icon="★" aria-label="ghost" />
               </Row>
+            </Block>
+
+            <Block title="OverlayAction — tone × size">
+              <Row>
+                <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                  <OverlayAction tone="default" size="xs" icon="▶" aria-label="xs" />
+                  <OverlayAction tone="default" size="sm" icon="▶" aria-label="sm" />
+                  <OverlayAction tone="default" size="md" icon="▶" aria-label="md" />
+                </div>
+                <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                  <OverlayAction tone="inverse" size="xs" icon="▶" aria-label="xs inverse" />
+                  <OverlayAction tone="inverse" size="sm" icon="▶" aria-label="sm inverse" />
+                  <OverlayAction tone="inverse" size="md" icon="▶" aria-label="md inverse" />
+                </div>
+              </Row>
+            </Block>
+
+            <Block title="OverlayAction — state (tone=default)">
+              <div style={{ background: 'var(--sys-surface-inverse)', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-16)', display: 'flex', alignItems: 'center', gap: 'var(--spacing-8)' }}>
+                <OverlayAction tone="default" size="md" state="normal"   icon="▶" aria-label="normal" />
+                <OverlayAction tone="default" size="md" state="disabled" icon="▶" aria-label="disabled" />
+                <OverlayAction tone="default" size="md" state="loading"  icon="▶" aria-label="loading" />
+              </div>
             </Block>
 
             <Block title="FloatingButton">

@@ -110,7 +110,7 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 ### 컴포넌트가 없는 경우 (Fallback)
 `src/components/` 에 해당하는 컴포넌트가 없을 경우에만 아래 규칙을 따릅니다:
 - **외부 라이브러리 또는 HTML 요소 직접 사용 허용** (AI가 적절한 구현을 선택)
-- **단, 폰트(타이포그래피)는 반드시 IGT 디자인 시스템 토큰 사용** — 하드코딩 금지
+- **단, 폰트(타이포그래피)/컬러는 반드시 IGT 디자인 시스템 토큰 사용** — 하드코딩 금지
   ```tsx
   // ✅ fallback 컴포넌트에서도 타이포그래피는 토큰 사용
   style={{
@@ -138,7 +138,21 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 | `FloatingButton` | `layout`, `priority`, `size` | FAB 버튼 |
 | `ButtonGroup` | `layout`, `distribution`, `size` | 버튼 묶음 |
 | `Link` | `tone`, `underline` | 링크 |
-| `OverlayAction` | `tone`, `size` | 오버레이 위 액션 |
+| `OverlayAction` | `tone`, `size`, `state` | 오버레이 위 액션 (이미지/미디어 위 원형 아이콘 버튼) |
+
+### OverlayAction 사용 예시
+```tsx
+// ✅ 올바른 사용
+<OverlayAction tone="default" size="md" icon={<PlayIcon />} aria-label="재생" />
+<OverlayAction tone="inverse" size="sm" icon={<CloseIcon />} aria-label="닫기" />
+<OverlayAction tone="default" size="xs" state="disabled" icon={<EditIcon />} aria-label="편집" />
+
+// ✅ tone 값: default | inverse
+// ✅ size 값: xs | sm | md
+// ✅ state 값: normal | hover | pressed | disabled | loading
+// ✅ 항상 원형(circle) — variant 없음
+// ✅ 이미지/영상/오버레이 위에 배치할 때 사용 (일반 배경에는 IconButton 사용)
+```
 
 ### Button 사용 예시
 ```tsx
