@@ -311,7 +311,7 @@ export function ComponentName({ prop1, prop2, ...rest }: ComponentNameProps) {
 ```
 
 - 페이지 루트 컨테이너: `height: '100vh'` + `overflow: 'hidden'`
-- 스크롤이 필요한 영역: `flex: 1` + `overflow: 'auto'` (단 하나의 컨테이너에만 적용)
+- 스크롤이 필요한 영역: `flex: 1` + `minHeight: 0` + `overflow: 'auto'` (단 하나의 컨테이너에만 적용)
 - 사이드바 / 헤더: `overflow: 'hidden'` 또는 `overflow` 미지정
 
 ### PC 해상도 정책
@@ -336,7 +336,7 @@ export function ComponentName({ prop1, prop2, ...rest }: ComponentNameProps) {
     <header style={{ flexShrink: 0 }}>...</header>
 
     {/* 스크롤 영역 (단 하나) */}
-    <div style={{ flex: 1, overflow: 'auto' }}>
+    <div style={{ flex: 1, minHeight: 0, overflow: 'auto' }}>
       ...
     </div>
   </main>

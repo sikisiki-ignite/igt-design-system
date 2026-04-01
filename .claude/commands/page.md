@@ -30,7 +30,7 @@
     <header style={{ flexShrink: 0 }}>...</header>
 
     {/* 스크롤 영역 — 반드시 단 하나만 */}
-    <div style={{ flex: 1, overflow: 'auto' }}>
+    <div style={{ flex: 1, minHeight: 0, overflow: 'auto' }}>
       ...
     </div>
   </main>
