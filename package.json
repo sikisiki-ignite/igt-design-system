@@ -22,7 +22,7 @@
   },
   "scripts": {
     "prepare": "npm run build:lib",
-    "postinstall": "npm install --prefix mcp-server && npm run build --prefix mcp-server",
+    "postinstall": "test -f mcp-server/package.json && npm install --prefix mcp-server && npm run build --prefix mcp-server || true",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:lib": "tsc -b && vite build --config vite.lib.config.ts",
