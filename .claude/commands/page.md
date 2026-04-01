@@ -123,10 +123,11 @@ CHART_STYLE   CartesianGrid, XAxis, YAxis 공통 props
 ### 배경/서피스
 ```
 --sys-background-base             /* 최하단 배경 */
---sys-background-subtle           /* 페이지 배경 */
---sys-surface-default             /* 카드, 패널 배경 */
---sys-surface-subtle              /* 살짝 구분되는 배경 */
---sys-surface-raised              /* 떠있는 요소 배경 */
+--sys-background-subtle           /* 페이지 배경 (연한 회색) */
+--sys-surface-base                /* 카드, 패널 기본 배경 */
+--sys-surface-raised              /* 떠있는 요소 배경 (카드 위) */
+--sys-surface-overlay             /* 오버레이/모달 배경 */
+--sys-surface-grouped-default     /* 그룹화된 섹션 배경 */
 ```
 
 ### 테두리
@@ -134,16 +135,22 @@ CHART_STYLE   CartesianGrid, XAxis, YAxis 공통 props
 --sys-border-neutral-default      /* 기본 테두리 */
 --sys-border-neutral-strong       /* 강조 테두리 */
 --sys-border-neutral-subtle       /* 약한 테두리 */
+--borderWidth-1                   /* 1px 테두리 두께 */
+--borderWidth-2                   /* 2px 테두리 두께 */
 ```
 
 ### 시맨틱 컨테이너 (배경색)
 ```
---sys-container-brand-solid-default    /* 브랜드 강조 배경 */
---sys-container-brand-tint-default     /* 브랜드 연한 배경 */
---sys-container-neutral-solid-default  /* 중립 강조 배경 */
---sys-container-status-success-tint-default  /* 성공 배경 */
---sys-container-status-danger-tint-default   /* 위험 배경 */
---sys-container-status-warning-tint-default  /* 경고 배경 */
+--sys-container-brand-solid-default         /* 브랜드 강조 배경 */
+--sys-container-brand-tint-default          /* 브랜드 연한 배경 */
+--sys-container-neutral-solid-default       /* 중립 강조 배경 */
+--sys-container-status-success-tint-default /* 성공 연한 배경 */
+--sys-container-status-success-solid-default /* 성공 강조 배경 */
+--sys-container-status-danger-tint-default  /* 위험 연한 배경 */
+--sys-container-status-danger-solid-default /* 위험 강조 배경 */
+--sys-container-status-warning-tint-default /* 경고 연한 배경 */
+--sys-container-status-warning-solid-default /* 경고 강조 배경 */
+--sys-container-status-info-tint-default    /* 정보 연한 배경 */
 ```
 
 ---

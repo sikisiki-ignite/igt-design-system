@@ -58,15 +58,23 @@ style={{
 | 토큰 접두사 | fontSize | fontWeight | 용도 |
 |---|---|---|---|
 | `--heading-md-bold` | 20px | 700 | 페이지 제목 |
+| `--heading-md-semibold` | 20px | 600 | 페이지 제목(세미볼드) |
 | `--body-sm-semibold` | 15px | 600 | 섹션 타이틀 |
-| `--label-sm-semibold` | 14px | 600 | 강조 라벨 |
-| `--label-sm-medium` | 14px | 500 | 일반 라벨 |
-| `--label-sm-regular` | 14px | 400 | 본문 라벨 |
+| `--body-sm-regular` | 15px | 400 | 본문 텍스트 |
+| `--label-md-semibold` | 14px | 600 | 강조 라벨 |
+| `--label-md-medium` | 14px | 500 | 일반 라벨 |
+| `--label-md-regular` | 14px | 400 | 본문 라벨 |
+| `--label-sm-semibold` | 14px | 600 | 강조 라벨(sm) |
+| `--label-sm-medium` | 14px | 500 | 일반 라벨(sm) |
+| `--label-sm-regular` | 14px | 400 | 본문 라벨(sm) |
 | `--body-xxs-semibold` | 13px | 600 | 소형 강조 |
-| `--label-xs-medium` | 13px | 500 | 소형 라벨 |
 | `--body-xxs-regular` | 13px | 400 | 소형 본문 |
+| `--label-xs-semibold` | 13px | 600 | 소형 강조 라벨 |
+| `--label-xs-medium` | 13px | 500 | 소형 라벨 |
 | `--label-xxs-strong` | 12px | 600 | 캡션 강조 |
+| `--caption-lg-semibold` | 12px | 600 | 캡션 강조 |
 | `--caption-lg-regular` | 12px | 400 | 캡션 |
+| `--caption-md-semibold` | 11px | 600 | 소형 캡션 강조 |
 | `--caption-md-regular` | 11px | 400 | 소형 캡션 |
 
 예외 (토큰 없음, 하드코딩 허용):
@@ -80,7 +88,7 @@ style={{ border: '1px solid #e0e0e0' }}
 style={{ border: '1px solid rgba(0,0,0,0.1)' }}
 
 // ✅ 대체
-style={{ border: 'var(--border-defalut) solid var(--sys-border-neutral-subtle)' }}
+style={{ border: 'var(--borderWidth-1) solid var(--sys-border-neutral-default)' }}
 ```
 
 ### 허용: 레이아웃 전용 속성 (토큰 없음)
