@@ -1,4 +1,5 @@
-// ── Design Tokens ─────────────────────────────────────────────
+// ── Global Reset + Design Tokens ──────────────────────────────
+import '../global.css'
 import '../tokens/index.css'
 
 // ── Actions ──────────────────────────────────────────────────
