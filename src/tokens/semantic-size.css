@@ -101,7 +101,7 @@
   --recipe-fieldBase-trailingSlot-trailingAction-iconSize-md: var(--icon-icon-16);
   --recipe-fieldBase-trailingSlot-trailingAction-iconSize-lg: var(--icon-icon-16);
   --recipe-fieldBase-trailingSlot-trailingAction-hitArea-sm: var(--size-size-32);
-  --recipe-fieldBase-trailingSlot-trailingAction-hitArea-md: var(--size-size-34_);
+  --recipe-fieldBase-trailingSlot-trailingAction-hitArea-md: var(--size-size-34);
   --recipe-fieldBase-trailingSlot-trailingAction-hitArea-lg: var(--size-size-36);
   --recipe-fieldBase-radius-xs: var(--radius-radius-6);
   --recipe-fieldBase-radius-sm: var(--radius-radius-8);

@@ -61,6 +61,12 @@ function pathToCssVar(parts) {
         .replace(/[^a-zA-Z0-9_-]/g, '') // strip remaining special chars
         .replace(/-+/g, '-')             // collapse multiple hyphens
         .replace(/^-|-$/g, '')           // trim leading/trailing hyphens
+        .replace(/_+$/g, '')             // trim trailing underscores (from stripped ✓✗)
+        .replace(/^_+/, '')              // trim leading underscores
+        // Fix known Figma typos
+        .replace(/\bradiuss?\b/g, s => s === 'raidus' ? 'radius' : s)
+        .replace(/raidus/g, 'radius')    // raidus → radius
+        .replace(/varaiant/g, 'variant') // varaiant → variant
     )
     .filter(Boolean)
   return '--' + sanitized.join('-')
