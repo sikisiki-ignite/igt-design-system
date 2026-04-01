@@ -77,10 +77,12 @@ StatusIndicator  size: xs|sm|md|lg  tone: active|inactive|attention|error
 ### Navigation
 ```
 TopNavigation    breakpoint: md-lg|xl  isLoggedIn?
-SideNavigation   size: sm|md  tone: neutral|accent  items[]
-Breadcrumb       separator: chevron|dot|slash  leading: none|home  items[]
+SideNavigation   size: sm|md  tone: neutral|accent  width: number|string (필수)
+                 items: { label, href?, depth?: 1|2|3, state?: default|current|disabled, children? }[]
+Breadcrumb       separator: chevron|dot|slash  leading: none|home
+                 items: { label, href? }[]
 Pagination       variant: default|minimal  size: sm|md  currentPage totalPages onChange
-Accordion        type: contained|plain  size: sm|md|lg  title
+Accordion        type: contained|plain  size: sm|md|lg  state: collapsed|expanded|disabled  title  children
 ```
 
 ### Loading
