@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MapLocationSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C16.9706 2 21 6.02944 21 11C21 14.1542 19.5407 16.6394 17.8789 18.4414C16.2218 20.2383 14.3117 21.4149 13.2559 21.9873C12.4682 22.4143 11.5318 22.4143 10.7441 21.9873C9.68833 21.4149 7.77824 20.2383 6.12109 18.4414C4.45928 16.6394 3 14.1542 3 11C3 6.02944 7.02944 2 12 2ZM12 7.5C10.067 7.5 8.5 9.067 8.5 11C8.5 12.933 10.067 14.5 12 14.5C13.933 14.5 15.5 12.933 15.5 11C15.5 9.067 13.933 7.5 12 7.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MapLocationSolidIcon;

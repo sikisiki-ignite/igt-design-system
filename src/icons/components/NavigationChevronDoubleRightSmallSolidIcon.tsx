@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationChevronDoubleRightSmallSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M15.9507 7.39272C14.9714 6.59153 13.501 7.28783 13.5005 8.55288V15.4435C13.5008 16.7087 14.9714 17.4049 15.9507 16.6037L20.1606 13.1593L20.2896 13.0412C20.8912 12.4213 20.8481 11.3997 20.1606 10.8371L15.9507 7.39272Z" fill="currentColor"/>
+<path d="M7.45068 7.39272C6.47145 6.59153 5.00096 7.28783 5.00049 8.55288V15.4435C5.00082 16.7087 6.4714 17.4049 7.45068 16.6037L11.6606 13.1593L11.7896 13.0412C12.3912 12.4213 12.3481 11.3997 11.6606 10.8371L7.45068 7.39272Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationChevronDoubleRightSmallSolidIcon;

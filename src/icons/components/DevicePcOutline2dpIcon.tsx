@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const DevicePcOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M19 3C20.6569 3 22 4.34315 22 6V14.5C22 16.1569 20.6569 17.5 19 17.5H13V19.5H17C17.5523 19.5 18 19.9477 18 20.5C18 21.0523 17.5523 21.5 17 21.5H7C6.44772 21.5 6 21.0523 6 20.5C6 19.9477 6.44772 19.5 7 19.5H11V17.5H5C3.34315 17.5 2 16.1569 2 14.5V6C2 4.34315 3.34315 3 5 3H19ZM5 5C4.44772 5 4 5.44772 4 6V14.5C4 15.0523 4.44772 15.5 5 15.5H19C19.5523 15.5 20 15.0523 20 14.5V6C20 5.44772 19.5523 5 19 5H5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default DevicePcOutline2dpIcon;

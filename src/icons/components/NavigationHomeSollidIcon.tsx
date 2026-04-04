@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationHomeSollidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M10.2002 3.59972C11.2667 2.80009 12.7333 2.80009 13.7998 3.59972L19 7.50011L19.2295 7.6837C20.3483 8.63031 21 10.0247 21 11.5001V18.5001C21 19.8808 19.8807 21.0001 18.5 21.0001H16.5C15.1193 21.0001 14 19.8808 14 18.5001V17.0001C13.9999 16.1717 13.3284 15.5001 12.5 15.5001H11.5C10.6716 15.5001 10.0001 16.1717 10 17.0001V18.5001C9.99999 19.8808 8.8807 21.0001 7.5 21.0001H5.5C4.1193 21.0001 3.00001 19.8808 3 18.5001V11.5001C3.00004 9.92638 3.74101 8.44436 5 7.50011L10.2002 3.59972Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationHomeSollidIcon;

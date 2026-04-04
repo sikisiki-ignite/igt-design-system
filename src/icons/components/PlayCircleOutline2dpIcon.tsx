@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const PlayCircleOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M9 8.89453C9.00018 8.11236 9.85821 7.633 10.5244 8.04297L15.5703 11.1484C16.2046 11.539 16.2046 12.461 15.5703 12.8516L10.5244 15.957C9.85822 16.367 9.00019 15.8876 9 15.1055V8.89453Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+  </svg>
+);
+
+export default PlayCircleOutline2dpIcon;

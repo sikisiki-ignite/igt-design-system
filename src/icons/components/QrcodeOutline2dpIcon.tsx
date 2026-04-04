@@ -1,0 +1,24 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const QrcodeOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M4 15.5C4.55228 15.5 5 15.9477 5 16.5V18C5 18.5523 5.44772 19 6 19H7.5C8.05228 19 8.5 19.4477 8.5 20C8.5 20.5523 8.05228 21 7.5 21H6C4.34315 21 3 19.6569 3 18V16.5C3 15.9477 3.44772 15.5 4 15.5Z" fill="currentColor"/>
+<path d="M20 15.5C20.5523 15.5 21 15.9477 21 16.5V18C21 19.6569 19.6569 21 18 21H16.5C15.9477 21 15.5 20.5523 15.5 20C15.5 19.4477 15.9477 19 16.5 19H18C18.5523 19 19 18.5523 19 18V16.5C19 15.9477 19.4477 15.5 20 15.5Z" fill="currentColor"/>
+<path d="M21 11C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12C2 11.4477 2.44772 11 3 11H21Z" fill="currentColor"/>
+<path d="M7.5 3C8.05228 3 8.5 3.44772 8.5 4C8.5 4.55228 8.05228 5 7.5 5H6C5.44772 5 5 5.44772 5 6V7.5C5 8.05228 4.55228 8.5 4 8.5C3.44772 8.5 3 8.05228 3 7.5V6C3 4.34315 4.34315 3 6 3H7.5Z" fill="currentColor"/>
+<path d="M18 3C19.6569 3 21 4.34315 21 6V7.5C21 8.05228 20.5523 8.5 20 8.5C19.4477 8.5 19 8.05228 19 7.5V6C19 5.44772 18.5523 5 18 5H16.5C15.9477 5 15.5 4.55228 15.5 4C15.5 3.44772 15.9477 3 16.5 3H18Z" fill="currentColor"/>
+  </svg>
+);
+
+export default QrcodeOutline2dpIcon;

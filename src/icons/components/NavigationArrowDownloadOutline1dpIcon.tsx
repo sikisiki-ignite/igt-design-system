@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationArrowDownloadOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M21 12.75C21.4142 12.75 21.75 13.0858 21.75 13.5V19.5C21.75 20.4665 20.9665 21.25 20 21.25H4C3.0335 21.25 2.25 20.4665 2.25 19.5V13.5C2.25 13.0858 2.58579 12.75 3 12.75C3.41421 12.75 3.75 13.0858 3.75 13.5V19.5C3.75 19.6381 3.86193 19.75 4 19.75H20C20.1381 19.75 20.25 19.6381 20.25 19.5V13.5C20.25 13.0858 20.5858 12.75 21 12.75Z" fill="currentColor"/>
+<path d="M12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V12.1895L15.9697 8.96973C16.2626 8.67684 16.7374 8.67684 17.0303 8.96973C17.3232 9.26262 17.3232 9.73738 17.0303 10.0303L12.5303 14.5303L12.4736 14.582C12.1791 14.8223 11.7443 14.8049 11.4697 14.5303L6.96973 10.0303C6.67683 9.73738 6.67683 9.26262 6.96973 8.96973C7.26262 8.67684 7.73738 8.67684 8.03027 8.96973L11.25 12.1895V3C11.25 2.58579 11.5858 2.25 12 2.25Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationArrowDownloadOutline1dpIcon;

@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const ProhibitionOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM6.54395 18.5156C8.02046 19.7533 9.9226 20.5 12 20.5C16.6944 20.5 20.5 16.6944 20.5 12C20.5 9.9226 19.7533 8.02046 18.5156 6.54395L6.54395 18.5156ZM12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 14.0769 4.24621 15.9787 5.4834 17.4551L17.4551 5.4834C15.9787 4.24621 14.0769 3.5 12 3.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default ProhibitionOutline1dpIcon;

@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const VideoPlaySolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M4 5.61014C4.00007 3.25394 6.59174 1.81752 8.58984 3.06619L18.8164 9.4578C20.6963 10.6328 20.6964 13.3707 18.8164 14.5457L8.58984 20.9373C6.59182 22.1858 4.00023 20.7494 4 18.3933V5.61014Z" fill="currentColor"/>
+  </svg>
+);
+
+export default VideoPlaySolidIcon;

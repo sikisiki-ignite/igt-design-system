@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const CheckCircleOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M15.4697 8.96973C15.7626 8.67684 16.2374 8.67684 16.5303 8.96973C16.8232 9.26262 16.8232 9.73738 16.5303 10.0303L11.5303 15.0303C11.2374 15.3232 10.7626 15.3232 10.4697 15.0303L7.46973 12.0303C7.17684 11.7374 7.17684 11.2626 7.46973 10.9697C7.76262 10.6768 8.23738 10.6768 8.53027 10.9697L11 13.4395L15.4697 8.96973Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 16.6944 7.30558 20.5 12 20.5C16.6944 20.5 20.5 16.6944 20.5 12C20.5 7.30558 16.6944 3.5 12 3.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default CheckCircleOutline1dpIcon;

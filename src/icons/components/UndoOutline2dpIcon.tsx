@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const UndoOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12 2C8.7274 2 5.82361 3.57241 4 6V3.5C4 2.94772 3.55228 2.5 3 2.5C2.44772 2.5 2 2.94772 2 3.5V9C2 9.55228 2.44772 10 3 10H8.5C9.05228 10 9.5 9.55228 9.5 9C9.5 8.44772 9.05228 8 8.5 8H5.07031C6.45471 5.60721 9.04047 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C8.63282 20 5.74936 17.9192 4.56934 14.9697C4.36416 14.4571 3.7822 14.2081 3.26953 14.4131C2.7568 14.6182 2.50685 15.2002 2.71191 15.7129C4.18533 19.3956 7.78748 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="currentColor"/>
+  </svg>
+);
+
+export default UndoOutline2dpIcon;

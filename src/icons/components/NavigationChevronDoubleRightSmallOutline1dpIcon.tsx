@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationChevronDoubleRightSmallOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M15.0302 5.96967C14.7373 5.67678 14.2625 5.67678 13.9697 5.96967C13.6768 6.26257 13.6768 6.73733 13.9697 7.03022L18.9394 11.9999L13.9697 16.9697C13.6768 17.2626 13.6768 17.7373 13.9697 18.0302C14.2625 18.3231 14.7373 18.3231 15.0302 18.0302L20.5302 12.5302C20.6708 12.3896 20.7499 12.1988 20.7499 11.9999C20.7499 11.8508 20.7055 11.7062 20.624 11.5839L20.5302 11.4697L15.0302 5.96967Z" fill="currentColor"/>
+<path d="M6.5302 5.96967C6.23731 5.67678 5.76255 5.67678 5.46966 5.96967C5.17679 6.26257 5.17677 6.73733 5.46966 7.03022L10.4394 11.9999L5.46966 16.9697C5.17679 17.2626 5.17677 17.7373 5.46966 18.0302C5.76254 18.3231 6.23732 18.3231 6.5302 18.0302L12.0302 12.5302C12.1708 12.3896 12.2499 12.1988 12.2499 11.9999C12.2499 11.8508 12.2055 11.7062 12.124 11.5839L12.0302 11.4697L6.5302 5.96967Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationChevronDoubleRightSmallOutline1dpIcon;

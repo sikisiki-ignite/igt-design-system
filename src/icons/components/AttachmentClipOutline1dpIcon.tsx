@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const AttachmentClipOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M9.25 15.75V6.5C9.25 6.08579 9.58579 5.75 10 5.75C10.4142 5.75 10.75 6.08579 10.75 6.5V15.75C10.75 16.3023 11.1977 16.75 11.75 16.75C12.3023 16.75 12.75 16.3023 12.75 15.75V6.5C12.75 4.98122 11.5188 3.75 10 3.75C8.48122 3.75 7.25 4.98122 7.25 6.5V15.75C7.25 18.2353 9.26472 20.25 11.75 20.25C14.2353 20.25 16.25 18.2353 16.25 15.75V6C16.25 5.58579 16.5858 5.25 17 5.25C17.4142 5.25 17.75 5.58579 17.75 6V15.75C17.75 19.0637 15.0637 21.75 11.75 21.75C8.43629 21.75 5.75 19.0637 5.75 15.75V6.5C5.75 4.15279 7.65279 2.25 10 2.25C12.3472 2.25 14.25 4.15279 14.25 6.5V15.75C14.25 17.1307 13.1307 18.25 11.75 18.25C10.3693 18.25 9.25 17.1307 9.25 15.75Z" fill="currentColor"/>
+  </svg>
+);
+
+export default AttachmentClipOutline1dpIcon;

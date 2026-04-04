@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MapLocationOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7ZM12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C16.9706 2 21 6.02944 21 11C21 14.1542 19.5407 16.6394 17.8789 18.4414C16.2218 20.2383 14.3117 21.4149 13.2559 21.9873C12.4682 22.4143 11.5318 22.4143 10.7441 21.9873C9.68833 21.4149 7.77824 20.2383 6.12109 18.4414C4.45928 16.6394 3 14.1542 3 11C3 6.02944 7.02944 2 12 2ZM12 4C8.13401 4 5 7.13401 5 11C5 13.4943 6.14527 15.5184 7.59082 17.0859C9.04099 18.6584 10.7416 19.7114 11.6973 20.2295C11.8902 20.3341 12.1098 20.3341 12.3027 20.2295C13.2584 19.7114 14.959 18.6584 16.4092 17.0859C17.8547 15.5184 19 13.4943 19 11C19 7.13401 15.866 4 12 4Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MapLocationOutline2dpIcon;

@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const InformationSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 11C11.4477 11 11 11.4477 11 12V15.5C11 16.0523 11.4477 16.5 12 16.5C12.5523 16.5 13 16.0523 13 15.5V12C13 11.4477 12.5523 11 12 11ZM12 7.25C11.3096 7.25 10.75 7.80964 10.75 8.5C10.75 9.19036 11.3096 9.75 12 9.75C12.6904 9.75 13.25 9.19036 13.25 8.5C13.25 7.80964 12.6904 7.25 12 7.25Z" fill="currentColor"/>
+  </svg>
+);
+
+export default InformationSolidIcon;

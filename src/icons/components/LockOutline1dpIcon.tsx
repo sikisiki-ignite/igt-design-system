@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const LockOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12 14.25C12.4142 14.25 12.75 14.5858 12.75 15V16.5C12.75 16.9142 12.4142 17.25 12 17.25C11.5858 17.25 11.25 16.9142 11.25 16.5V15C11.25 14.5858 11.5858 14.25 12 14.25Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25C14.6234 2.25 16.75 4.37665 16.75 7V9.75H17C18.5188 9.75 19.75 10.9812 19.75 12.5V19C19.75 20.5188 18.5188 21.75 17 21.75H7C5.48122 21.75 4.25 20.5188 4.25 19V12.5C4.25 10.9812 5.48122 9.75 7 9.75H7.25V7C7.25 4.37665 9.37665 2.25 12 2.25ZM7 11.25C6.30964 11.25 5.75 11.8096 5.75 12.5V19C5.75 19.6904 6.30964 20.25 7 20.25H17C17.6904 20.25 18.25 19.6904 18.25 19V12.5C18.25 11.8096 17.6904 11.25 17 11.25H7ZM12 3.75C10.2051 3.75 8.75 5.20507 8.75 7V9.75H15.25V7C15.25 5.20507 13.7949 3.75 12 3.75Z" fill="currentColor"/>
+  </svg>
+);
+
+export default LockOutline1dpIcon;

@@ -1,0 +1,22 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MessageSpeechBubbleCommentOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12.5 13C13.0523 13 13.5 13.4477 13.5 14C13.5 14.5523 13.0523 15 12.5 15H8C7.44772 15 7 14.5523 7 14C7 13.4477 7.44772 13 8 13H12.5Z" fill="currentColor"/>
+<path d="M16 9C16.5523 9 17 9.44772 17 10C17 10.5523 16.5523 11 16 11H8C7.44772 11 7 10.5523 7 10C7 9.44772 7.44772 9 8 9H16Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 13.6178 21.6133 15.1476 20.9297 16.501C20.9128 16.5347 20.9185 16.5503 20.917 16.5439L21.5664 19.1406C21.9323 20.6053 20.6052 21.9317 19.1406 21.5654L16.5449 20.916C16.5512 20.9175 16.5359 20.9126 16.502 20.9297C15.1485 21.6136 13.6184 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C13.2964 20 14.518 19.6911 15.5996 19.1445C16.0209 18.9316 16.5275 18.8498 17.0303 18.9756L19.626 19.625L18.9766 17.0283C18.8511 16.5259 18.9319 16.0197 19.1445 15.5986C19.6907 14.5173 20 13.2962 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MessageSpeechBubbleCommentOutline2dpIcon;

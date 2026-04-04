@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationArrowDownBottomOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12.4736 16.082C12.1791 16.3223 11.7443 16.3049 11.4697 16.0303L5.46973 10.0303C5.17683 9.73738 5.17683 9.26262 5.46973 8.96973C5.76262 8.67684 6.23738 8.67684 6.53027 8.96973L11.25 13.6895L11.25 3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3L12.75 13.6895L17.4697 8.96973C17.7626 8.67684 18.2374 8.67684 18.5303 8.96973C18.8232 9.26262 18.8232 9.73738 18.5303 10.0303L12.5303 16.0303L12.4736 16.082Z" fill="currentColor"/>
+<path d="M5 20.75C4.58579 20.75 4.25 20.4142 4.25 20C4.25 19.5858 4.58579 19.25 5 19.25H19C19.4142 19.25 19.75 19.5858 19.75 20C19.75 20.4142 19.4142 20.75 19 20.75H5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationArrowDownBottomOutline1dpIcon;

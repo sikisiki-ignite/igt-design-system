@@ -1,0 +1,22 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const BuildingOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M14 11.25C14.4142 11.25 14.75 11.5858 14.75 12C14.75 12.4142 14.4142 12.75 14 12.75H10C9.58579 12.75 9.25 12.4142 9.25 12C9.25 11.5858 9.58579 11.25 10 11.25H14Z" fill="currentColor"/>
+<path d="M14 8.25C14.4142 8.25 14.75 8.58579 14.75 9C14.75 9.41421 14.4142 9.75 14 9.75H10C9.58579 9.75 9.25 9.41421 9.25 9C9.25 8.58579 9.58579 8.25 10 8.25H14Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15 3.25C16.5188 3.25 17.75 4.48122 17.75 6V11.25H19C20.5188 11.25 21.75 12.4812 21.75 14V20.75H2.25V14C2.25 12.4812 3.48122 11.25 5 11.25H6.25V6C6.25 4.48122 7.48122 3.25 9 3.25H15ZM5 12.75C4.30964 12.75 3.75 13.3096 3.75 14V19.25H6.25V12.75H5ZM9 4.75C8.30964 4.75 7.75 5.30964 7.75 6V19.25H11.25V16.5C11.25 16.0858 11.5858 15.75 12 15.75C12.4142 15.75 12.75 16.0858 12.75 16.5V19.25H16.25V6C16.25 5.30964 15.6904 4.75 15 4.75H9ZM17.75 19.25H20.25V14C20.25 13.3096 19.6904 12.75 19 12.75H17.75V19.25Z" fill="currentColor"/>
+  </svg>
+);
+
+export default BuildingOutline1dpIcon;

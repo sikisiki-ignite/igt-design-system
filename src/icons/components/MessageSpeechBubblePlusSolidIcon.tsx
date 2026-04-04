@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MessageSpeechBubblePlusSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 13.8215 21.5093 15.5295 20.6572 17.001L21.2686 19.4492C21.5429 20.5477 20.5476 21.5422 19.4492 21.2676L17.0029 20.6553C15.531 21.5081 13.8226 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM11.9951 7.00488C11.4429 7.00488 10.9952 7.45265 10.9951 8.00488V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H10.9951V16.0049C10.9951 16.5572 11.4428 17.0049 11.9951 17.0049C12.5473 17.0048 12.9951 16.5571 12.9951 16.0049V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H12.9951V8.00488C12.9951 7.45269 12.5473 7.00495 11.9951 7.00488Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MessageSpeechBubblePlusSolidIcon;

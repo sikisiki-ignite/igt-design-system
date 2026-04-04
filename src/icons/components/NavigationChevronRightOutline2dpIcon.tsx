@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationChevronRightOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M8.79302 3.29289C9.18354 2.90237 9.81655 2.90237 10.2071 3.29289L18.2071 11.2929L18.2735 11.3661C18.4193 11.5441 18.5 11.7679 18.5 11.9999C18.5 12.2651 18.3946 12.5194 18.2071 12.707L10.2071 20.707C9.81658 21.0974 9.18355 21.0974 8.79302 20.707C8.40249 20.3164 8.40249 19.6834 8.79302 19.2929L16.086 11.9999L8.79302 4.70696C8.40249 4.31643 8.40249 3.68342 8.79302 3.29289Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationChevronRightOutline2dpIcon;

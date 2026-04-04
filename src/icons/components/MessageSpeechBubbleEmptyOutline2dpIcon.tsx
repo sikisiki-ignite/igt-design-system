@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MessageSpeechBubbleEmptyOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 13.2962 19.6907 14.5173 19.1445 15.5986C18.9319 16.0197 18.8511 16.5259 18.9766 17.0283L19.626 19.625L17.0303 18.9756C16.5275 18.8498 16.0209 18.9316 15.5996 19.1445C14.518 19.6911 13.2964 20 12 20C7.58172 20 4 16.4183 4 12ZM2 12C2 17.5228 6.47715 22 12 22C13.6184 22 15.1485 21.6136 16.502 20.9297C16.5359 20.9126 16.5512 20.9175 16.5449 20.916L19.1406 21.5654C20.6052 21.9317 21.9323 20.6053 21.5664 19.1406L20.917 16.5439C20.9185 16.5503 20.9128 16.5347 20.9297 16.501C21.6133 15.1476 22 13.6178 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MessageSpeechBubbleEmptyOutline2dpIcon;

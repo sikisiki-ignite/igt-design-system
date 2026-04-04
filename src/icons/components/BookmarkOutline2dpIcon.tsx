@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const BookmarkOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 3C19.6046 3 20.5 3.89543 20.5 5V20.0859C20.4999 21.8676 18.3458 22.7598 17.0859 21.5L12 16.4141L6.91406 21.5C5.65416 22.7598 3.50012 21.8676 3.5 20.0859V5C3.5 3.89543 4.39543 3 5.5 3H18.5ZM5.5 20.0859L11.293 14.293L11.3691 14.2246C11.7619 13.9043 12.3409 13.9269 12.707 14.293L18.5 20.0859V5H5.5V20.0859Z" fill="currentColor"/>
+  </svg>
+);
+
+export default BookmarkOutline2dpIcon;

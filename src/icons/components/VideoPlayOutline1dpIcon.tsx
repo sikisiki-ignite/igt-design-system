@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const VideoPlayOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M4.25 5.60967C4.25007 3.44994 6.62548 2.13332 8.45703 3.27764L18.6836 9.66924C20.4069 10.7463 20.4069 13.2562 18.6836 14.3333L8.45703 20.7249C6.62548 21.8692 4.25007 20.5526 4.25 18.3929V5.60967ZM5.75 18.3929C5.75007 19.3746 6.8296 19.9726 7.66211 19.4524L17.8887 13.0608C18.672 12.5713 18.672 11.4313 17.8887 10.9417L7.66211 4.5501C6.8296 4.02992 5.75007 4.62799 5.75 5.60967V18.3929Z" fill="currentColor"/>
+  </svg>
+);
+
+export default VideoPlayOutline1dpIcon;

@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const NavigationArrowRightTopSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M17 5.5C17.8284 5.50004 18.5 6.1716 18.5 7V15.793C18.5 17.1292 16.8844 17.7983 15.9395 16.8535L12.25 13.1641L6.70708 18.707C6.31657 19.0975 5.68354 19.0975 5.29302 18.707C4.90249 18.3165 4.90249 17.6835 5.29302 17.293L10.836 11.75L7.14653 8.06055C6.20166 7.11561 6.87079 5.50006 8.20708 5.5H17Z" fill="currentColor"/>
+  </svg>
+);
+
+export default NavigationArrowRightTopSolidIcon;

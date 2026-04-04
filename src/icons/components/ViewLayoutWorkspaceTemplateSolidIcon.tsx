@@ -1,0 +1,22 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const ViewLayoutWorkspaceTemplateSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M21.5 7.5C21.5 8.05229 21.0523 8.5 20.5 8.5L3.5 8.5C2.94772 8.5 2.5 8.05228 2.5 7.5L2.5 5.5C2.5 3.84315 3.84315 2.5 5.5 2.5L18.5 2.5C20.1569 2.5 21.5 3.84315 21.5 5.5V7.5Z" fill="currentColor"/>
+<path d="M8.5 20.5C8.5 21.0523 8.05228 21.5 7.5 21.5H5.5C3.84315 21.5 2.5 20.1569 2.5 18.5L2.5 11.5C2.5 10.9477 2.94772 10.5 3.5 10.5H7.5C8.05228 10.5 8.5 10.9477 8.5 11.5L8.5 20.5Z" fill="currentColor"/>
+<path d="M21.5 18.5C21.5 20.1569 20.1569 21.5 18.5 21.5H11.5C10.9477 21.5 10.5 21.0523 10.5 20.5V11.5C10.5 10.9477 10.9477 10.5 11.5 10.5L20.5 10.5C21.0523 10.5 21.5 10.9477 21.5 11.5V18.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default ViewLayoutWorkspaceTemplateSolidIcon;

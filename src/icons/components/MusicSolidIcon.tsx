@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const MusicSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M21 15.501H20.9678C20.9882 15.6648 21 15.8316 21 16.001C21 18.2101 19.2091 20.001 17 20.001C14.7909 20.001 13 18.2101 13 16.001C13 13.7918 14.7909 12.001 17 12.001C17.7288 12.001 18.4116 12.1966 19 12.5371V6.5957L10 7.41406V16.501H9.96777C9.98821 16.6648 10 16.8316 10 17.001C10 19.2101 8.20914 21.001 6 21.001C3.79086 21.001 2 19.2101 2 17.001C2 14.7918 3.79086 13.001 6 13.001C6.72875 13.001 7.41155 13.1966 8 13.5371V3.08789L21 1.90625V15.501Z" fill="currentColor"/>
+  </svg>
+);
+
+export default MusicSolidIcon;

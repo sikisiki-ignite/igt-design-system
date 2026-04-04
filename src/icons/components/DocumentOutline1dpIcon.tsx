@@ -1,0 +1,22 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const DocumentOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M13.5 13.25C13.9142 13.25 14.25 13.5858 14.25 14C14.25 14.4142 13.9142 14.75 13.5 14.75H8.5C8.08579 14.75 7.75 14.4142 7.75 14C7.75 13.5858 8.08579 13.25 8.5 13.25H13.5Z" fill="currentColor"/>
+<path d="M15.5 9.25C15.9142 9.25 16.25 9.58579 16.25 10C16.25 10.4142 15.9142 10.75 15.5 10.75H8.5C8.08579 10.75 7.75 10.4142 7.75 10C7.75 9.58579 8.08579 9.25 8.5 9.25H15.5Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 2.25C19.5188 2.25 20.75 3.48122 20.75 5V19C20.75 20.5188 19.5188 21.75 18 21.75H6C4.48122 21.75 3.25 20.5188 3.25 19V5C3.25 3.48122 4.48122 2.25 6 2.25H18ZM6 3.75C5.30964 3.75 4.75 4.30964 4.75 5V19C4.75 19.6904 5.30964 20.25 6 20.25H18C18.6904 20.25 19.25 19.6904 19.25 19V5C19.25 4.30964 18.6904 3.75 18 3.75H6Z" fill="currentColor"/>
+  </svg>
+);
+
+export default DocumentOutline1dpIcon;

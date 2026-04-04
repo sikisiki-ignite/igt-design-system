@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const PlusOutline25dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M11.9951 3C12.6854 3.00007 13.2451 3.55969 13.2451 4.25V10.75H19.75C20.4404 10.75 21 11.3096 21 12C21 12.6904 20.4404 13.25 19.75 13.25H13.2451V19.75C13.2451 20.4403 12.6854 20.9999 11.9951 21C11.3048 21 10.7451 20.4404 10.7451 19.75V13.25H4.25C3.55964 13.25 3 12.6904 3 12C3 11.3096 3.55964 10.75 4.25 10.75H10.7451V4.25C10.7451 3.55964 11.3048 3 11.9951 3Z" fill="currentColor"/>
+  </svg>
+);
+
+export default PlusOutline25dpIcon;

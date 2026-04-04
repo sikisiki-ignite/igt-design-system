@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const SharpHashOutline3dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 2.75C16.1904 2.75 16.75 3.30964 16.75 4V7.25H20C20.6904 7.25 21.25 7.80964 21.25 8.5C21.25 9.19036 20.6904 9.75 20 9.75H16.75V14.25H20C20.6904 14.25 21.25 14.8096 21.25 15.5C21.25 16.1904 20.6904 16.75 20 16.75H16.75V20C16.75 20.6904 16.1904 21.25 15.5 21.25C14.8096 21.25 14.25 20.6904 14.25 20V16.75H9.75V20C9.75 20.6904 9.19036 21.25 8.5 21.25C7.80964 21.25 7.25 20.6904 7.25 20V16.75H4C3.30964 16.75 2.75 16.1904 2.75 15.5C2.75 14.8096 3.30964 14.25 4 14.25H7.25V9.75H4C3.30964 9.75 2.75 9.19036 2.75 8.5C2.75 7.80964 3.30964 7.25 4 7.25H7.25V4C7.25 3.30964 7.80964 2.75 8.5 2.75C9.19036 2.75 9.75 3.30964 9.75 4V7.25H14.25V4C14.25 3.30964 14.8096 2.75 15.5 2.75ZM9.75 9.75V14.25H14.25V9.75H9.75Z" fill="currentColor"/>
+  </svg>
+);
+
+export default SharpHashOutline3dpIcon;

@@ -1,0 +1,23 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const PersonOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M14.6314 15.75C17.5188 15.75 19.8355 18.1364 19.7496 21.0225C19.7372 21.4364 19.3911 21.7623 18.9771 21.75C18.5633 21.7374 18.2373 21.3914 18.2496 20.9775C18.3103 18.937 16.6728 17.25 14.6314 17.25H9.63535C7.53335 17.2503 5.81216 18.9213 5.74961 21.0225C5.7372 21.4364 5.39113 21.7623 4.97714 21.75C4.56333 21.7374 4.23729 21.3914 4.24961 20.9775C4.33636 18.0658 6.72235 15.7503 9.63535 15.75H14.6314Z" fill="currentColor"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9996 2.25C15.1752 2.25 17.7496 4.82436 17.7496 8C17.7496 11.1756 15.1752 13.75 11.9996 13.75C8.82412 13.7498 6.24961 11.1755 6.24961 8C6.24961 4.82448 8.82412 2.25018 11.9996 2.25ZM11.9996 3.75C9.65255 3.75018 7.74961 5.6529 7.74961 8C7.74961 10.3471 9.65255 12.2498 11.9996 12.25C14.3468 12.25 16.2496 10.3472 16.2496 8C16.2496 5.65279 14.3468 3.75 11.9996 3.75Z" fill="currentColor"/>
+<circle cx="12" cy="8" r="5" stroke="currentColor" stroke-width="1.5"/>
+<path d="M5 21C5.07463 18.4933 7.1282 16.5 9.63597 16.5H14.632C17.0964 16.5 19.0733 18.5367 19 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+);
+
+export default PersonOutline1dpIcon;

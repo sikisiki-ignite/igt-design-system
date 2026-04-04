@@ -1,0 +1,23 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const ListAlignLeftOutline2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M14.5 9C15.0523 9 15.5 9.44772 15.5 10C15.5 10.5523 15.0523 11 14.5 11H4.5C3.94772 11 3.5 10.5523 3.5 10C3.5 9.44772 3.94772 9 4.5 9H14.5Z" fill="currentColor"/>
+<path d="M14.5 17C15.0523 17 15.5 17.4477 15.5 18C15.5 18.5523 15.0523 19 14.5 19H4.5C3.94772 19 3.5 18.5523 3.5 18C3.5 17.4477 3.94772 17 4.5 17H14.5Z" fill="currentColor"/>
+<path d="M19.5 13C20.0523 13 20.5 13.4477 20.5 14C20.5 14.5523 20.0523 15 19.5 15H4.5C3.94772 15 3.5 14.5523 3.5 14C3.5 13.4477 3.94772 13 4.5 13H19.5Z" fill="currentColor"/>
+<path d="M19.5 5C20.0523 5 20.5 5.44772 20.5 6C20.5 6.55228 20.0523 7 19.5 7H4.5C3.94772 7 3.5 6.55228 3.5 6C3.5 5.44772 3.94772 5 4.5 5H19.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default ListAlignLeftOutline2dpIcon;

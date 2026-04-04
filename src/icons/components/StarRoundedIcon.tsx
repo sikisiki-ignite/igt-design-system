@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const StarRoundedIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M10.6375 2.06683C11.1568 0.941009 12.7235 0.90602 13.3084 1.96136L13.3621 2.06683L15.6345 6.99652L21.0271 7.63617C22.2982 7.78688 22.8087 9.35793 21.8689 10.227L17.8826 13.9125L18.9412 19.2377C19.1906 20.4932 17.854 21.4645 16.7371 20.8393L11.9998 18.186L7.26247 20.8393C6.14558 21.4644 4.80892 20.4931 5.05837 19.2377L6.11599 13.9125L2.13064 10.227C1.19126 9.35794 1.7016 7.78701 2.97244 7.63617L8.36404 6.99652L10.6375 2.06683Z" fill="currentColor"/>
+  </svg>
+);
+
+export default StarRoundedIcon;

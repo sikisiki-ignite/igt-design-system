@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const WritePencilUnderlineSolidIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M17.9376 11.2136L8.45829 20.6929C8.26173 20.8894 7.99506 21 7.71715 21H4.04825C3.46946 21 3.00022 20.5305 3 19.9518V16.2829C3 16.005 3.11065 15.7383 3.30711 15.5417L12.7864 6.06246L17.9376 11.2136Z" fill="currentColor"/>
+<path d="M14.928 3.92092C16.1561 2.69303 18.1468 2.69303 19.3749 3.92092L20.0792 4.62521C21.3069 5.85329 21.307 7.84409 20.0792 9.07208L19.4199 9.73133L14.2687 4.58017L14.928 3.92092Z" fill="currentColor"/>
+  </svg>
+);
+
+export default WritePencilUnderlineSolidIcon;

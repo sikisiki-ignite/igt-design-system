@@ -1,0 +1,21 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const VideoPause2dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M16 2.5C15.4477 2.5 15 2.94772 15 3.5V20.5C15 21.0523 15.4477 21.5 16 21.5C16.5523 21.5 17 21.0523 17 20.5V3.5C17 2.94772 16.5523 2.5 16 2.5Z" fill="currentColor"/>
+<path d="M8 2.5C7.44772 2.5 7 2.94772 7 3.5V20.5C7 21.0523 7.44772 21.5 8 21.5C8.55228 21.5 9 21.0523 9 20.5V3.5C9 2.94772 8.55228 2.5 8 2.5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default VideoPause2dpIcon;

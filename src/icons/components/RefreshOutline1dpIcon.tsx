@@ -1,0 +1,20 @@
+import type { SVGProps } from 'react';
+
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+}
+
+export const RefreshOutline1dpIcon = ({ size = 24, ...props }: Props) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M12 2.25C15.4748 2.25 18.5238 4.06784 20.25 6.80176V3.5C20.25 3.08579 20.5858 2.75 21 2.75C21.4142 2.75 21.75 3.08579 21.75 3.5V9C21.75 9.41421 21.4142 9.75 21 9.75H15.5C15.0858 9.75 14.75 9.41421 14.75 9C14.75 8.58579 15.0858 8.25 15.5 8.25H19.3486C17.982 5.57768 15.2044 3.75 12 3.75C7.44365 3.75 3.75 7.44365 3.75 12C3.75 16.5563 7.44365 20.25 12 20.25C15.4728 20.25 18.4464 18.1036 19.6631 15.0625C19.8171 14.6782 20.2532 14.4917 20.6377 14.6455C21.0223 14.7994 21.2095 15.2355 21.0557 15.6201C19.6189 19.2111 16.1068 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12C2.25 6.61522 6.61522 2.25 12 2.25Z" fill="currentColor"/>
+  </svg>
+);
+
+export default RefreshOutline1dpIcon;
