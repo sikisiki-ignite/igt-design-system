@@ -51,7 +51,7 @@ import { SkeletonRect, SkeletonCircle, SkeletonText } from './components/Skeleto
 import { Breadcrumb } from './components/Breadcrumb'
 import { Pagination } from './components/Pagination'
 import { Accordion } from './components/Accordion'
-import { SideNavigation } from './components/Navigation'
+import { SideNavigation, TopNavigation } from './components/Navigation'
 
 // Table
 import { Table, TableCellStrong } from './components/Table'
@@ -388,13 +388,36 @@ export function Preview() {
             <Col>
               <Select type="filled" size="md"
                 options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'},{label:'옵션 3',value:'3'}]}
-                placeholder="선택하세요" />
+                placeholder="filled" />
               <Select type="outlined" size="md"
                 options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'}]}
                 placeholder="outlined" />
               <Select type="plain" size="md"
                 options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'}]}
                 placeholder="plain" />
+            </Col>
+            <Col>
+              <Select type="filled" size="xs"
+                options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'}]}
+                placeholder="XS" />
+              <Select type="filled" size="sm"
+                options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'}]}
+                placeholder="SM" />
+              <Select type="filled" size="md"
+                options={[{label:'옵션 1',value:'1'},{label:'옵션 2',value:'2'}]}
+                placeholder="MD" />
+            </Col>
+            <Col>
+              <Select type="filled" size="md" state="disabled"
+                options={[{label:'옵션 1',value:'1'}]}
+                placeholder="Disabled" />
+              <Select type="filled" size="md" state="error"
+                options={[{label:'옵션 1',value:'1'}]}
+                placeholder="Error" />
+              <Select type="filled" size="md" state="read only"
+                value="1"
+                options={[{label:'읽기 전용',value:'1'}]}
+                placeholder="Read Only" />
             </Col>
           </Section>
         </div>
@@ -409,6 +432,7 @@ export function Preview() {
               <Checkbox size="md" label="Indeterminate" value="indeterminate" />
               <Checkbox size="md" label="Disabled" value="unchecked" disabled />
               <Checkbox size="md" label="Invalid" value="unchecked" invalid />
+              <Checkbox size="md" label="Read Only" value="checked" readOnly />
             </Row>
             <Row>
               <Checkbox size="sm" label="SM" value={checkboxVal} onChange={v => setCheckboxVal(v as typeof checkboxVal)} />
@@ -490,6 +514,12 @@ export function Preview() {
 
           <Section title="Tab">
             <Col style={{ width: '100%' }}>
+              <Tab variant="underline" size="md" layout="scrollable" value={tabValue}
+                tabs={[{label:'첫 번째',value:'one'},{label:'두 번째',value:'two'},{label:'세 번째',value:'three'}]}
+                onChange={setTabValue} />
+              <Tab variant="filled" size="md" layout="scrollable" value={tabValue}
+                tabs={[{label:'첫 번째',value:'one'},{label:'두 번째',value:'two'},{label:'세 번째',value:'three'}]}
+                onChange={setTabValue} />
               <Tab variant="underline" size="md" layout="fixed" value={tabValue}
                 tabs={[{label:'첫 번째',value:'one'},{label:'두 번째',value:'two'},{label:'세 번째',value:'three'}]}
                 onChange={setTabValue} />
@@ -688,6 +718,34 @@ export function Preview() {
 
         {/* ── Navigation ── */}
         <div id="Navigation">
+          <Section title="TopNavigation">
+            <Col style={{ width: '100%' }}>
+              <div style={{ border: '1px solid var(--sys-border-neutral-subtle)', borderRadius: 8, overflow: 'hidden' }}>
+                <TopNavigation
+                  items={[
+                    { label: '홈', href: '#', active: true },
+                    { label: '제품', href: '#' },
+                    { label: '가격', href: '#' },
+                    { label: '문의', href: '#' },
+                  ]}
+                  isLoggedIn={false}
+                />
+              </div>
+              <div style={{ border: '1px solid var(--sys-border-neutral-subtle)', borderRadius: 8, overflow: 'hidden' }}>
+                <TopNavigation
+                  items={[
+                    { label: '홈', href: '#' },
+                    { label: '대시보드', href: '#', active: true },
+                    { label: '설정', href: '#' },
+                  ]}
+                  isLoggedIn={true}
+                  hasNotification={true}
+                  userAlt="사용자"
+                />
+              </div>
+            </Col>
+          </Section>
+
           <Section title="Breadcrumb">
             <Col>
               <Breadcrumb separator="chevron" leading="none"
