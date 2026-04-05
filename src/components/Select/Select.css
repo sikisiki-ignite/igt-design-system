@@ -125,7 +125,7 @@
 .igt-select--size-xs {
   --_sel-height: var(--recipe-field-base-height-sm);
   --_sel-padding-start: var(--recipe-field-base-padding-start-xs);
-  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-xs);
+  --_sel-padding-end-trailing: calc(var(--recipe-field-base-padding-end-xs) + var(--recipe-field-base-icon-size-sm) + var(--spacing-4));
   --_sel-radius: var(--recipe-field-base-radius-xs);
   --_sel-icon-size: var(--recipe-field-base-icon-size-sm);
   --_sel-arrow-inset: var(--recipe-field-base-padding-end-xs);
@@ -134,7 +134,7 @@
 .igt-select--size-sm {
   --_sel-height: var(--recipe-field-base-height-sm);
   --_sel-padding-start: var(--recipe-field-base-padding-start-sm);
-  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-sm);
+  --_sel-padding-end-trailing: calc(var(--recipe-field-base-padding-end-sm) + var(--recipe-field-base-icon-size-sm) + var(--spacing-4));
   --_sel-radius: var(--recipe-field-base-radius-sm);
   --_sel-icon-size: var(--recipe-field-base-icon-size-sm);
   --_sel-arrow-inset: var(--recipe-field-base-padding-end-sm);
@@ -143,7 +143,7 @@
 .igt-select--size-md {
   --_sel-height: var(--recipe-field-base-height-md);
   --_sel-padding-start: var(--recipe-field-base-padding-start-md);
-  --_sel-padding-end-trailing: var(--recipe-field-base-padding-end-with-trailing-md);
+  --_sel-padding-end-trailing: calc(var(--recipe-field-base-padding-end-md) + var(--recipe-field-base-icon-size-md) + var(--spacing-4));
   --_sel-radius: var(--recipe-field-base-radius-md);
   --_sel-icon-size: var(--recipe-field-base-icon-size-md);
   --_sel-arrow-inset: var(--recipe-field-base-padding-end-md);

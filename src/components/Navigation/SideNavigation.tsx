@@ -1,10 +1,10 @@
-import type { SideNavigationProps } from '../../types/components'
+import type { SideNavigationProps, SideNavItem, NavSectionDef } from '../../types/components'
+import { Icon } from '../../icons/Icon'
+import { IconButton } from '../IconButton'
 import './Navigation.css'
 
-type NavItem = SideNavigationProps['items'][number]
-
 interface NavItemsProps {
-  items: NavItem[]
+  items: SideNavItem[]
   size: NonNullable<SideNavigationProps['size']>
   tone: NonNullable<SideNavigationProps['tone']>
 }
@@ -35,15 +35,27 @@ function NavItems({ items, size, tone }: NavItemsProps) {
                 href={item.href}
                 aria-current={isCurrent ? 'page' : undefined}
               >
+                {item.icon && (
+                  <span className="igt-sidenav__link-icon" aria-hidden>
+                    <Icon name={item.icon} size="sm" />
+                  </span>
+                )}
                 {item.label}
               </a>
             ) : (
-              <span className="igt-sidenav__link">{item.label}</span>
+              <span className="igt-sidenav__link">
+                {item.icon && (
+                  <span className="igt-sidenav__link-icon" aria-hidden>
+                    <Icon name={item.icon} size="sm" />
+                  </span>
+                )}
+                {item.label}
+              </span>
             )}
             {item.children && item.children.length > 0 && (
               <ul className="igt-sidenav__sublist">
                 {item.children.map((child, j) => {
-                  const childDepth = child.depth ?? (depth + 1) as 1 | 2 | 3
+                  const childDepth = child.depth ?? ((depth + 1) as 1 | 2 | 3)
                   const childIsCurrent = child.state === 'current'
                   const childIsDisabled = child.state === 'disabled'
 
@@ -65,10 +77,22 @@ function NavItems({ items, size, tone }: NavItemsProps) {
                           href={child.href}
                           aria-current={childIsCurrent ? 'page' : undefined}
                         >
+                          {child.icon && (
+                            <span className="igt-sidenav__link-icon" aria-hidden>
+                              <Icon name={child.icon} size="sm" />
+                            </span>
+                          )}
                           {child.label}
                         </a>
                       ) : (
-                        <span className="igt-sidenav__link">{child.label}</span>
+                        <span className="igt-sidenav__link">
+                          {child.icon && (
+                            <span className="igt-sidenav__link-icon" aria-hidden>
+                              <Icon name={child.icon} size="sm" />
+                            </span>
+                          )}
+                          {child.label}
+                        </span>
                       )}
                     </li>
                   )
@@ -82,10 +106,38 @@ function NavItems({ items, size, tone }: NavItemsProps) {
   )
 }
 
+interface NavSectionProps {
+  section: NavSectionDef
+  size: NonNullable<SideNavigationProps['size']>
+  tone: NonNullable<SideNavigationProps['tone']>
+}
+
+function NavSection({ section, size, tone }: NavSectionProps) {
+  return (
+    <div className="igt-sidenav__section">
+      <div className="igt-sidenav__section-header">
+        <span className="igt-sidenav__section-label">{section.label}</span>
+        {section.onAdd && (
+          <IconButton
+            tone="neutral"
+            variant="ghost"
+            size="xs"
+            icon={<Icon name="plus-outline-2dp" size="sm" />}
+            aria-label="섹션 항목 추가"
+            onClick={section.onAdd}
+          />
+        )}
+      </div>
+      <NavItems items={section.items} size={size} tone={tone} />
+    </div>
+  )
+}
+
 export function SideNavigation({
   size = 'md',
   tone = 'neutral',
   width,
+  sections,
   items,
 }: SideNavigationProps) {
   return (
@@ -97,7 +149,11 @@ export function SideNavigation({
       ].join(' ')}
       style={width !== undefined ? { width } : undefined}
     >
-      <NavItems items={items} size={size} tone={tone} />
+      {sections
+        ? sections.map((section, i) => (
+            <NavSection key={i} section={section} size={size} tone={tone} />
+          ))
+        : items && <NavItems items={items} size={size} tone={tone} />}
     </nav>
   )
 }

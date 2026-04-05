@@ -1,0 +1,17 @@
+/* =============================================================================
+   IGT Design System — Breakpoints
+   Viewport breakpoints are NOT part of the Figma token pipeline.
+   Edit this file directly when breakpoints need to change.
+   ============================================================================= */
+
+:root {
+  --breakpoint-mobile: 768px;   /* ≤ 768px: mobile (smartphone + tablet portrait) */
+  --breakpoint-pc: 1280px;      /* ≥ 1280px: PC (design baseline) */
+  /* 769–1279px: undefined zone — PC layout applies, no mobile spec */
+}
+
+/*
+  Usage:
+  @media (max-width: 768px) { ... }   mobile override
+  @media (min-width: 1280px) { ... }  PC-only enforcement (if needed)
+*/

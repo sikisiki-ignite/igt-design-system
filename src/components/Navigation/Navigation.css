@@ -19,7 +19,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-1);
+  gap: var(--spacing-4);
 }
 
 .igt-sidenav__item {
@@ -35,8 +35,8 @@
 .igt-sidenav__link {
   display: flex;
   align-items: center;
+  gap: var(--spacing-4);
   width: 100%;
-  padding: 0 var(--spacing-8);
   border-radius: var(--radius-radius-6);
   color: var(--sys-content-neutral-default);
   text-decoration: none;
@@ -45,39 +45,45 @@
   transition: background-color 120ms ease, color 120ms ease;
 }
 
+.igt-sidenav__link-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
 /* size */
 .igt-sidenav--size-sm .igt-sidenav__link {
   height: var(--size-32);
-  font-size: var(--label-sm-medium-font-size);
-  line-height: var(--label-sm-medium-line-height);
-  font-weight: var(--label-sm-medium-font-weight);
-  letter-spacing: var(--label-sm-medium-letter-spacing);
+  padding: 0 var(--spacing-10);
+  font-size: var(--label-sm-semibold-font-size);
+  line-height: var(--label-sm-semibold-line-height);
+  font-weight: var(--label-sm-semibold-font-weight);
+  letter-spacing: var(--label-sm-semibold-letter-spacing);
 }
 .igt-sidenav--size-md .igt-sidenav__link {
   height: var(--size-40);
-  font-size: var(--label-md-medium-font-size);
-  line-height: var(--label-md-medium-line-height);
-  font-weight: var(--label-md-medium-font-weight);
-  letter-spacing: var(--label-md-medium-letter-spacing);
+  padding: 0 var(--spacing-14);
+  font-size: var(--label-md-semibold-font-size);
+  line-height: var(--label-md-semibold-line-height);
+  font-weight: var(--label-md-semibold-font-weight);
+  letter-spacing: var(--label-md-semibold-letter-spacing);
 }
 
-/* hover */
-.igt-sidenav__link:hover {
-  background-color: var(--sys-surface-subtle, var(--sys-background-subtle));
+/* hover & pressed */
+.igt-sidenav__link:hover,
+.igt-sidenav__link:active {
+  background-color: var(--sys-interaction-hover-overlay-neutral);
 }
 
 /* current — neutral tone */
 .igt-sidenav--tone-neutral .igt-sidenav__item--current > .igt-sidenav__link {
-  background-color: var(--sys-container-neutral-tint-default);
+  background-color: var(--sys-container-neutral-tint-strong);
   color: var(--sys-content-neutral-strong);
-  font-weight: var(--label-md-semibold-font-weight);
 }
 
 /* current — accent tone */
 .igt-sidenav--tone-accent .igt-sidenav__item--current > .igt-sidenav__link {
   background-color: var(--sys-container-brand-tint-default);
   color: var(--sys-content-brand-default);
-  font-weight: var(--label-md-semibold-font-weight);
 }
 
 /* disabled */
@@ -85,6 +91,36 @@
   color: var(--sys-content-neutral-disabled);
   pointer-events: none;
   cursor: default;
+}
+
+/* ── NavSection ─────────────────────────────────────────────── */
+
+.igt-sidenav__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.igt-sidenav__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.igt-sidenav--size-md .igt-sidenav__section-header {
+  padding: var(--spacing-24) var(--spacing-14) var(--spacing-12);
+}
+
+.igt-sidenav--size-sm .igt-sidenav__section-header {
+  padding: var(--spacing-16) var(--spacing-10) var(--spacing-8);
+}
+
+.igt-sidenav__section-label {
+  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: var(--caption-lg-semibold-fontSize);
+  font-weight: var(--caption-lg-semibold-fontWeight);
+  line-height: var(--caption-lg-semibold-lineHeight);
+  letter-spacing: var(--caption-lg-semibold-letterSpacing);
+  color: var(--sys-content-neutral-muted);
 }
 
 
@@ -95,69 +131,171 @@
 .igt-topnav {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: var(--size-48);
-  padding: 0 var(--spacing-16);
-  background-color: var(--sys-surface-default, #ffffff);
-  border-bottom: var(--border-width-1) solid var(--sys-border-neutral-subtle);
+  height: 52px;
+  background-color: var(--sys-surface-base);
+  border-bottom: 1px solid var(--sys-border-neutral-subtle);
   box-sizing: border-box;
-  font-family: 'IGTSans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  flex-shrink: 0;
 }
+
+/* ─── Inner container ─── */
 
 .igt-topnav__inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  height: 100%;
+}
+
+.igt-topnav--breakpoint-xl .igt-topnav__inner {
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 .igt-topnav--breakpoint-md-lg .igt-topnav__inner {
-  max-width: 1024px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-.igt-topnav--breakpoint-xl .igt-topnav__inner {
-  max-width: 1280px;
+
+/* ─── Leading ─── */
+
+.igt-topnav__leading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-40);
+  height: 100%;
 }
 
 .igt-topnav__brand {
   display: flex;
   align-items: center;
+  height: 44px;
   flex-shrink: 0;
-  font-size: var(--label-lg-semibold-font-size);
-  font-weight: var(--label-lg-semibold-font-weight);
+  font-size: var(--label-lg-semibold-fontSize);
+  font-weight: var(--label-lg-semibold-fontWeight);
+  line-height: var(--label-lg-semibold-lineHeight);
   color: var(--sys-content-neutral-strong);
   text-decoration: none;
 }
 
+/* ─── Nav menu ─── */
+
 .igt-topnav__nav {
-  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-4);
 }
 
-.igt-topnav__actions {
+.igt-topnav__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: var(--spacing-8);
+}
+
+.igt-topnav__menu-item-wrap {
+  display: flex;
+}
+
+.igt-topnav__menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: var(--spacing-6) var(--spacing-12);
+  border-radius: var(--radius-6);
+  font-size: var(--body-sm-semibold-fontSize);
+  line-height: var(--body-sm-semibold-lineHeight);
+  font-weight: var(--label-md-medium-fontWeight);
+  color: var(--sys-content-neutral-default);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+  box-sizing: border-box;
+}
+
+.igt-topnav__menu-item:hover {
+  background-color: var(--sys-container-neutral-tint-default);
+}
+
+.igt-topnav__menu-item:focus-visible {
+  outline: 2px solid var(--sys-border-brand-default);
+  outline-offset: 2px;
+  border-radius: var(--radius-6);
+}
+
+/* Active 상태: 텍스트 강조 + 하단 indicator */
+
+.igt-topnav__menu-item--active {
+  font-weight: var(--body-sm-semibold-fontWeight);
+  color: var(--sys-content-neutral-strong);
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
+.igt-topnav__menu-item--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-12);
+  right: var(--spacing-12);
+  height: 2px;
+  background-color: var(--sys-container-brand-solid-default);
+  border-radius: 1px;
+}
+
+/* ─── Trailing ─── */
+
+.igt-topnav__trailing {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
   flex-shrink: 0;
 }
 
-.igt-topnav__user,
-.igt-topnav__auth {
+/* Bell badge wrapper */
+
+.igt-topnav__bell-wrap {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--spacing-6);
-  font-size: var(--label-sm-medium-font-size);
-  font-weight: var(--label-sm-medium-font-weight);
-  color: var(--sys-content-neutral-default);
-  cursor: pointer;
 }
 
-.igt-topnav__clock {
-  font-size: var(--label-sm-regular-font-size);
-  font-weight: var(--label-sm-regular-font-weight);
-  color: var(--sys-content-neutral-muted);
-  letter-spacing: var(--label-sm-regular-letter-spacing);
-  white-space: nowrap;
+.igt-topnav__bell-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--sys-container-brand-solid-default);
+  border: 2px solid var(--sys-surface-base);
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+/* Avatar button — 커스텀 버튼 (IGT Avatar에 onClick 없음) */
+
+.igt-topnav__avatar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  outline-offset: 2px;
+}
+
+.igt-topnav__avatar-btn:focus-visible {
+  outline: 2px solid var(--sys-border-brand-default);
+}
+
+.igt-topnav__avatar-btn .igt-avatar {
+  outline: 1px solid var(--sys-border-neutral-strong);
+  outline-offset: -1px;
 }

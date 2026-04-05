@@ -15,7 +15,7 @@
 .igt-table__head {
   display: flex;
   align-items: stretch;
-  background: var(--sys-surface-subtle);
+  background: var(--sys-background-subtle);
 }
 
 /* Figma: Property 1=default
@@ -34,7 +34,7 @@
   line-height: var(--label-sm-semibold-line-height);
   letter-spacing: var(--label-sm-semibold-letter-spacing);
   color: var(--sys-content-neutral-strong);
-  border-bottom: 1px solid var(--sys-border-neutral-default);
+  border-bottom: 1px solid var(--sys-border-neutral-subtle);
   border-right: 1px solid var(--sys-border-neutral-subtle);
 }
 
@@ -111,12 +111,6 @@
   min-height: 40px;
 }
 
-.igt-table--size-sm .igt-table__header-cell {
-  font-size: var(--label-xs-semibold-font-size, var(--label-sm-semibold-font-size));
-  font-weight: var(--label-xs-semibold-font-weight, var(--label-sm-semibold-font-weight));
-  line-height: var(--label-xs-semibold-line-height, var(--label-sm-semibold-line-height));
-  letter-spacing: var(--label-xs-semibold-letter-spacing, var(--label-sm-semibold-letter-spacing));
-}
 
 .igt-table--size-lg .igt-table__header-cell,
 .igt-table--size-lg .igt-table__cell {
@@ -139,7 +133,7 @@
   font-weight: var(--caption-lg-regular-font-weight);
   line-height: var(--caption-lg-regular-line-height);
   letter-spacing: var(--caption-lg-regular-letter-spacing);
-  color: var(--sys-content-neutral-muted);
+  color: var(--sys-content-neutral-default);
 }
 
 .igt-table-cell__title-strong {

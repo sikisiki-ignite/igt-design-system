@@ -438,24 +438,48 @@ export interface PaginationProps {
 export type SideNavigationSize = 'sm' | 'md'
 export type SideNavigationTone = 'neutral' | 'accent'
 
+export interface SideNavItem {
+  label: string
+  href?: string
+  icon?: string
+  depth?: 1 | 2 | 3
+  state?: 'default' | 'current' | 'disabled'
+  children?: SideNavItem[]
+}
+
+export interface NavSectionDef {
+  label: string
+  onAdd?: () => void
+  items: SideNavItem[]
+}
+
 export interface SideNavigationProps {
   size?: SideNavigationSize
   tone?: SideNavigationTone
   width?: number | string
-  items: {
-    label: string
-    href?: string
-    depth?: 1 | 2 | 3
-    state?: 'default' | 'current' | 'disabled'
-    children?: SideNavigationProps['items']
-  }[]
+  sections?: NavSectionDef[]
+  items?: SideNavItem[]
 }
 
 export type TopNavigationBreakpoint = 'md-lg' | 'xl'
 
+export interface TopNavItem {
+  label: string
+  href: string
+  active?: boolean
+}
+
 export interface TopNavigationProps {
   breakpoint?: TopNavigationBreakpoint
+  items?: TopNavItem[]
   isLoggedIn?: boolean
+  userSrc?: string
+  userAlt?: string
+  hasNotification?: boolean
+  onLoginClick?: () => void
+  onSearchClick?: () => void
+  onBellClick?: () => void
+  onUserClick?: () => void
 }
 
 // ─── Popover ─────────────────────────────────────────────────

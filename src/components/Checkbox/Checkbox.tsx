@@ -34,8 +34,16 @@ export function Checkbox({
         .join(' ')}
     >
       <span className="igt-checkbox__control" aria-hidden>
-        {isChecked && <span className="igt-checkbox__check" aria-hidden />}
-        {isIndeterminate && <span className="igt-checkbox__dash" aria-hidden />}
+        {isChecked && (
+          <svg className="igt-checkbox__check-icon" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 6L5 9L10 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
+        {isIndeterminate && (
+          <svg className="igt-checkbox__check-icon" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M1 6H11" stroke="currentColor" strokeWidth="1.875" strokeLinecap="round" />
+          </svg>
+        )}
       </span>
       {label && <span className="igt-checkbox__label">{label}</span>}
       <input

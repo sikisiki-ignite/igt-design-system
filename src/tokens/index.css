@@ -3,6 +3,7 @@
    ============================================================================= */
 
 /* Design token layers */
+@import './breakpoints.css';
 @import './primitives.css';
 @import './semantic-color.css';
 @import './semantic-radius.css';
