@@ -1,0 +1,6 @@
+/* Icon 컴포넌트 — 색상은 currentColor 상속, 크기만 관리 */
+.igt-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  vertical-align: middle;
+}

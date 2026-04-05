@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { iconRegistry } from './icons/registry'
+import { Icon } from './icons/Icon'
 
 // Actions
 import { Button } from './components/Button'
@@ -169,6 +171,14 @@ export function Preview() {
   const [searchVal, setSearchVal] = useState('')
   const [page, setPage] = useState(1)
   const [tableSelectedKeys, setTableSelectedKeys] = useState<Set<string>>(new Set())
+
+  // Icon Browser
+  const [iconSearch, setIconSearch] = useState('')
+  const [iconCategory, setIconCategory] = useState('all')
+  const [iconVariant, setIconVariant] = useState<'solid' | 'outline'>('outline')
+  const [iconWeight, setIconWeight] = useState<'1dp' | '2dp'>('2dp')
+  const [copiedIcon, setCopiedIcon] = useState<string | null>(null)
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // html 속성으로 모드 적용
   useEffect(() => {
@@ -801,6 +811,195 @@ export function Preview() {
                     </div>
                   </Col>
                 </Section>
+              </>
+            )
+          })()}
+        </div>
+
+        {/* ── Icons ───────────────────────────────────────────── */}
+        <div style={{ marginTop: 48 }}>
+          <h1 style={{
+            margin: '0 0 32px',
+            fontSize: 20,
+            fontWeight: 700,
+            color: 'var(--sys-content-neutral-default)',
+            paddingBottom: 12,
+            borderBottom: '2px solid var(--sys-border-neutral-subtle)',
+          }}>
+            Icons
+          </h1>
+
+          {(() => {
+            const categories = ['all', ...Array.from(new Set(iconRegistry.map(m => m.category))).sort()]
+
+            // 현재 필터 기준으로 유니크 베이스 아이콘 목록
+            const filtered = iconRegistry.filter(m => {
+              if (m.style !== iconVariant) return false
+              if (m.weight !== iconWeight) return false
+              if (iconCategory !== 'all' && m.category !== iconCategory) return false
+              if (iconSearch.trim()) {
+                const q = iconSearch.toLowerCase()
+                return m.name.includes(q) || m.category.includes(q)
+              }
+              return true
+            })
+
+            // name 기준 중복 제거 (같은 name이면 하나만)
+            const seen = new Set<string>()
+            const unique = filtered.filter(m => {
+              if (seen.has(m.name)) return false
+              seen.add(m.name)
+              return true
+            })
+
+            const handleCopy = (name: string) => {
+              const importStr = `import { Icon } from '@igt/design-system'\n<Icon name="${name}" variant="${iconVariant}" weight="${iconWeight}" />`
+              navigator.clipboard.writeText(importStr).catch(() => {})
+              setCopiedIcon(name)
+              if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
+              copyTimerRef.current = setTimeout(() => setCopiedIcon(null), 1500)
+            }
+
+            const filterBtn = (active: boolean): React.CSSProperties => ({
+              padding: '4px 10px',
+              borderRadius: 6,
+              border: '1px solid',
+              borderColor: active ? 'var(--sys-content-brand-default)' : 'var(--sys-border-neutral-subtle)',
+              background: active ? 'var(--sys-container-brand-tint-default, #EFF6FF)' : 'transparent',
+              color: active ? 'var(--sys-content-brand-default)' : 'var(--sys-content-neutral-default)',
+              fontSize: 12,
+              fontWeight: active ? 600 : 400,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              whiteSpace: 'nowrap' as const,
+            })
+
+            return (
+              <>
+                {/* 필터 바 */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', marginBottom: 20 }}>
+                  {/* 검색 */}
+                  <input
+                    type="text"
+                    placeholder="아이콘 검색..."
+                    value={iconSearch}
+                    onChange={e => setIconSearch(e.target.value)}
+                    style={{
+                      padding: '6px 12px',
+                      borderRadius: 8,
+                      border: '1px solid var(--sys-border-neutral-subtle)',
+                      background: 'var(--sys-surface-base)',
+                      color: 'var(--sys-content-neutral-default)',
+                      fontSize: 13,
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      width: 200,
+                    }}
+                  />
+
+                  <div style={{ width: 1, height: 20, background: 'var(--sys-border-neutral-subtle)' }} />
+
+                  {/* Style */}
+                  <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    <span style={{ fontSize: 11, color: 'var(--sys-content-neutral-muted)', fontWeight: 600, letterSpacing: '0.05em' }}>STYLE</span>
+                    {(['solid', 'outline'] as const).map(s => (
+                      <button key={s} style={filterBtn(iconVariant === s)} onClick={() => setIconVariant(s)}>{s}</button>
+                    ))}
+                  </div>
+
+                  <div style={{ width: 1, height: 20, background: 'var(--sys-border-neutral-subtle)' }} />
+
+                  {/* Weight */}
+                  <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    <span style={{ fontSize: 11, color: 'var(--sys-content-neutral-muted)', fontWeight: 600, letterSpacing: '0.05em' }}>WEIGHT</span>
+                    {(['1dp', '2dp'] as const).map(w => (
+                      <button key={w} style={filterBtn(iconWeight === w)} onClick={() => setIconWeight(w)}>{w}</button>
+                    ))}
+                  </div>
+
+                  <span style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--sys-content-neutral-muted)' }}>
+                    {unique.length}개
+                  </span>
+                </div>
+
+                {/* 카테고리 탭 */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 24 }}>
+                  {categories.map(cat => (
+                    <button key={cat} style={filterBtn(iconCategory === cat)} onClick={() => setIconCategory(cat)}>
+                      {cat === 'all' ? 'All' : cat}
+                    </button>
+                  ))}
+                </div>
+
+                {/* 아이콘 그리드 */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(96px, 1fr))',
+                  gap: 8,
+                }}>
+                  {unique.map(meta => (
+                    <button
+                      key={meta.name}
+                      title={`${meta.name}\n클릭하여 import 코드 복사`}
+                      onClick={() => handleCopy(meta.name)}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 8,
+                        padding: '14px 8px 10px',
+                        borderRadius: 8,
+                        border: '1px solid',
+                        borderColor: copiedIcon === meta.name
+                          ? 'var(--sys-content-brand-default)'
+                          : 'var(--sys-border-neutral-subtle)',
+                        background: copiedIcon === meta.name
+                          ? 'var(--sys-container-brand-tint-default, #EFF6FF)'
+                          : 'var(--sys-surface-base)',
+                        color: 'var(--sys-content-neutral-default)',
+                        cursor: 'pointer',
+                        fontFamily: 'inherit',
+                        transition: 'border-color 0.15s, background 0.15s',
+                      }}
+                    >
+                      <Icon
+                        name={meta.name}
+                        variant={iconVariant}
+                        weight={iconWeight}
+                        size={24}
+                        color={copiedIcon === meta.name ? 'var(--sys-content-brand-default)' : 'currentColor'}
+                      />
+                      <span style={{
+                        fontSize: 10,
+                        lineHeight: 1.3,
+                        textAlign: 'center',
+                        wordBreak: 'break-all',
+                        color: copiedIcon === meta.name
+                          ? 'var(--sys-content-brand-default)'
+                          : 'var(--sys-content-neutral-muted)',
+                        maxWidth: '100%',
+                        overflow: 'hidden',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                      }}>
+                        {copiedIcon === meta.name ? '✓ copied' : meta.name.replace(`${meta.category}-`, '')}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {unique.length === 0 && (
+                  <div style={{
+                    padding: '48px 0',
+                    textAlign: 'center',
+                    color: 'var(--sys-content-neutral-muted)',
+                    fontSize: 14,
+                  }}>
+                    검색 결과가 없습니다.
+                  </div>
+                )}
               </>
             )
           })()}
