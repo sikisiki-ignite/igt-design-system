@@ -37,10 +37,10 @@
   --recipe-actionBase-buttonLike-labelPaddingX-sm: var(--spacing-4);
   --recipe-actionBase-buttonLike-labelPaddingX-md: var(--spacing-6);
   --recipe-actionBase-buttonLike-labelPaddingX-lg: var(--spacing-8);
-  --recipe-actionBase-buttonLike-labelTrailingGap-xs: var(--spacing-2);
-  --recipe-actionBase-buttonLike-labelTrailingGap-sm: var(--spacing-2);
-  --recipe-actionBase-buttonLike-labelTrailingGap-md: var(--spacing-4);
-  --recipe-actionBase-buttonLike-labelTrailingGap-lg: var(--spacing-4);
+  --recipe-actionBase-buttonLike-labelTrailingGap-xs: var(--spacing-neg2);
+  --recipe-actionBase-buttonLike-labelTrailingGap-sm: var(--spacing-neg2);
+  --recipe-actionBase-buttonLike-labelTrailingGap-md: var(--spacing-neg4);
+  --recipe-actionBase-buttonLike-labelTrailingGap-lg: var(--spacing-neg4);
   --recipe-actionBase-buttonLike-iconSize-xs: var(--icon-icon-14);
   --recipe-actionBase-buttonLike-iconSize-sm: var(--icon-icon-16);
   --recipe-actionBase-buttonLike-iconSize-md: var(--icon-icon-18);

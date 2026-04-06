@@ -16,3 +16,6 @@ dist/
 .claude/settings.local.json
 mcp-server/dist
 mcp-server/node_modules
+
+*storybook.log
+storybook-static

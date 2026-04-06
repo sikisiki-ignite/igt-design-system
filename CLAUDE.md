@@ -208,6 +208,20 @@ style={{ maxWidth: 1080 }}   // 페이지 레이아웃 최대 너비
 | `SegmentedControl` | `size`, `content`, `segments` | 세그먼트 컨트롤 |
 | `Tab` | `variant`, `layout`, `size`, `tabs` | 탭 |
 
+### Tab 사용 예시
+```tsx
+// ✅ layout 기본값: scrollable
+<Tab variant="underline" layout="scrollable" size="md" value={tab} tabs={[...]} onChange={setTab} />
+<Tab variant="filled" layout="scrollable" size="md" value={tab} tabs={[...]} onChange={setTab} />
+
+// ✅ layout="fixed" 는 탭이 컨테이너 전체 너비를 균등 분할해야 할 때만 사용
+<Tab variant="underline" layout="fixed" size="md" value={tab} tabs={[...]} onChange={setTab} />
+
+// ✅ variant 값: underline | filled
+// ✅ layout 값: scrollable (기본) | fixed (전체 너비 균등 분할 시)
+// ✅ size 값: sm | md | lg
+```
+
 ### Feedback (피드백)
 | 컴포넌트 | 주요 Props | 설명 |
 |----------|------------|------|

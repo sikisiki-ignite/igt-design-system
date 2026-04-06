@@ -53,8 +53,12 @@ if (existsSync(FIGMA_EXPORT_DIR)) {
  */
 function pathToCssVar(parts) {
   const sanitized = parts
-    .map(p =>
-      p
+    .map((p, i) => {
+      // Negative number keys like "-6" → "neg6" to avoid collision with positive counterparts
+      if (i === parts.length - 1 && /^-\d/.test(p)) {
+        p = 'neg' + p.slice(1)
+      }
+      return p
         .replace(/[✓✗]/g, '')           // strip check marks
         .replace(/\s*[-–]\s*/g, '-')     // normalize dashes
         .replace(/[\s/\\()]+/g, '-')     // spaces, slashes, parens → hyphen
@@ -67,7 +71,7 @@ function pathToCssVar(parts) {
         .replace(/\bradiuss?\b/g, s => s === 'raidus' ? 'radius' : s)
         .replace(/raidus/g, 'radius')    // raidus → radius
         .replace(/varaiant/g, 'variant') // varaiant → variant
-    )
+    })
     .filter(Boolean)
   return '--' + sanitized.join('-')
 }
@@ -114,6 +118,35 @@ function flattenTokens(obj, pathSoFar = []) {
 }
 
 /**
+ * Convert named font weight strings (from Figma) to numeric CSS values.
+ */
+const FONT_WEIGHT_MAP = {
+  thin: 100,
+  extralight: 200,
+  'extra-light': 200,
+  ultralight: 200,
+  light: 300,
+  regular: 400,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  'semi-bold': 600,
+  demibold: 600,
+  bold: 700,
+  extrabold: 800,
+  'extra-bold': 800,
+  ultrabold: 800,
+  black: 900,
+  heavy: 900,
+}
+
+function normalizeFontWeight(value) {
+  if (typeof value !== 'string') return value
+  const numeric = FONT_WEIGHT_MAP[value.toLowerCase().trim()]
+  return numeric !== undefined ? String(numeric) : value
+}
+
+/**
  * Convert a single token entry to one or more CSS variable declarations.
  * Returns an array of "  --var-name: value;" strings.
  */
@@ -134,7 +167,10 @@ function tokenToCssLines(token, { isTypography = false } = {}) {
       const propVar = `${varName}-${prop}`
       let resolved = resolveAlias(typeof propValue === 'object' ? propValue.$value ?? propValue : propValue)
       if (prop === 'fontFamily' && isTypography) {
-        resolved = `'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
+        resolved = `IGTSans, -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
+      }
+      if (prop === 'fontWeight') {
+        resolved = normalizeFontWeight(resolved)
       }
       lines.push(`  ${propVar}: ${resolved};`)
     }
@@ -144,7 +180,20 @@ function tokenToCssLines(token, { isTypography = false } = {}) {
   // For individual typography leaf tokens (fontFamily specifically)
   let resolved = resolveAlias(value)
   if (isTypography && (path[path.length - 1] === 'fontFamily' || type === 'fontFamily')) {
-    resolved = `'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
+    resolved = `IGTSans, -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
+  }
+
+  // Normalize fontFamily → IGTSans (primitives token has "igt system sans" from Figma)
+  if (path.some(p => p.toLowerCase() === 'fontfamily') || type === 'fontFamily') {
+    const lower = String(resolved).toLowerCase().replace(/['\s]/g, '')
+    if (lower.includes('igt') || lower.includes('igtsystemsans')) {
+      resolved = `IGTSans`
+    }
+  }
+
+  // Normalize fontWeight named strings → numeric values
+  if (type === 'fontWeight' || path.some(p => p.toLowerCase() === 'fontweight')) {
+    resolved = normalizeFontWeight(resolved)
   }
 
   return [`  ${varName}: ${resolved};`]
@@ -160,10 +209,18 @@ function generateCssBlock(tokenObj, selector, opts = {}) {
   const { isTypography = false } = opts
   const tokens = flattenTokens(tokenObj)
   const lines = []
+  const seen = new Map() // varName → line index
 
   for (const token of tokens) {
     const cssLines = tokenToCssLines(token, { isTypography })
-    lines.push(...cssLines)
+    for (const line of cssLines) {
+      const varName = line.trim().split(':')[0]
+      if (seen.has(varName)) {
+        console.warn(`  ⚠ Duplicate token: ${varName} (overwriting line ${seen.get(varName) + 1})`)
+      }
+      seen.set(varName, lines.length)
+      lines.push(line)
+    }
   }
 
   if (lines.length === 0) return ''
