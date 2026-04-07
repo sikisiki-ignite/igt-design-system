@@ -74,3 +74,32 @@ export const TopNavLoggedIn: StoryObj = {
     <TopNavigation items={TOP_ITEMS} isLoggedIn={true} hasNotification={true} />
   ),
 }
+
+// ── 기본 사용 (default props 그대로) ────────────────────────────
+export const Default: StoryObj = {
+  name: 'Default (기본 사용)',
+  render: () => <TopNavigation />,
+}
+
+// ── 활성 메뉴 아이템 ─────────────────────────────────────────────
+export const WithActiveItem: StoryObj = {
+  name: 'With Active Item',
+  render: () => (
+    <TopNavigation
+      items={[
+        { label: '서비스', href: '#' },
+        { label: '현황',   href: '#', active: true },
+        { label: '관리',   href: '#' },
+        { label: '설정',   href: '#' },
+      ]}
+    />
+  ),
+}
+
+// ── trailing 버튼 없음 ───────────────────────────────────────────
+export const NoTrailingButton: StoryObj = {
+  name: 'No Trailing Button',
+  render: () => (
+    <TopNavigation trailingButton={undefined} />
+  ),
+}

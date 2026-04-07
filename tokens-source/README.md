@@ -28,4 +28,4 @@ npm run build:tokens
 
 - 스크립트는 Figma export 경로(`~/Downloads/design-tokens 2/`)에 파일이 있으면 자동으로 이 폴더로 복사합니다.
 - 직접 이 폴더에 파일을 넣어도 정상 동작합니다.
-- `semanticTypography`의 `fontFamily` 값은 `'Pretendard Variable'` 스택으로 자동 치환됩니다.
+

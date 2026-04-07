@@ -4,6 +4,17 @@ import { IconButton } from '../IconButton'
 import { Avatar } from '../Avatar'
 import './Navigation.css'
 
+const DEFAULT_ITEMS: NonNullable<TopNavigationProps['items']> = [
+  { label: '서비스', href: '#' },
+  { label: '현황',   href: '#' },
+  { label: '관리',   href: '#' },
+  { label: '설정',   href: '#' },
+]
+
+const DEFAULT_TRAILING_BUTTON: NonNullable<TopNavigationProps['trailingButton']> = {
+  label: '로그인',
+}
+
 const SearchIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
     <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" strokeWidth="1.5" />
@@ -29,8 +40,10 @@ const BellIcon = () => (
 )
 
 export function TopNavigation({
-  breakpoint = 'xl',
-  items = [],
+  logo,
+  breakpoint = 'full',
+  items = DEFAULT_ITEMS,
+  trailingButton = DEFAULT_TRAILING_BUTTON,
   isLoggedIn = false,
   userSrc,
   userAlt = '',
@@ -51,7 +64,7 @@ export function TopNavigation({
         {/* Leading: 로고 + 메뉴 */}
         <div className="igt-topnav__leading">
           <a className="igt-topnav__brand" href="/" aria-label="홈으로 이동">
-            IGT
+            {logo ?? 'IGT'}
           </a>
 
           {items.length > 0 && (
@@ -110,11 +123,16 @@ export function TopNavigation({
                 <Avatar size="xs" shape="circle" src={userSrc} alt={userAlt} />
               </button>
             </>
-          ) : (
-            <Button tone="primary" variant="fill" size="sm" onClick={onLoginClick}>
-              로그인
+          ) : trailingButton ? (
+            <Button
+              tone="primary"
+              variant="fill"
+              size="sm"
+              onClick={trailingButton.onClick ?? onLoginClick}
+            >
+              {trailingButton.label}
             </Button>
-          )}
+          ) : null}
         </div>
       </div>
     </header>

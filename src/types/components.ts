@@ -461,7 +461,7 @@ export interface SideNavigationProps {
   items?: SideNavItem[]
 }
 
-export type TopNavigationBreakpoint = 'md-lg' | 'xl'
+export type TopNavigationBreakpoint = 'md-lg' | 'xl' | 'full'
 
 export interface TopNavItem {
   label: string
@@ -469,9 +469,19 @@ export interface TopNavItem {
   active?: boolean
 }
 
+export interface TopNavTrailingButton {
+  label: string
+  onClick?: () => void
+}
+
 export interface TopNavigationProps {
+  /** 브랜드 로고 영역. 미제공 시 "IGT" 텍스트로 대체. */
+  logo?: React.ReactNode
+  /** 컨텐츠 최대 너비 제어. 'full' = 1600px (기본), 'xl' = 1440px, 'md-lg' = 1100px */
   breakpoint?: TopNavigationBreakpoint
   items?: TopNavItem[]
+  /** 비로그인 상태의 trailing 버튼. 미제공 시 { label: '로그인' } */
+  trailingButton?: TopNavTrailingButton
   isLoggedIn?: boolean
   userSrc?: string
   userAlt?: string

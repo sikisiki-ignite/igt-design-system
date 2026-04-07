@@ -82,7 +82,13 @@ function pathToCssVar(parts) {
 function resolveAlias(value) {
   if (typeof value !== 'string') return value
   return value.replace(/\{([^}]+)\}/g, (_, path) => {
-    const parts = path.split('.')
+    let parts = path.split('.')
+    // Normalize {radius.radius-N} → {radius.N} to match primitive token names.
+    // Figma exports reference e.g. {radius.radius-12} but primitives define --radius-12.
+    if (parts.length === 2 && parts[0] === 'radius' && parts[1].startsWith('radius-')) {
+      const suffix = parts[1].slice('radius-'.length)
+      parts = ['radius', suffix === 'full' ? '9999' : suffix]
+    }
     return `var(${pathToCssVar(parts)})`
   })
 }

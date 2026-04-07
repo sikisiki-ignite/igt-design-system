@@ -117,9 +117,9 @@
    VARIANT
    ============================================================================= */
 
-/* fill — filled background, border only on focus (handled via :focus-within) */
+/* fill — tinted background, border only on focus (handled via :focus-within) */
 .igt-textfield--variant-fill {
-  --_tf-bg: var(--sys-container-field-normal);
+  --_tf-bg: var(--recipe-fieldBase-fill-container-normal);
   --_tf-border-color: transparent;
 }
 
@@ -127,9 +127,9 @@
   --_tf-border-color: var(--sys-border-field-hover);
 }
 
-/* outline — transparent bg, always-visible border */
+/* outline — white background, always-visible border */
 .igt-textfield--variant-outline {
-  --_tf-bg: transparent;
+  --_tf-bg: var(--sys-container-field-normal);
   --_tf-border-color: var(--sys-border-field-normal-default);
 }
 
