@@ -10,7 +10,7 @@ import { Button } from '../components/Button'
 import { Table } from '../components/Table'
 import { Pagination } from '../components/Pagination'
 import { Tag } from '../components/Tag'
-import type { TableColumn } from '../types/components'
+import type { TableColumnDef } from '../types/components'
 
 interface User {
   id: string
@@ -26,7 +26,7 @@ const STATUS_OPTIONS = [
   { value: 'inactive', label: '비활성' },
 ]
 
-const COLUMNS: TableColumn<User>[] = [
+const COLUMNS: TableColumnDef<User>[] = [
   { key: 'name', header: '이름', cell: (row) => row.name },
   { key: 'email', header: '이메일', cell: (row) => row.email, width: 240 },
   { key: 'role', header: '역할', width: 120, cell: (row) => row.role },
@@ -88,7 +88,7 @@ export function DataTablePage() {
         getRowKey={(row) => row.id}
         selectable
         selectedKeys={selectedKeys}
-        onSelectAll={(v) =>
+        onSelectAll={(v: 'checked' | 'unchecked' | 'indeterminate') =>
           setSelectedKeys(v === 'checked' ? new Set(data.map((u) => u.id)) : new Set())
         }
         onSelectRow={(key) =>
@@ -106,7 +106,7 @@ export function DataTablePage() {
         <Pagination
           variant="default"
           size="md"
-          page={page}
+          currentPage={page}
           totalPages={totalPages}
           onChange={setPage}
         />

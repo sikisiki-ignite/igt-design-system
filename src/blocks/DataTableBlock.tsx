@@ -4,7 +4,7 @@ import { SearchField } from '../components/SearchField'
 import { Select } from '../components/Select'
 import { Pagination } from '../components/Pagination'
 import { Button } from '../components/Button'
-import type { TableColumn } from '../types/components'
+import type { TableColumnDef } from '../types/components'
 
 interface FilterOption {
   value: string
@@ -18,7 +18,7 @@ interface FilterDef {
 }
 
 interface DataTableBlockProps<T> {
-  columns: TableColumn<T>[]
+  columns: TableColumnDef<T>[]
   data: T[]
   getRowKey: (row: T) => string
   /** 검색창 표시 */

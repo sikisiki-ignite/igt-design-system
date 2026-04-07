@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { DataTableBlock } from './DataTableBlock'
 import { Tag } from '../components/Tag'
-import type { TableColumn } from '../types/components'
+import type { TableColumnDef } from '../types/components'
 
 interface User {
   id: string
@@ -20,7 +20,7 @@ const USERS: User[] = [
   { id: '5', name: '정하린', email: 'harin@example.com', role: '뷰어', status: 'active' },
 ]
 
-const COLUMNS: TableColumn<User>[] = [
+const COLUMNS: TableColumnDef<User>[] = [
   { key: 'name', header: '이름', cell: (row) => row.name },
   { key: 'email', header: '이메일', cell: (row) => row.email, width: 220 },
   { key: 'role', header: '역할', width: 100, cell: (row) => row.role },

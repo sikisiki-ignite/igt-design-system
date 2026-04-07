@@ -107,7 +107,7 @@ export function LoginFormBlock({
         {/* 하단 링크 */}
         {forgotPasswordHref && (
           <div style={{ marginTop: 'var(--spacing-16)', textAlign: 'center' }}>
-            <Link tone="primary" underline="always" href={forgotPasswordHref}>
+            <Link tone="brand" underline="always" href={forgotPasswordHref}>
               비밀번호를 잊으셨나요?
             </Link>
           </div>

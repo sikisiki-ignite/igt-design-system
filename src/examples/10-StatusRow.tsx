@@ -19,10 +19,10 @@ interface UserStatusRowProps {
 /** 사용자 상태 행 — 테이블 셀 내 사용 */
 export function UserStatusRow({ name, email, role, status, badge }: UserStatusRowProps) {
   const statusTone = {
-    online: 'success',
-    offline: 'neutral',
-    busy: 'warning',
-  }[status] as 'success' | 'neutral' | 'warning'
+    online: 'active',
+    offline: 'inactive',
+    busy: 'attention',
+  }[status] as 'active' | 'inactive' | 'attention'
 
   const statusLabel = { online: '온라인', offline: '오프라인', busy: '자리비움' }[status]
 
@@ -39,7 +39,7 @@ export function UserStatusRow({ name, email, role, status, badge }: UserStatusRo
         <Avatar size="md" shape="circle" />
         {badge !== undefined && badge > 0 && (
           <div style={{ position: 'absolute', top: -4, right: -4 }}>
-            <Badge kind="count" tone="danger">{badge > 99 ? '99+' : badge}</Badge>
+            <Badge kind="count" tone="urgent" count={badge > 99 ? 99 : badge} />
           </div>
         )}
       </div>

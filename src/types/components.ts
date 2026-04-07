@@ -561,7 +561,7 @@ export interface TableProps<T = unknown> {
   size?: TableSize
   selectable?: boolean
   selectedKeys?: Set<string>
-  onSelectAll?: () => void
+  onSelectAll?: (value: 'checked' | 'unchecked' | 'indeterminate') => void
   onSelectRow?: (key: string) => void
   getRowKey: (row: T) => string
   loading?: boolean

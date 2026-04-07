@@ -95,7 +95,7 @@ export function LoginForm() {
 
         {/* 하단 링크 */}
         <div style={{ marginTop: 'var(--spacing-16)', textAlign: 'center' }}>
-          <Link tone="primary" underline="always" href="/forgot-password">
+          <Link tone="brand" underline="always" href="/forgot-password">
             비밀번호를 잊으셨나요?
           </Link>
         </div>
